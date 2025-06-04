@@ -169,6 +169,21 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - **Output**: Validated `data/processed/processed.csv` + quality report
   - **Dependencies**: 2.1.3
 
+- **2.1.5 Analyze `student_id` for Embedded Information** (🔴 Not Started)
+  - **Objective**: Investigate `student_id` for potential embedded information or patterns.
+  - **Tests Required**:
+    - Test `student_id` format consistency.
+    - Test for common prefixes/suffixes or patterns that might correlate with other data (e.g., school, region, enrollment year).
+    - Test documentation of findings regarding `student_id` utility beyond unique identification.
+  - **Implementation**:
+    - Analyze structure and components of `student_id` values.
+    - Check for correlations between parts of `student_id` (if any structure exists) and other features.
+    - Document whether `student_id` contains extractable information or is purely an arbitrary identifier.
+  - **Database Usage**:
+    - **Source**: Raw data from SQLite `score.db` (or `data/processed/processed.csv` if after initial cleaning).
+    - **Output**: Analysis report/documentation on `student_id`.
+  - **Dependencies**: 2.1.3
+
 ### 2.2 Data Storage and Backup (🔴 Not Started)
 
 **Objective**: Ensure processed data is properly stored and backed up
@@ -184,7 +199,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**:
     - **Source**: In-memory processed DataFrame
     - **Output**: `data/processed/processed.csv`
-  - **Dependencies**: 2.1.4
+  - **Dependencies**: 2.1.4, 2.1.5
 
 - **2.2.2** Create data backup and recovery procedures (🔴 Not Started)
   - **Tests Required**:
@@ -255,7 +270,9 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - Test transportation efficiency scoring
     - Test academic support index calculation
     - Test all new features have expected distributions
+    - Test `age`-derived features for statistical properties and potential predictive power if implemented.
   - **Implementation**: 
+    - Consideration of `age`-derived features (e.g., `age_squared` for non-linear trends, or specific age-based flags like `is_minor` if relevant based on EDA findings and domain knowledge);
     - Sleep category: Early/Normal/Late based on sleep_time
     - Transportation efficiency: Distance proxy
     - Academic support index: Combination of tuition, direct_admission, CCA
@@ -268,16 +285,20 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
 
 #### Sub-tasks:
 - **3.2.1** Implement categorical encoding (🔴 Not Started)
+  - **Objective**: Encode categorical features for machine learning algorithms, considering potential imbalances.
   - **Tests Required**:
     - Test one-hot encoding creates correct number of columns
     - Test target encoding doesn't cause data leakage
     - Test binary encoding preserves information
     - Test ordinal encoding maintains order
+    - Test identification of categorical features with high class imbalance.
+    - Test documentation of decisions regarding handling of imbalanced categorical predictors.
   - **Implementation**:
     - One-hot: gender, learning_style, mode_of_transport, bag_color
     - Target: CCA, sleep_time, wake_time
     - Binary: direct_admission, tuition
     - Ordinal: number_of_siblings
+    - Identify and analyze highly imbalanced categorical predictor features. Based on findings and chosen ML models, decide on appropriate handling strategies (e.g., grouping rare categories, selecting robust encoding methods).
   - **Database Usage**: In-memory feature transformation
   - **Dependencies**: 3.1.5
 
@@ -286,10 +307,10 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - Test numerical features are properly scaled
     - Test scaling preserves feature relationships
     - Test inverse transform works correctly
-    - Test scaling parameters are saved for inference
-  - **Implementation**: StandardScaler for numerical features
+    - Test scaling parameters are saved for inference (and are derived from training data only)
+  - **Implementation**: StandardScaler for numerical features. **Important: Scaler must be fitted *only* on the training data partition (obtained *after* train/test split as per Task 4.1.1) and then used to transform both training and test/validation sets.** Scaling parameters from the training fit must be saved.
   - **Database Usage**: In-memory feature transformation
-  - **Dependencies**: 3.2.1
+  - **Dependencies**: 3.2.1, 4.1.1
 
 - **3.2.3** Feature selection and dimensionality reduction (🔴 Not Started)
   - **Tests Required**:
