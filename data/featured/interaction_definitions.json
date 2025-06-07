@@ -1,0 +1,735 @@
+{
+  "interaction_definitions": {
+    "age_x_attendance_rate": {
+      "type": "multiplicative",
+      "features": [
+        "age",
+        "attendance_rate"
+      ],
+      "formula": "age * attendance_rate",
+      "rationale": "Captures multiplicative effect between age and attendance_rate"
+    },
+    "age_div_attendance_rate": {
+      "type": "ratio",
+      "features": [
+        "age",
+        "attendance_rate"
+      ],
+      "formula": "age / attendance_rate",
+      "rationale": "Captures ratio relationship between age and attendance_rate"
+    },
+    "age_minus_attendance_rate": {
+      "type": "difference",
+      "features": [
+        "age",
+        "attendance_rate"
+      ],
+      "formula": "age - attendance_rate",
+      "rationale": "Captures difference between age and attendance_rate"
+    },
+    "attendance_rate_x_final_test": {
+      "type": "multiplicative",
+      "features": [
+        "attendance_rate",
+        "final_test"
+      ],
+      "formula": "attendance_rate * final_test",
+      "rationale": "Captures multiplicative effect between attendance_rate and final_test"
+    },
+    "attendance_rate_div_final_test": {
+      "type": "ratio",
+      "features": [
+        "attendance_rate",
+        "final_test"
+      ],
+      "formula": "attendance_rate / final_test",
+      "rationale": "Captures ratio relationship between attendance_rate and final_test"
+    },
+    "attendance_rate_minus_final_test": {
+      "type": "difference",
+      "features": [
+        "attendance_rate",
+        "final_test"
+      ],
+      "formula": "attendance_rate - final_test",
+      "rationale": "Captures difference between attendance_rate and final_test"
+    },
+    "age_x_final_test": {
+      "type": "multiplicative",
+      "features": [
+        "age",
+        "final_test"
+      ],
+      "formula": "age * final_test",
+      "rationale": "Captures multiplicative effect between age and final_test"
+    },
+    "age_div_final_test": {
+      "type": "ratio",
+      "features": [
+        "age",
+        "final_test"
+      ],
+      "formula": "age / final_test",
+      "rationale": "Captures ratio relationship between age and final_test"
+    },
+    "age_minus_final_test": {
+      "type": "difference",
+      "features": [
+        "age",
+        "final_test"
+      ],
+      "formula": "age - final_test",
+      "rationale": "Captures difference between age and final_test"
+    },
+    "attendance_age_ratio_x_engagement_score": {
+      "type": "multiplicative",
+      "features": [
+        "attendance_age_ratio",
+        "engagement_score"
+      ],
+      "formula": "attendance_age_ratio * engagement_score",
+      "rationale": "Captures multiplicative effect between attendance_age_ratio and engagement_score"
+    },
+    "attendance_age_ratio_div_engagement_score": {
+      "type": "ratio",
+      "features": [
+        "attendance_age_ratio",
+        "engagement_score"
+      ],
+      "formula": "attendance_age_ratio / engagement_score",
+      "rationale": "Captures ratio relationship between attendance_age_ratio and engagement_score"
+    },
+    "attendance_age_ratio_minus_engagement_score": {
+      "type": "difference",
+      "features": [
+        "attendance_age_ratio",
+        "engagement_score"
+      ],
+      "formula": "attendance_age_ratio - engagement_score",
+      "rationale": "Captures difference between attendance_age_ratio and engagement_score"
+    },
+    "age_squared": {
+      "type": "polynomial",
+      "features": [
+        "age"
+      ],
+      "formula": "age^2",
+      "rationale": "Captures non-linear relationship in age"
+    },
+    "attendance_rate_squared": {
+      "type": "polynomial",
+      "features": [
+        "attendance_rate"
+      ],
+      "formula": "attendance_rate^2",
+      "rationale": "Captures non-linear relationship in attendance_rate"
+    },
+    "gender_x_learning_style": {
+      "type": "categorical_combination",
+      "features": [
+        "gender",
+        "learning_style"
+      ],
+      "formula": "gender + \"_\" + learning_style",
+      "rationale": "Captures combined effect of gender and learning_style categories"
+    },
+    "age_group_x_attendance_category": {
+      "type": "categorical_combination",
+      "features": [
+        "age_group",
+        "attendance_category"
+      ],
+      "formula": "age_group + \"_\" + attendance_category",
+      "rationale": "Captures combined effect of age_group and attendance_category categories"
+    },
+    "gender_x_CCA": {
+      "type": "categorical_combination",
+      "features": [
+        "gender",
+        "CCA"
+      ],
+      "formula": "gender + \"_\" + CCA",
+      "rationale": "Captures combined effect of gender and CCA categories"
+    },
+    "learning_style_x_tuition": {
+      "type": "categorical_combination",
+      "features": [
+        "learning_style",
+        "tuition"
+      ],
+      "formula": "learning_style + \"_\" + tuition",
+      "rationale": "Captures combined effect of learning_style and tuition categories"
+    },
+    "attendance_rate_mean_by_gender": {
+      "type": "group_statistic",
+      "features": [
+        "attendance_rate",
+        "gender"
+      ],
+      "formula": "mean(attendance_rate) grouped by gender",
+      "rationale": "Captures mean of attendance_rate within gender groups"
+    },
+    "attendance_rate_median_by_gender": {
+      "type": "group_statistic",
+      "features": [
+        "attendance_rate",
+        "gender"
+      ],
+      "formula": "median(attendance_rate) grouped by gender",
+      "rationale": "Captures median of attendance_rate within gender groups"
+    },
+    "attendance_rate_std_by_gender": {
+      "type": "group_statistic",
+      "features": [
+        "attendance_rate",
+        "gender"
+      ],
+      "formula": "std(attendance_rate) grouped by gender",
+      "rationale": "Captures std of attendance_rate within gender groups"
+    },
+    "attendance_rate_deviation_from_gender_mean": {
+      "type": "group_deviation",
+      "features": [
+        "attendance_rate",
+        "gender"
+      ],
+      "formula": "attendance_rate - mean(attendance_rate) by gender",
+      "rationale": "Captures how attendance_rate deviates from its group mean in gender"
+    },
+    "age_mean_by_learning_style": {
+      "type": "group_statistic",
+      "features": [
+        "age",
+        "learning_style"
+      ],
+      "formula": "mean(age) grouped by learning_style",
+      "rationale": "Captures mean of age within learning_style groups"
+    },
+    "age_median_by_learning_style": {
+      "type": "group_statistic",
+      "features": [
+        "age",
+        "learning_style"
+      ],
+      "formula": "median(age) grouped by learning_style",
+      "rationale": "Captures median of age within learning_style groups"
+    },
+    "age_std_by_learning_style": {
+      "type": "group_statistic",
+      "features": [
+        "age",
+        "learning_style"
+      ],
+      "formula": "std(age) grouped by learning_style",
+      "rationale": "Captures std of age within learning_style groups"
+    },
+    "age_deviation_from_learning_style_mean": {
+      "type": "group_deviation",
+      "features": [
+        "age",
+        "learning_style"
+      ],
+      "formula": "age - mean(age) by learning_style",
+      "rationale": "Captures how age deviates from its group mean in learning_style"
+    },
+    "final_test_mean_by_tuition": {
+      "type": "group_statistic",
+      "features": [
+        "final_test",
+        "tuition"
+      ],
+      "formula": "mean(final_test) grouped by tuition",
+      "rationale": "Captures mean of final_test within tuition groups"
+    },
+    "final_test_median_by_tuition": {
+      "type": "group_statistic",
+      "features": [
+        "final_test",
+        "tuition"
+      ],
+      "formula": "median(final_test) grouped by tuition",
+      "rationale": "Captures median of final_test within tuition groups"
+    },
+    "final_test_std_by_tuition": {
+      "type": "group_statistic",
+      "features": [
+        "final_test",
+        "tuition"
+      ],
+      "formula": "std(final_test) grouped by tuition",
+      "rationale": "Captures std of final_test within tuition groups"
+    },
+    "final_test_deviation_from_tuition_mean": {
+      "type": "group_deviation",
+      "features": [
+        "final_test",
+        "tuition"
+      ],
+      "formula": "final_test - mean(final_test) by tuition",
+      "rationale": "Captures how final_test deviates from its group mean in tuition"
+    },
+    "engagement_score_mean_by_age_group": {
+      "type": "group_statistic",
+      "features": [
+        "engagement_score",
+        "age_group"
+      ],
+      "formula": "mean(engagement_score) grouped by age_group",
+      "rationale": "Captures mean of engagement_score within age_group groups"
+    },
+    "engagement_score_median_by_age_group": {
+      "type": "group_statistic",
+      "features": [
+        "engagement_score",
+        "age_group"
+      ],
+      "formula": "median(engagement_score) grouped by age_group",
+      "rationale": "Captures median of engagement_score within age_group groups"
+    },
+    "engagement_score_std_by_age_group": {
+      "type": "group_statistic",
+      "features": [
+        "engagement_score",
+        "age_group"
+      ],
+      "formula": "std(engagement_score) grouped by age_group",
+      "rationale": "Captures std of engagement_score within age_group groups"
+    },
+    "engagement_score_deviation_from_age_group_mean": {
+      "type": "group_deviation",
+      "features": [
+        "engagement_score",
+        "age_group"
+      ],
+      "formula": "engagement_score - mean(engagement_score) by age_group",
+      "rationale": "Captures how engagement_score deviates from its group mean in age_group"
+    },
+    "academic_support_index": {
+      "type": "domain_composite",
+      "features": [
+        "tuition",
+        "CCA",
+        "attendance_rate"
+      ],
+      "formula": "average of normalized support indicators",
+      "rationale": "Comprehensive measure of academic support utilization"
+    },
+    "performance_vs_age_peers": {
+      "type": "domain_relative",
+      "features": [
+        "final_test",
+        "age"
+      ],
+      "formula": "final_test - median(final_test) by age",
+      "rationale": "Performance relative to age-matched peers"
+    },
+    "learning_style_effectiveness": {
+      "type": "domain_effectiveness",
+      "features": [
+        "learning_style",
+        "final_test",
+        "attendance_rate"
+      ],
+      "formula": "0.7 * median(final_test) + 0.3 * median(attendance_rate) by learning_style",
+      "rationale": "Effectiveness score of each learning style based on outcomes"
+    },
+    "risk_amplification_score": {
+      "type": "domain_amplification",
+      "features": [
+        "low_attendance_risk",
+        "age_mismatch_risk",
+        "low_engagement_risk",
+        "multiple_risk_factors"
+      ],
+      "formula": "(sum of risk indicators)^1.5",
+      "rationale": "Non-linear amplification of multiple concurrent risks"
+    }
+  },
+  "interaction_statistics": {
+    "age_x_attendance_rate": {
+      "mean": 1420.7056307014784,
+      "median": 1470.0,
+      "std": 200.07364468420712,
+      "min": 205.0,
+      "max": 1600.0,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "age_div_attendance_rate": {
+      "mean": 0.164824676182911,
+      "median": 0.16326530612244897,
+      "std": 0.02888187437813438,
+      "min": 0.05,
+      "max": 0.4,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "age_minus_attendance_rate": {
+      "mean": -78.12312047813778,
+      "median": -79.0,
+      "std": 7.976584476669468,
+      "min": -95.0,
+      "max": -24.0,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "attendance_rate_x_final_test": {
+      "mean": 6306.346558441558,
+      "median": 6417.0,
+      "std": 1489.269296870466,
+      "min": 1408.0,
+      "max": 10000.0,
+      "missing_count": "495",
+      "infinite_count": "0"
+    },
+    "attendance_rate_div_final_test": {
+      "mean": 1.4442905562691684,
+      "median": 1.386038961038961,
+      "std": 0.3001766377930665,
+      "min": 0.8888888888888888,
+      "max": 3.03125,
+      "missing_count": "495",
+      "infinite_count": "0"
+    },
+    "attendance_rate_minus_final_test": {
+      "mean": 26.17305194805195,
+      "median": 26.0,
+      "std": 13.486967530626842,
+      "min": -10.0,
+      "max": 65.0,
+      "missing_count": "495",
+      "infinite_count": "0"
+    },
+    "age_x_final_test": {
+      "mean": 1022.6750649350649,
+      "median": 1035.0,
+      "std": 243.96384956611675,
+      "min": 200.0,
+      "max": 1600.0,
+      "missing_count": "495",
+      "infinite_count": "0"
+    },
+    "age_div_final_test": {
+      "mean": 0.2372964900585359,
+      "median": 0.22727272727272727,
+      "std": 0.059878158240197835,
+      "min": 0.05,
+      "max": 0.5,
+      "missing_count": "495",
+      "infinite_count": "0"
+    },
+    "age_minus_final_test": {
+      "mean": -51.9451948051948,
+      "median": -53.0,
+      "std": 14.058383325421902,
+      "min": -95.0,
+      "max": -16.0,
+      "missing_count": "495",
+      "infinite_count": "0"
+    },
+    "attendance_age_ratio_x_engagement_score": {
+      "mean": 5272.486262907267,
+      "median": 5463.951421556064,
+      "std": 952.9131739528714,
+      "min": 331.3456832480428,
+      "max": 6323.36080820774,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "attendance_age_ratio_div_engagement_score": {
+      "mean": 1.6641586718485821,
+      "median": 1.6426020387073308,
+      "std": 0.18840765447927812,
+      "min": 0.5446370075431713,
+      "max": 1.7521088412878199,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "attendance_age_ratio_minus_engagement_score": {
+      "mean": 37.255557797862046,
+      "median": 38.17056109921544,
+      "std": 11.022293642146657,
+      "min": -27.297959225853383,
+      "max": 45.12653047726916,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "age_squared": {
+      "mean": 234.60949984271784,
+      "median": 225.0,
+      "std": 37.88302079391721,
+      "min": 25.0,
+      "max": 256.0,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "attendance_rate_squared": {
+      "mean": 8773.645611827618,
+      "median": 9025.0,
+      "std": 1230.2350031090643,
+      "min": 1600.0,
+      "max": 10000.0,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "gender_x_learning_style": {
+      "counts": {
+        "Female_Auditory": 4647,
+        "Male_Auditory": 4482,
+        "Male_Visual": 3500,
+        "Female_Visual": 3266
+      },
+      "percentages": {
+        "Female_Auditory": 0.292,
+        "Male_Auditory": 0.282,
+        "Male_Visual": 0.22,
+        "Female_Visual": 0.205
+      },
+      "unique_values": 4,
+      "missing_count": "0"
+    },
+    "age_group_x_attendance_category": {
+      "counts": {
+        "Early_Teen_Unknown": 7726,
+        "Late_Teen_Unknown": 7723,
+        "Child_Unknown": 446
+      },
+      "percentages": {
+        "Early_Teen_Unknown": 0.486,
+        "Late_Teen_Unknown": 0.486,
+        "Child_Unknown": 0.028
+      },
+      "unique_values": 3,
+      "missing_count": "0"
+    },
+    "gender_x_CCA": {
+      "counts": {
+        "Male_Clubs": 2045,
+        "Female_Clubs": 2010,
+        "Male_nan": 1997,
+        "Female_Sports": 1995,
+        "Male_Sports": 1975,
+        "Male_Arts": 1965,
+        "Female_nan": 1961,
+        "Female_Arts": 1947
+      },
+      "percentages": {
+        "Male_Clubs": 0.129,
+        "Female_Clubs": 0.126,
+        "Male_nan": 0.126,
+        "Female_Sports": 0.126,
+        "Male_Sports": 0.124,
+        "Male_Arts": 0.124,
+        "Female_nan": 0.123,
+        "Female_Arts": 0.122
+      },
+      "unique_values": 8,
+      "missing_count": "0"
+    },
+    "learning_style_x_tuition": {
+      "counts": {
+        "Auditory_Yes": 5377,
+        "Auditory_No": 3752,
+        "Visual_Yes": 3617,
+        "Visual_No": 3149
+      },
+      "percentages": {
+        "Auditory_Yes": 0.338,
+        "Auditory_No": 0.236,
+        "Visual_Yes": 0.228,
+        "Visual_No": 0.198
+      },
+      "unique_values": 4,
+      "missing_count": "0"
+    },
+    "attendance_rate_mean_by_gender": {
+      "mean": 93.34265548914753,
+      "median": 93.493,
+      "std": 0.15100332735885721,
+      "min": 93.191,
+      "max": 93.493,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "attendance_rate_median_by_gender": {
+      "mean": 95.0,
+      "median": 95.0,
+      "std": 0.0,
+      "min": 95.0,
+      "max": 95.0,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "attendance_rate_std_by_gender": {
+      "mean": 7.790586222082417,
+      "median": 7.581,
+      "std": 0.21050463847046527,
+      "min": 7.581,
+      "max": 8.002,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "attendance_rate_deviation_from_gender_mean": {
+      "mean": 1.1837163663370527e-15,
+      "median": 1.506639939864698,
+      "std": 7.793218482862886,
+      "min": -53.4933600601353,
+      "max": 6.808922027044105,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "age_mean_by_learning_style": {
+      "mean": 15.219973262032084,
+      "median": 15.237,
+      "std": 0.0197783802020128,
+      "min": 15.197,
+      "max": 15.237,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "age_median_by_learning_style": {
+      "mean": 15.0,
+      "median": 15.0,
+      "std": 0.0,
+      "min": 15.0,
+      "max": 15.0,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "age_std_by_learning_style": {
+      "mean": 1.7219315508021393,
+      "median": 1.67,
+      "std": 0.06032405961613772,
+      "min": 1.67,
+      "max": 1.792,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "age_deviation_from_learning_style_mean": {
+      "mean": -8.761646820319574e-17,
+      "median": -0.19686668637304194,
+      "std": 1.7228949575357155,
+      "min": -10.23671815094753,
+      "max": 0.8031333136269581,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "final_test_mean_by_tuition": {
+      "mean": 67.16610783265178,
+      "median": 70.464,
+      "std": 3.765048204549715,
+      "min": 62.868,
+      "max": 70.464,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "final_test_median_by_tuition": {
+      "mean": 66.658383139352,
+      "median": 71.0,
+      "std": 4.956619542587831,
+      "min": 61.0,
+      "max": 71.0,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "final_test_std_by_tuition": {
+      "mean": 13.444445611827618,
+      "median": 12.844,
+      "std": 0.6855004827398974,
+      "min": 12.844,
+      "max": 14.227,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "final_test_deviation_from_tuition_mean": {
+      "mean": 2.3032658031911818e-15,
+      "median": -0.46408078953407994,
+      "std": 13.461234187450792,
+      "min": -38.46408078953408,
+      "max": 37.132366138199224,
+      "missing_count": "495",
+      "infinite_count": "0"
+    },
+    "engagement_score_mean_by_age_group": {
+      "mean": 56.090158100031445,
+      "median": 56.025,
+      "std": 0.07980277283920871,
+      "min": 55.87,
+      "max": 56.168,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "engagement_score_median_by_age_group": {
+      "mean": 57.0,
+      "median": 57.0,
+      "std": 0.0,
+      "min": 57.0,
+      "max": 57.0,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "engagement_score_std_by_age_group": {
+      "mean": 4.6849672223969785,
+      "median": 4.8,
+      "std": 0.14755510621375986,
+      "min": 4.544,
+      "max": 5.135,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "engagement_score_deviation_from_age_group_mean": {
+      "mean": 2.1546498813234874e-15,
+      "median": 0.9745047261426905,
+      "std": 4.6871345542497735,
+      "min": -32.168437742687026,
+      "max": 4.280381165919287,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "academic_support_index": {
+      "mean": 31.30290447729894,
+      "median": 31.666666666666668,
+      "std": 2.6264965270243974,
+      "min": 13.333333333333334,
+      "max": 33.666666666666664,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "performance_vs_age_peers": {
+      "mean": -0.7767532467532468,
+      "median": 0.0,
+      "std": 13.977551226368472,
+      "min": -36.0,
+      "max": 33.0,
+      "missing_count": "495",
+      "infinite_count": "0"
+    },
+    "learning_style_effectiveness": {
+      "mean": 2897.4817112299465,
+      "median": 2894.8,
+      "std": 3.11509488181681,
+      "min": 2894.8,
+      "max": 2901.1,
+      "missing_count": "0",
+      "infinite_count": "0"
+    },
+    "risk_amplification_score": {
+      "mean": 0.07936322728133381,
+      "median": 0.0,
+      "std": 0.4671063152615663,
+      "min": 0.0,
+      "max": 2.8284271247461903,
+      "missing_count": "0",
+      "infinite_count": "0"
+    }
+  },
+  "creation_summary": {
+    "total_interaction_features": 38,
+    "interaction_categories": {
+      "numeric": 14,
+      "categorical": 4,
+      "mixed": 16,
+      "domain_specific": 4
+    }
+  }
+}

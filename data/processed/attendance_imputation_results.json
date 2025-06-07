@@ -1,0 +1,92 @@
+{
+  "median_by_groups": {
+    "method": "median_by_groups",
+    "statistics": {
+      "total_missing": 778,
+      "imputed_by_group": 577,
+      "imputed_by_overall_median": 201,
+      "group_medians_used": {
+        "('Female', 'Clubs', 'Auditory')": {
+          "median_value": 94.0,
+          "count_used": 58
+        },
+        "('Male', 'Arts', 'Auditory')": {
+          "median_value": 95.0,
+          "count_used": 56
+        },
+        "('Male', 'Clubs', 'Visual')": {
+          "median_value": 95.0,
+          "count_used": 39
+        },
+        "('Female', 'Arts', 'Auditory')": {
+          "median_value": 95.0,
+          "count_used": 55
+        },
+        "('Female', 'Sports', 'Visual')": {
+          "median_value": 95.0,
+          "count_used": 50
+        },
+        "('Female', 'Sports', 'Auditory')": {
+          "median_value": 94.0,
+          "count_used": 45
+        },
+        "('Male', 'Arts', 'Visual')": {
+          "median_value": 95.0,
+          "count_used": 44
+        },
+        "('Male', 'Sports', 'Auditory')": {
+          "median_value": 94.0,
+          "count_used": 62
+        },
+        "('Female', 'Arts', 'Visual')": {
+          "median_value": 94.0,
+          "count_used": 32
+        },
+        "('Female', 'Clubs', 'Visual')": {
+          "median_value": 95.0,
+          "count_used": 29
+        },
+        "('Male', 'Clubs', 'Auditory')": {
+          "median_value": 95.0,
+          "count_used": 66
+        },
+        "('Male', 'Sports', 'Visual')": {
+          "median_value": 95.0,
+          "count_used": 41
+        }
+      },
+      "fallback_median": 95.0
+    },
+    "groupby_columns": [
+      "gender",
+      "CCA",
+      "learning_style"
+    ]
+  },
+  "regression_based": {
+    "method": "regression_based",
+    "statistics": {
+      "total_missing": 778,
+      "imputed_by_regression": 560,
+      "imputed_by_median_fallback": 218,
+      "model_r2": 0.14200171607711487,
+      "model_rmse": 8.16033670469485,
+      "features_used": [
+        "age",
+        "gender_encoded",
+        "CCA_encoded",
+        "learning_style_encoded",
+        "tuition_encoded",
+        "final_test"
+      ]
+    },
+    "features_used": [
+      "age",
+      "gender_encoded",
+      "CCA_encoded",
+      "learning_style_encoded",
+      "tuition_encoded",
+      "final_test"
+    ]
+  }
+}

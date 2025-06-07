@@ -1,0 +1,127 @@
+[
+  {
+    "timestamp": "2025-06-07T17:02:41.641759",
+    "action": "identified_negative_age",
+    "record_index": 4513,
+    "student_id": "RXTBXJ",
+    "original_age": -4.0,
+    "details": "Record identified with negative age value"
+  },
+  {
+    "timestamp": "2025-06-07T17:02:41.641759",
+    "action": "identified_negative_age",
+    "record_index": 7932,
+    "student_id": "UAMI3G",
+    "original_age": -5.0,
+    "details": "Record identified with negative age value"
+  },
+  {
+    "timestamp": "2025-06-07T17:02:41.641759",
+    "action": "identified_negative_age",
+    "record_index": 8602,
+    "student_id": "XQMSBU",
+    "original_age": -5.0,
+    "details": "Record identified with negative age value"
+  },
+  {
+    "timestamp": "2025-06-07T17:02:41.641759",
+    "action": "identified_negative_age",
+    "record_index": 8663,
+    "student_id": "39XWY2",
+    "original_age": -5.0,
+    "details": "Record identified with negative age value"
+  },
+  {
+    "timestamp": "2025-06-07T17:02:41.641759",
+    "action": "identified_negative_age",
+    "record_index": 8846,
+    "student_id": "Z33FOS",
+    "original_age": -5.0,
+    "details": "Record identified with negative age value"
+  },
+  {
+    "timestamp": "2025-06-07T17:02:41.644761",
+    "action": "identified_negative_age",
+    "record_index": 4513,
+    "student_id": "RXTBXJ",
+    "original_age": -4.0,
+    "details": "Record identified with negative age value"
+  },
+  {
+    "timestamp": "2025-06-07T17:02:41.644761",
+    "action": "identified_negative_age",
+    "record_index": 7932,
+    "student_id": "UAMI3G",
+    "original_age": -5.0,
+    "details": "Record identified with negative age value"
+  },
+  {
+    "timestamp": "2025-06-07T17:02:41.644761",
+    "action": "identified_negative_age",
+    "record_index": 8602,
+    "student_id": "XQMSBU",
+    "original_age": -5.0,
+    "details": "Record identified with negative age value"
+  },
+  {
+    "timestamp": "2025-06-07T17:02:41.644761",
+    "action": "identified_negative_age",
+    "record_index": 8663,
+    "student_id": "39XWY2",
+    "original_age": -5.0,
+    "details": "Record identified with negative age value"
+  },
+  {
+    "timestamp": "2025-06-07T17:02:41.644761",
+    "action": "identified_negative_age",
+    "record_index": 8846,
+    "student_id": "Z33FOS",
+    "original_age": -5.0,
+    "details": "Record identified with negative age value"
+  },
+  {
+    "timestamp": "2025-06-07T17:02:41.673767",
+    "action": "removed_negative_age_record",
+    "original_index": 4513,
+    "student_id": "RXTBXJ",
+    "original_age": -4.0,
+    "strategy": "remove",
+    "details": "Record removed due to negative age value"
+  },
+  {
+    "timestamp": "2025-06-07T17:02:41.674757",
+    "action": "removed_negative_age_record",
+    "original_index": 7932,
+    "student_id": "UAMI3G",
+    "original_age": -5.0,
+    "strategy": "remove",
+    "details": "Record removed due to negative age value"
+  },
+  {
+    "timestamp": "2025-06-07T17:02:41.674757",
+    "action": "removed_negative_age_record",
+    "original_index": 8602,
+    "student_id": "XQMSBU",
+    "original_age": -5.0,
+    "strategy": "remove",
+    "details": "Record removed due to negative age value"
+  },
+  {
+    "timestamp": "2025-06-07T17:02:41.674757",
+    "action": "removed_negative_age_record",
+    "original_index": 8663,
+    "student_id": "39XWY2",
+    "original_age": -5.0,
+    "strategy": "remove",
+    "details": "Record removed due to negative age value"
+  },
+  {
+    "timestamp": "2025-06-07T17:02:41.674757",
+    "action": "removed_negative_age_record",
+    "original_index": 8846,
+    "student_id": "Z33FOS",
+    "original_age": -5.0,
+    "strategy": "remove",
+    "details": "Record removed due to negative age value"
+  }
+]

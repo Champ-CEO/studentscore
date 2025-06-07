@@ -1,0 +1,303 @@
+{
+  "feature_definitions": {
+    "age_group": {
+      "description": "Categorical age groups based on developmental stages",
+      "bins": [
+        0,
+        12,
+        15,
+        18,
+        21,
+        100
+      ],
+      "labels": [
+        "Child",
+        "Early_Teen",
+        "Late_Teen",
+        "Young_Adult",
+        "Adult"
+      ],
+      "method": "pd.cut with predefined bins",
+      "rationale": "Groups students by developmental/educational stages"
+    },
+    "attendance_category": {
+      "description": "Categorical attendance levels based on educational standards",
+      "bins": [
+        0,
+        0.6,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "labels": [
+        "Poor",
+        "Below_Average",
+        "Good",
+        "Excellent"
+      ],
+      "method": "pd.cut with educational standard bins",
+      "rationale": "Categorizes attendance based on common educational thresholds"
+    },
+    "performance_level": {
+      "description": "Performance level based on final_test quartiles",
+      "high_threshold": 78.0,
+      "low_threshold": 56.0,
+      "method": "Quartile-based categorization",
+      "rationale": "Identifies high, medium, and low performers based on test scores"
+    },
+    "attendance_age_ratio": {
+      "description": "Attendance rate adjusted by age relative to mean age",
+      "formula": "attendance_rate * (age / mean_age)",
+      "mean_age": 15.219754639823844,
+      "method": "Ratio calculation",
+      "rationale": "Captures interaction between age and attendance patterns"
+    },
+    "engagement_score": {
+      "description": "Composite engagement score from attendance, CCA, and tuition",
+      "components": [
+        "attendance_rate",
+        "CCA",
+        "tuition"
+      ],
+      "weights": [
+        0.6,
+        0.25,
+        0.15
+      ],
+      "method": "Weighted average of engagement indicators",
+      "rationale": "Measures overall student engagement across multiple dimensions"
+    },
+    "learning_style_visual": {
+      "description": "Binary indicator for Visual learning style",
+      "method": "One-hot encoding of learning_style",
+      "rationale": "Captures preference for Visual learning approach"
+    },
+    "learning_style_auditory": {
+      "description": "Binary indicator for Auditory learning style",
+      "method": "One-hot encoding of learning_style",
+      "rationale": "Captures preference for Auditory learning approach"
+    },
+    "support_seeking_score": {
+      "description": "Score indicating tendency to seek additional support/activities",
+      "components": [
+        "tuition",
+        "CCA"
+      ],
+      "method": "Average of binary support indicators",
+      "rationale": "Measures proactive behavior in seeking additional support"
+    },
+    "gender_female": {
+      "description": "Binary indicator for Female gender",
+      "method": "One-hot encoding of gender",
+      "rationale": "Captures potential gender-specific learning patterns"
+    },
+    "gender_male": {
+      "description": "Binary indicator for Male gender",
+      "method": "One-hot encoding of gender",
+      "rationale": "Captures potential gender-specific learning patterns"
+    },
+    "high_consistency": {
+      "description": "Binary indicator for consistent attendance (>= 0.85)",
+      "threshold": 0.85,
+      "method": "Binary threshold on attendance_rate",
+      "rationale": "Identifies students with consistent behavioral patterns"
+    },
+    "low_attendance_risk": {
+      "description": "Risk indicator for low attendance (< 0.7)",
+      "threshold": 0.7,
+      "method": "Binary threshold on attendance_rate",
+      "rationale": "Early warning indicator for academic risk"
+    },
+    "age_mismatch_risk": {
+      "description": "Risk indicator for age outside typical range",
+      "typical_range": [
+        12,
+        18
+      ],
+      "method": "Binary indicator for age outside typical range",
+      "rationale": "Identifies potential grade retention or acceleration cases"
+    },
+    "low_engagement_risk": {
+      "description": "Risk indicator for low engagement (< 0.4)",
+      "threshold": 0.4,
+      "method": "Binary threshold on engagement_score",
+      "rationale": "Early warning for students at risk of disengagement"
+    },
+    "multiple_risk_factors": {
+      "description": "Count of concurrent risk factors",
+      "components": [
+        "low_attendance_risk",
+        "age_mismatch_risk",
+        "low_engagement_risk"
+      ],
+      "method": "Sum of individual risk indicators",
+      "rationale": "Identifies students with multiple concurrent risk factors"
+    }
+  },
+  "feature_statistics": {
+    "age_group": {
+      "counts": {
+        "Early_Teen": 7726,
+        "Late_Teen": 7723,
+        "Child": 446
+      },
+      "percentages": {
+        "Early_Teen": 0.486,
+        "Late_Teen": 0.486,
+        "Child": 0.028
+      },
+      "unique_values": 3
+    },
+    "attendance_category": {
+      "counts": {
+        "Unknown": 15895
+      },
+      "percentages": {
+        "Unknown": 1.0
+      },
+      "unique_values": 1
+    },
+    "performance_level": {
+      "counts": {
+        "Medium": 7841,
+        "High": 3904,
+        "Low": 3655,
+        "Unknown": 495
+      },
+      "percentages": {
+        "Medium": 0.493,
+        "High": 0.246,
+        "Low": 0.23,
+        "Unknown": 0.031
+      },
+      "unique_values": 4
+    },
+    "attendance_age_ratio": {
+      "mean": 93.3461586157293,
+      "median": 96.58499987599103,
+      "std": 13.14565506599539,
+      "min": 13.469336717400111,
+      "max": 105.12653047726917,
+      "missing_count": "0"
+    },
+    "engagement_score": {
+      "mean": 56.090600817867255,
+      "median": 57.0,
+      "std": 4.687814555611283,
+      "min": 24.0,
+      "max": 60.15,
+      "missing_count": "0"
+    },
+    "learning_style_visual": {
+      "mean": 0.42566844919786095,
+      "median": 0.0,
+      "std": 0.4944595050503086,
+      "min": "0",
+      "max": "1",
+      "missing_count": "0"
+    },
+    "learning_style_auditory": {
+      "mean": 0.574331550802139,
+      "median": 1.0,
+      "std": 0.4944595050503086,
+      "min": "0",
+      "max": "1",
+      "missing_count": "0"
+    },
+    "support_seeking_score": {
+      "mean": 0.2829191569675999,
+      "median": 0.5,
+      "std": 0.2478309771293915,
+      "min": 0.0,
+      "max": 0.5,
+      "missing_count": "0"
+    },
+    "gender_female": {
+      "mean": 0.4978295061340044,
+      "median": 0.0,
+      "std": 0.5000110177445728,
+      "min": "0",
+      "max": "1",
+      "missing_count": "0"
+    },
+    "gender_male": {
+      "mean": 0.5021704938659955,
+      "median": 1.0,
+      "std": 0.5000110177445728,
+      "min": "0",
+      "max": "1",
+      "missing_count": "0"
+    },
+    "high_consistency": {
+      "mean": 1.0,
+      "median": 1.0,
+      "std": 0.0,
+      "min": "1",
+      "max": "1",
+      "missing_count": "0"
+    },
+    "low_attendance_risk": {
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0,
+      "min": "0",
+      "max": "0",
+      "missing_count": "0"
+    },
+    "age_mismatch_risk": {
+      "mean": 0.02805913809374017,
+      "median": 0.0,
+      "std": 0.16514702152825741,
+      "min": "0",
+      "max": "1",
+      "missing_count": "0"
+    },
+    "low_engagement_risk": {
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0,
+      "min": "0",
+      "max": "0",
+      "missing_count": "0"
+    },
+    "multiple_risk_factors": {
+      "mean": 0.02805913809374017,
+      "median": 0.0,
+      "std": 0.16514702152825741,
+      "min": "0",
+      "max": "1",
+      "missing_count": "0"
+    }
+  },
+  "creation_summary": {
+    "total_derived_features": 15,
+    "feature_categories": {
+      "demographic": [
+        "age_group"
+      ],
+      "behavioral": [
+        "learning_style_visual",
+        "learning_style_auditory",
+        "support_seeking_score",
+        "gender_female",
+        "gender_male",
+        "high_consistency"
+      ],
+      "performance": [
+        "performance_level",
+        "attendance_age_ratio",
+        "engagement_score",
+        "low_engagement_risk"
+      ],
+      "risk": [
+        "low_attendance_risk",
+        "age_mismatch_risk",
+        "low_engagement_risk",
+        "multiple_risk_factors"
+      ],
+      "categorical": [
+        "attendance_category"
+      ]
+    }
+  }
+}

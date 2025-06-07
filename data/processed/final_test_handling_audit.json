@@ -1,0 +1,107 @@
+[
+  {
+    "timestamp": "2025-06-07T17:18:59.050014",
+    "action": "knn_imputation",
+    "n_neighbors": 5,
+    "features_used": [
+      "age",
+      "attendance_rate",
+      "gender_encoded",
+      "CCA_encoded",
+      "learning_style_encoded",
+      "tuition_encoded"
+    ],
+    "statistics": {
+      "method": "KNN",
+      "n_neighbors": 5,
+      "total_missing": 495,
+      "imputed_count": 495,
+      "features_used": [
+        "age",
+        "attendance_rate",
+        "gender_encoded",
+        "CCA_encoded",
+        "learning_style_encoded",
+        "tuition_encoded"
+      ],
+      "imputed_stats": {
+        "mean": 67.27555555555556,
+        "median": 67.6,
+        "std": 9.871532520130621,
+        "min": 41.8,
+        "max": 89.2
+      },
+      "original_stats": {
+        "mean": 67.16603896103896,
+        "median": 68.0,
+        "std": 13.977913516062584,
+        "min": 32.0,
+        "max": 100.0
+      }
+    },
+    "details": "KNN imputation with 5 neighbors"
+  },
+  {
+    "timestamp": "2025-06-07T17:18:59.217045",
+    "action": "iterative_imputation",
+    "max_iter": 10,
+    "features_used": [
+      "age",
+      "attendance_rate",
+      "gender_encoded",
+      "CCA_encoded",
+      "learning_style_encoded",
+      "tuition_encoded"
+    ],
+    "statistics": {
+      "method": "Iterative",
+      "max_iter": 10,
+      "random_state": 42,
+      "total_missing": 495,
+      "imputed_count": 495,
+      "features_used": [
+        "age",
+        "attendance_rate",
+        "gender_encoded",
+        "CCA_encoded",
+        "learning_style_encoded",
+        "tuition_encoded"
+      ],
+      "imputed_stats": {
+        "mean": 67.23132717785947,
+        "median": 67.8957520866123,
+        "std": 7.468769938753339,
+        "min": 31.457647702306776,
+        "max": 81.71555400518523
+      },
+      "original_stats": {
+        "mean": 67.16603896103896,
+        "median": 68.0,
+        "std": 13.977913516062584,
+        "min": 32.0,
+        "max": 100.0
+      }
+    },
+    "details": "Iterative imputation with max_iter=10"
+  },
+  {
+    "timestamp": "2025-06-07T17:18:59.239575",
+    "action": "evaluated_exclusion_strategy",
+    "training_size": 15400,
+    "excluded_size": 495,
+    "data_loss_pct": 3.1141868512110724,
+    "details": "Evaluated impact of excluding missing final_test records"
+  },
+  {
+    "timestamp": "2025-06-07T17:18:59.703531",
+    "action": "created_data_splits",
+    "strategy": "exclusion",
+    "split_sizes": {
+      "train": 9856,
+      "validation": 2464,
+      "test": 3080,
+      "prediction": 495
+    },
+    "details": "Created train/val/test splits using exclusion strategy"
+  }
+]

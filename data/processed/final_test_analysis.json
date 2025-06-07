@@ -1,0 +1,314 @@
+{
+  "missing_analysis": {
+    "total_records": 15895,
+    "missing_count": 495,
+    "missing_percentage": 3.11,
+    "non_missing_count": 15400,
+    "missing_by_groups": {
+      "gender": {
+        "Female": {
+          "total": 7658,
+          "missing": 255,
+          "missing_pct": 3.22
+        },
+        "Male": {
+          "total": 7742,
+          "missing": 240,
+          "missing_pct": 3.01
+        }
+      },
+      "CCA": {
+        "Arts": {
+          "total": 3790,
+          "missing": 122,
+          "missing_pct": 3.12
+        },
+        "Clubs": {
+          "total": 3940,
+          "missing": 115,
+          "missing_pct": 2.84
+        },
+        "Sports": {
+          "total": 3840,
+          "missing": 130,
+          "missing_pct": 3.27
+        }
+      },
+      "learning_style": {
+        "Auditory": {
+          "total": 8844,
+          "missing": 285,
+          "missing_pct": 3.12
+        },
+        "Visual": {
+          "total": 6556,
+          "missing": 210,
+          "missing_pct": 3.1
+        }
+      },
+      "tuition": {
+        "No": {
+          "total": 6686,
+          "missing": 215,
+          "missing_pct": 3.12
+        },
+        "Yes": {
+          "total": 8714,
+          "missing": 280,
+          "missing_pct": 3.11
+        }
+      }
+    },
+    "impact_assessment": {
+      "available_for_training": 15400,
+      "percentage_available": 96.88581314878893,
+      "final_test_stats_available": {
+        "mean": 67.16603896103896,
+        "median": 68.0,
+        "std": 13.977913516062584,
+        "min": 32.0,
+        "max": 100.0
+      }
+    }
+  },
+  "comparison_results": {
+    "strategies_evaluated": [
+      "exclusion",
+      "knn_imputation",
+      "iterative_imputation"
+    ],
+    "exclusion_analysis": {
+      "strategy": "exclusion",
+      "training_set_size": 15400,
+      "excluded_set_size": 495,
+      "data_loss_percentage": 3.1141868512110724,
+      "training_data_characteristics": {
+        "age": {
+          "mean": 15.220844155844157,
+          "median": 15.0,
+          "std": 1.7200662108545766
+        },
+        "attendance_rate": {
+          "mean": 93.33909090909091,
+          "median": 95.0,
+          "std": 7.79616142395862
+        }
+      },
+      "excluded_data_characteristics": {
+        "age": {
+          "mean": 15.185858585858586,
+          "median": 15.0,
+          "std": 1.8136353822639255
+        },
+        "attendance_rate": {
+          "mean": 93.46060606060605,
+          "median": 95.0,
+          "std": 7.7554971777476815
+        }
+      },
+      "bias_assessment": {
+        "gender": {
+          "max_distribution_difference": 0.017878787878787883,
+          "training_distribution": {
+            "Male": 0.5027272727272727,
+            "Female": 0.49727272727272726
+          },
+          "excluded_distribution": {
+            "Female": 0.5151515151515151,
+            "Male": 0.48484848484848486
+          }
+        },
+        "CCA": {
+          "max_distribution_difference": 0.027184369988154045,
+          "training_distribution": {
+            "Clubs": 0.34053586862575624,
+            "Sports": 0.33189282627484873,
+            "Arts": 0.32757130509939497
+          },
+          "excluded_distribution": {
+            "Sports": 0.3542234332425068,
+            "Arts": 0.33242506811989103,
+            "Clubs": 0.3133514986376022
+          }
+        },
+        "learning_style": {
+          "max_distribution_difference": 0.001471861471861513,
+          "training_distribution": {
+            "Auditory": 0.5742857142857143,
+            "Visual": 0.4257142857142857
+          },
+          "excluded_distribution": {
+            "Auditory": 0.5757575757575758,
+            "Visual": 0.42424242424242425
+          }
+        },
+        "tuition": {
+          "max_distribution_difference": 0.00018759018759023638,
+          "training_distribution": {
+            "Yes": 0.5658441558441558,
+            "No": 0.43415584415584413
+          },
+          "excluded_distribution": {
+            "Yes": 0.5656565656565656,
+            "No": 0.43434343434343436
+          }
+        }
+      }
+    },
+    "imputation_methods": {
+      "knn": {
+        "method": "KNN",
+        "n_neighbors": 5,
+        "total_missing": 495,
+        "imputed_count": 495,
+        "features_used": [
+          "age",
+          "attendance_rate",
+          "gender_encoded",
+          "CCA_encoded",
+          "learning_style_encoded",
+          "tuition_encoded"
+        ],
+        "imputed_stats": {
+          "mean": 67.27555555555556,
+          "median": 67.6,
+          "std": 9.871532520130621,
+          "min": 41.8,
+          "max": 89.2
+        },
+        "original_stats": {
+          "mean": 67.16603896103896,
+          "median": 68.0,
+          "std": 13.977913516062584,
+          "min": 32.0,
+          "max": 100.0
+        }
+      },
+      "iterative": {
+        "method": "Iterative",
+        "max_iter": 10,
+        "random_state": 42,
+        "total_missing": 495,
+        "imputed_count": 495,
+        "features_used": [
+          "age",
+          "attendance_rate",
+          "gender_encoded",
+          "CCA_encoded",
+          "learning_style_encoded",
+          "tuition_encoded"
+        ],
+        "imputed_stats": {
+          "mean": 67.23132717785947,
+          "median": 67.8957520866123,
+          "std": 7.468769938753339,
+          "min": 31.457647702306776,
+          "max": 81.71555400518523
+        },
+        "original_stats": {
+          "mean": 67.16603896103896,
+          "median": 68.0,
+          "std": 13.977913516062584,
+          "min": 32.0,
+          "max": 100.0
+        }
+      }
+    },
+    "recommendations": [
+      "Low data loss (3.1%) - exclusion strategy is viable",
+      "Low imputation quality (best R\u00b2 = 0.200) - consider exclusion"
+    ],
+    "validation_results": {
+      "validation_possible": true,
+      "validation_set_size": 15400,
+      "method_performance": {
+        "knn": {
+          "mse": 145.9384,
+          "rmse": 12.08049667853106,
+          "mae": 9.900000000000002,
+          "r2": 0.06617592481206847,
+          "validation_samples": 50
+        },
+        "iterative": {
+          "mse": 124.98318867191215,
+          "rmse": 11.17958803677095,
+          "mae": 9.377342739272688,
+          "r2": 0.20026318929365328,
+          "validation_samples": 50
+        }
+      }
+    }
+  },
+  "final_recommendation": {
+    "recommended_strategy": "exclusion",
+    "rationale": [
+      "Low data loss (3.1%)",
+      "Poor imputation quality (best R\u00b2 = 0.200)"
+    ],
+    "implementation_details": {
+      "training_records": 15400,
+      "excluded_records": 495,
+      "handling": "Exclude missing final_test from training, use for prediction only"
+    },
+    "expected_impact": {}
+  },
+  "imputation_methods": {
+    "knn": {
+      "method": "KNN",
+      "n_neighbors": 5,
+      "total_missing": 495,
+      "imputed_count": 495,
+      "features_used": [
+        "age",
+        "attendance_rate",
+        "gender_encoded",
+        "CCA_encoded",
+        "learning_style_encoded",
+        "tuition_encoded"
+      ],
+      "imputed_stats": {
+        "mean": 67.27555555555556,
+        "median": 67.6,
+        "std": 9.871532520130621,
+        "min": 41.8,
+        "max": 89.2
+      },
+      "original_stats": {
+        "mean": 67.16603896103896,
+        "median": 68.0,
+        "std": 13.977913516062584,
+        "min": 32.0,
+        "max": 100.0
+      }
+    },
+    "iterative": {
+      "method": "Iterative",
+      "max_iter": 10,
+      "random_state": 42,
+      "total_missing": 495,
+      "imputed_count": 495,
+      "features_used": [
+        "age",
+        "attendance_rate",
+        "gender_encoded",
+        "CCA_encoded",
+        "learning_style_encoded",
+        "tuition_encoded"
+      ],
+      "imputed_stats": {
+        "mean": 67.23132717785947,
+        "median": 67.8957520866123,
+        "std": 7.468769938753339,
+        "min": 31.457647702306776,
+        "max": 81.71555400518523
+      },
+      "original_stats": {
+        "mean": 67.16603896103896,
+        "median": 68.0,
+        "std": 13.977913516062584,
+        "min": 32.0,
+        "max": 100.0
+      }
+    }
+  }
+}

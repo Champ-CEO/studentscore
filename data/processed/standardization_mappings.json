@@ -1,0 +1,25 @@
+{
+  "gender": {
+    "Female": "Female",
+    "Male": "Male"
+  },
+  "CCA": {
+    "Sports": "Sports",
+    "Clubs": "Clubs",
+    "Arts": "Arts",
+    "ARTS": "Arts",
+    "SPORTS": "Sports",
+    "CLUBS": "Clubs",
+    "NONE": "None"
+  },
+  "learning_style": {
+    "Visual": "Visual",
+    "Auditory": "Auditory"
+  },
+  "tuition": {
+    "No": "No",
+    "Yes": "Yes",
+    "Y": "Yes",
+    "N": "No"
+  }
+}

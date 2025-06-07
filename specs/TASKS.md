@@ -23,7 +23,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
 
 ### Phase 1: Project Setup & Infrastructure (🟢 Completed)
 ### Phase 2: Exploratory Data Analysis (EDA) (🟢 Completed)
-### Phase 3: Data Preprocessing and Cleaning (🔴 Not Started)
+### Phase 3: Data Preprocessing and Cleaning (🟢 Completed)
 ### Phase 4: Feature Engineering (🔴 Not Started)
 ### Phase 5: Model Development (🔴 Not Started)
 ### Phase 6: Testing & Validation (🔴 Not Started)
@@ -514,12 +514,12 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
 
 **Objective**: Clean raw data and prepare for feature engineering based on Phase 2 EDA recommendations with prioritized approach
 
-### 3.1 Priority 1: Critical Data Quality Issues (🔴 Not Started)
+### 3.1 Priority 1: Critical Data Quality Issues (🟢 Completed)
 
 **Objective**: Address critical data quality issues identified in Phase 2 EDA that could compromise model validity
 
 #### Sub-tasks:
-- **3.1.1** Age Data Correction (🔴 Not Started)
+- **3.1.1** Age Data Correction (✅ Completed)
   - **Tests Required**:
     - Test identification of all 5 records with negative age values (-5)
     - Test age correction/removal strategy preserves data integrity
@@ -537,7 +537,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - **Output**: Age-corrected data to `data/processed/age_corrected.csv`
   - **Dependencies**: 1.2.3
 
-- **3.1.2** Categorical Data Standardization (🔴 Not Started)
+- **3.1.2** Categorical Data Standardization (✅ Completed)
   - **Tests Required**:
     - Test tuition standardization ('Y' → 'Yes') is complete
     - Test case normalization ('CLUBS' → 'Clubs') is applied consistently
@@ -555,12 +555,120 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - **Output**: Standardized data to `data/processed/standardized.csv`
   - **Dependencies**: 3.1.1
 
-### 3.2 Priority 2: Missing Data Strategy (🔴 Not Started)
+#### 3.1.2a ID Structure Analysis (🟢 Completed)
+- **Objective**: Analyze and document the structure of all ID fields (student_id, class_id, etc.)
+- **Tests Required**:
+  - Test uniqueness and format of each ID field
+  - Test for embedded information (e.g., year, class, cohort)
+  - Test for missing or malformed IDs
+- **Implementation**:
+  - Profile all ID fields for uniqueness and structure
+  - Document any embedded information or patterns
+  - Flag and address any anomalies
+- **Dependencies**: 3.1.2
+
+#### 3.1.2a.1 Feature Extraction from ID (🟢 Completed)
+- **Objective**: Extract useful features from ID fields if patterns exist
+- **Tests Required**:
+  - Test extraction logic for accuracy
+  - Test predictive value of extracted features
+- **Implementation**:
+  - Implement extraction logic for relevant ID fields
+  - Validate extracted features with EDA
+- **Dependencies**: 3.1.2a
+
+#### 3.1.2a.2 ID Retention Decision (🟢 Completed)
+- **Objective**: Decide whether to retain or drop ID fields after feature extraction
+- **Tests Required**:
+  - Test model performance with and without ID fields
+- **Implementation**:
+  - Compare model results
+  - Document decision rationale
+- **Dependencies**: 3.1.2a.1
+
+#### 3.1.3 Handle duplicate records (🟢 Completed)
+- **Objective**: Identify and resolve duplicate records in the dataset
+- **Tests Required**:
+  - Test duplicate detection logic
+  - Test impact of deduplication on data size and integrity
+- **Implementation**:
+  - Implement deduplication logic
+  - Validate with before/after record counts
+- **Dependencies**: 3.1.2a.2
+
+#### 3.1.4 Data validation and quality checks (🟢 Completed)
+- **Objective**: Implement comprehensive data validation and quality checks
+- **Tests Required**:
+  - Test for missing, inconsistent, or out-of-range values
+  - Test for logical inconsistencies across features
+- **Implementation**:
+  - Implement validation scripts
+  - Document and address issues found
+- **Dependencies**: 3.1.3
+
+#### 3.1.5 Enhanced age processing and feature engineering (🟢 Completed)
+- **Objective**: Improve age feature quality and create derived features
+- **Tests Required**:
+  - Test for outliers and inconsistencies in age
+  - Test derived age features (e.g., age groups)
+- **Implementation**:
+  - Clean and validate age data
+  - Create and validate derived features
+- **Dependencies**: 3.1.4
+
+#### 3.1.6 Comprehensive data entry consistency check (🟢 Completed)
+- **Objective**: Ensure consistency in data entry across all features
+- **Tests Required**:
+  - Test for inconsistent formats, units, or categories
+- **Implementation**:
+  - Implement consistency checks
+  - Standardize formats and categories
+- **Dependencies**: 3.1.5
+
+#### 3.1.7 Implement robust outlier handling based on EDA findings (🟢 Completed)
+- **Objective**: Detect and handle outliers in key features
+- **Tests Required**:
+  - Test outlier detection logic
+  - Test impact of outlier handling on data distribution
+- **Implementation**:
+  - Apply EDA-driven outlier detection methods
+  - Decide on removal, capping, or transformation
+- **Dependencies**: 3.1.6
+
+##### 3.1.7.1 Outlier Detection Based on EDA (🟢 Completed)
+- **Objective**: Use EDA results to identify outliers
+- **Implementation**:
+  - Apply statistical and visual methods
+- **Dependencies**: 3.1.7
+
+##### 3.1.7.2 Outlier Analysis and Decision (🟢 Completed)
+- **Objective**: Analyze outliers and decide on treatment
+- **Implementation**:
+  - Document rationale for chosen methods
+- **Dependencies**: 3.1.7.1
+
+##### 3.1.7.3 Outlier Treatment Application (🟢 Completed)
+- **Objective**: Apply chosen outlier treatment methods
+- **Implementation**:
+  - Implement and validate treatment
+- **Dependencies**: 3.1.7.2
+
+#### 3.1.8 Imbalanced Data Analysis (🟢 Completed)
+- **Objective**: Assess and address class imbalance in target variable
+- **Tests Required**:
+  - Test for imbalance severity
+  - Test impact of balancing methods
+- **Implementation**:
+  - Analyze class distribution
+  - Apply and validate balancing techniques if needed
+- **Dependencies**: 3.1.7.3
+
+### 3.2 Priority 2: Missing Data Strategy (✅ Completed)
 
 **Objective**: Implement comprehensive missing data handling strategy based on Phase 2 EDA findings
 
 #### Sub-tasks:
-- **3.2.1** Missing Data Imputation for Attendance Rate (🔴 Not Started)
+- **3.2.1** Missing Data Imputation for Attendance Rate (✅ Completed)
   - **Tests Required**:
     - Test identification of all 778 missing attendance_rate values (4.89%)
     - Test median imputation preserves distribution characteristics
@@ -579,7 +687,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - **Output**: Imputed data to `data/processed/imputed.csv`
   - **Dependencies**: 3.1.2
 
-- **3.2.2** Final Test Missing Values Handling (🔴 Not Started)
+- **3.2.2** Final Test Missing Values Handling (✅ Completed)
   - **Tests Required**:
     - Test identification of all 495 missing final_test values (3.11%)
     - Test exclusion from training preserves data integrity
@@ -596,12 +704,12 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - **Output**: Final missing-handled data to `data/processed/missing_handled.csv`
   - **Dependencies**: 3.2.1
 
-### 3.3 Priority 3: Feature Engineering Opportunities (🔴 Not Started)
+### 3.3 Priority 3: Feature Engineering Opportunities (✅ Completed)
 
 **Objective**: Create derived and interaction features based on Phase 2 EDA insights
 
 #### Sub-tasks:
-- **3.3.1** Derived Features Creation (🔴 Not Started)
+- **3.3.1** Derived Features Creation (✅ Completed)
   - **Tests Required**:
     - Test sleep duration calculation from sleep_time and wake_time
     - Test study intensity combination of hours_per_week with attendance_rate
@@ -619,7 +727,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - **Output**: Feature-enhanced data to `data/processed/derived_features.csv`
   - **Dependencies**: 3.2.2
 
-- **3.3.2** Interaction Features Creation (🔴 Not Started)
+- **3.3.2** Interaction Features Creation (✅ Completed)
   - **Tests Required**:
     - Test study habits × learning style interaction significance
     - Test support × performance interaction effects
@@ -637,202 +745,13 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - **Output**: Interaction-enhanced data to `data/processed/interaction_features.csv`
   - **Dependencies**: 3.3.1
 
-## Sub-tasks:
 
-### 3.1.2a.1 ID Structure Analysis (🔴 Not Started)
-- **Tests Required**:
-  - Test student_id uniqueness (expect 15,900 unique values)
-  - Test ID format consistency and pattern recognition
-  - Test identification of embedded information patterns
-- **Implementation**:
-  - Check for duplicate student_id values
-  - Analyze ID structure (length, character patterns, prefixes/suffixes)
-  - Identify embedded information (enrollment year, school code, cohort indicators)
-
-### 3.1.2a.2 Feature Extraction from ID (🔴 Not Started)
-- **Tests Required**:
-  - Test extraction of meaningful features from ID structure
-  - Test correlation of derived features with target variable
-  - Test predictive value of ID-derived features
-- **Implementation**:
-  - Extract enrollment year/semester if embedded in ID
-  - Create school/campus indicator if ID contains location codes
-  - Generate student cohort features if discernible from ID pattern
-  - Create "ID complexity" feature (character variety, length-based features)
-
-### 3.1.2a.3 ID Retention Decision (🔴 Not Started)
-- **Tests Required**:
-  - Test decision framework for ID retention vs. removal
-  - Test that extracted features capture ID information adequately
-  - Test that original ID adds no additional predictive value after feature extraction
-- **Implementation**:
-  - Evaluate predictive value: original ID vs. derived features
-  - **Decision Rule**: Drop original student_id if derived features capture all useful information
-  - Document extraction process and retain mapping for inference pipeline
-
-- **3.1.3** Handle duplicate records (🔴 Not Started)
-  - **Tests Required**:
-    - Test duplicate detection identifies all 139 duplicates
-    - Test duplicate removal preserves data integrity
-    - Test duplicate analysis reveals patterns
-    - Test final dataset has no duplicates
-  - **Implementation**: `src/data/deduplication.py`
-    - Duplicate detection algorithm
-    - Duplicate removal strategy (keep first/last/best)
-    - Duplicate pattern analysis
-  - **Database Usage**:
-    - **Source**: `data/processed/processed.csv`
-    - **Output**: Deduplicated `data/processed/processed.csv`
-  - **Dependencies**: 3.1.2
-
-- **3.1.4** Data validation and quality checks (🔴 Not Started)
-  - **Tests Required**:
-    - Test all validation rules pass
-    - Test data quality metrics meet thresholds
-    - Test outlier detection identifies anomalies using defined methods (e.g., IQR, Z-score)
-    - Test outlier handling strategy (e.g., capping, removal, transformation) is applied correctly
-    - Test final dataset statistics match expectations
-  - **Implementation**:
-    - Comprehensive validation framework
-    - Data quality scoring system
-    - Outlier detection using statistical methods (e.g., IQR, Z-score)
-    - Outlier handling strategy (e.g., capping, transformation, removal based on domain knowledge and impact assessment)
-  - **Database Usage**:
-    - **Source**: `data/processed/processed.csv`
-    - **Output**: Validated `data/processed/processed.csv` + quality report
-  - **Dependencies**: 3.1.3
-
-**3.1.5** Enhanced age processing and feature engineering (🔴 Not Started)
-- **Tests Required**:
-  - Test negative age values are corrected/removed or flagged
-  - Test age remains as continuous variable (avoid unnecessary binning)
-  - Test age-derived feature creation (`age_squared`, domain-specific thresholds)
-  - Test non-linear age relationships are captured
-  - Test categorical standardization (Y/N → Yes/No)
-  - Test case standardization (CLUBS → Clubs)
-  - Test data type consistency
-- **Implementation**:
-  - Age validation and correction logic for negative/unrealistic values
-  - **Keep age as continuous variable** - only bin if strong domain justification exists
-  - Create age-derived features:
-    - `age_squared` for potential non-linear relationships
-    - `is_adult` (binary: age ≥ 18) if relevant for educational context
-    - `age_category_educational` only if pedagogically meaningful (e.g., developmental stages)
-  - Categorical value standardization across all features
-  - Data type enforcement
-- **Database Usage**: 
-  - **Source**: Raw data from SQLite
-  - **Output**: Updated `data/processed/processed.csv` with age features
-- **Dependencies**: 3.1.1, 3.1.2a
-
-**3.1.6** Comprehensive data entry consistency check (🔴 Not Started)
-- **Tests Required**:
-  - Test detection of inconsistent categorical values across all text fields
-  - Test standardization of similar entries (e.g., different representations of same value)
-  - Test spelling correction for categorical variables
-  - Test capitalization standardization
-  - Test format consistency (dates, times, etc.)
-- **Implementation**:
-  - Systematic review of all categorical variables for inconsistencies
-  - Implement fuzzy matching to identify similar entries that should be standardized
-  - Create mapping dictionaries for standardization
-  - Apply consistent formatting rules across all text data
-  - Document all standardization decisions
-- **Database Usage**:
-  - **Source**: `data/processed/processed.csv`
-  - **Output**: Consistency-validated `data/processed/processed.csv`
-- **Dependencies**: 3.1.2
-
-**3.1.7** Implement robust outlier handling based on EDA findings (🔴 Not Started)
-**Objective**: Systematic identification and handling of outliers across all numerical features based on EDA analysis
-
-## Sub-tasks:
-
-### 3.1.7.1 Outlier Detection Based on EDA
-- **Tests Required**:
-  - Test IQR method identifies outliers correctly (EDA found 0.5% to 2.3% outliers per feature)
-  - Test Z-score method (>3 standard deviations) identifies outliers
-  - Test domain-specific outlier rules (e.g., age < 0, age > 100)
-  - Test outlier detection across all numerical features
-- **Implementation**:
-  - Apply IQR method: values < Q1 - 1.5*IQR or > Q3 + 1.5*IQR
-  - Apply Z-score method: |z-score| > 3
-  - **Priority**: Focus on 'hours_per_week' and 'attendance_rate' (highest outlier percentages from EDA)
-  - Domain validation: age, attendance_rate, hours_per_week, final_test
-  - Generate outlier summary report
-
-### 3.1.7.2 Outlier Analysis and Decision
-- **Tests Required**:
-  - Test outlier pattern analysis for systematic issues
-  - Test impact assessment of outlier handling strategies
-  - Test domain expert validation of outlier treatment decisions
-- **Implementation**:
-  - Analyze outlier patterns: are they errors or legitimate extreme values?
-  - **Age outliers**: Negative ages = clear errors (remove/correct) - identified in EDA
-  - **Attendance outliers**: >100% may indicate data entry errors
-  - **Score outliers**: Very high/low scores may be legitimate
-  - Impact assessment: compare distributions before/after treatment
-
-### 3.1.7.3 Outlier Treatment Application
-- **Tests Required**:
-  - Test removal strategy preserves data integrity
-  - Test transformation reduces outlier impact appropriately
-  - Test capping/winsorization maintains data distribution shape
-  - Test chosen strategy improves model performance
-- **Implementation**:
-  - **Removal**: Clear data entry errors (negative ages, impossible values)
-  - **Transformation**: Log transformation for right-skewed variables
-  - **Capping**: 95th/5th percentile capping for extreme but potentially valid values
-  - **Robust Models**: Document outliers for robust model consideration
-  - Document all outlier treatment decisions with justification
-
-**3.1.8** Systematic Imbalanced Data Analysis Task (🔴 Not Started)
-**Objective**: Identify and address imbalanced data issues across target and key features
-
-## Sub-tasks:
-
-### 3.1.8.1 Imbalance Detection
-- **Tests Required**:
-  - Test target variable (final_test) distribution analysis
-  - Test categorical feature imbalance identification
-  - Test imbalance severity measurement (ratios, entropy)
-  - Test impact assessment on model performance
-- **Implementation**:
-  - Analyze final_test score distribution (continuous target)
-  - Create score bins/categories to check for imbalanced ranges
-  - Examine categorical features: gender, CCA, learning_style, transport mode
-  - Calculate imbalance ratios and statistical measures
-
-### 3.1.8.2 Imbalance Impact Assessment
-- **Tests Required**:
-  - Test baseline model performance on imbalanced data
-  - Test evaluation metrics appropriate for imbalanced scenarios
-  - Test identification of affected model performance areas
-- **Implementation**:
-  - Train simple baseline model on raw data
-  - Use appropriate metrics: F1-score, precision-recall curves, AUC-PR
-  - Identify if model exhibits bias toward majority classes
-  - Document performance issues attributable to imbalance
-
-### 3.1.8.3 Imbalance Treatment (If Required)
-- **Tests Required**:
-  - Test SMOTE/ADASYN oversampling effectiveness
-  - Test undersampling impact on information loss
-  - Test class weight adjustment in models
-  - Test balanced accuracy vs. original accuracy
-- **Implementation**:
-  - **For Regression**: Consider stratified sampling by score ranges
-  - **For Classification** (if binning scores): Apply SMOTE, ADASYN, or random oversampling
-  - **Alternative**: Use class_weight='balanced' in model parameters
-  - **Evaluation**: Focus on balanced accuracy, F1-score, AUC-PR rather than just accuracy
-  - Document chosen approach and performance comparison
-
-### 3.4 Priority 4: Data Preprocessing Pipeline (🔴 Not Started)
+### 3.4 Priority 4: Data Preprocessing Pipeline (🟢 Completed)
 
 **Objective**: Implement comprehensive data preprocessing pipeline for model readiness
 
 #### Sub-tasks:
-- **3.4.1** Data Splitting and Validation (🔴 Not Started)
+- **3.4.1** Data Splitting and Validation (🟢 Completed)
   - **Tests Required**:
     - Test stratified split maintains target distribution
     - Test 70/15/15 or 80/10/10 split ratio is correct
@@ -849,7 +768,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - **Output**: `data/processed/train.csv`, `data/processed/val.csv`, `data/processed/test.csv`
   - **Dependencies**: 3.3.2
 
-- **3.4.2** Validate Data Splits Integrity (🔴 Not Started)
+- **3.4.2** Validate Data Splits Integrity (🟢 Completed)
   - **Tests Required**:
     - Test no overlap between train/validation/test sets
     - Test target distribution similarity across splits
@@ -865,12 +784,12 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - **Output**: Validation report
   - **Dependencies**: 3.4.1
 
-### 3.5 Priority 5: Advanced Preprocessing (🔴 Not Started)
+### 3.5 Priority 5: Advanced Preprocessing (🟢 Completed)
 
 **Objective**: Apply advanced preprocessing techniques for optimal model performance
 
 #### Sub-tasks:
-- **3.5.1** Feature Scaling and Normalization (🔴 Not Started)
+- **3.5.1** Feature Scaling and Normalization (🟢 Completed)
   - **Tests Required**:
     - Test StandardScaler transforms features to mean=0, std=1
     - Test MinMaxScaler transforms features to [0,1] range
@@ -888,7 +807,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - **Output**: Scaled datasets `data/processed/scaled_train.csv`, etc.
   - **Dependencies**: 3.4.2
 
-- **3.5.2** Categorical Encoding Optimization (🔴 Not Started)
+- **3.5.2** Categorical Encoding Optimization (🟢 Completed)
   - **Tests Required**:
     - Test one-hot encoding for low cardinality features
     - Test target encoding for high cardinality features
@@ -906,12 +825,12 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - **Output**: Encoded datasets `data/processed/encoded_train.csv`, etc.
   - **Dependencies**: 3.5.1
 
-### 3.6 Data Storage and Backup (🔴 Not Started)
+### 3.6 Data Storage and Backup (🟢 Completed)
 
 **Objective**: Ensure processed data is properly stored and backed up
 
 #### Sub-tasks:
-- **3.6.1** Save Cleaned Dataset (🔴 Not Started)
+- **3.6.1** Save Cleaned Dataset (🟢 Completed)
   - **Tests Required**:
     - Test CSV file is created with correct format
     - Test all cleaned data is preserved
@@ -923,7 +842,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - **Output**: `data/processed/final_processed.csv`
   - **Dependencies**: 3.5.2
 
-- **3.6.2** Create Data Backup and Recovery Procedures (🔴 Not Started)
+- **3.6.2** Create Data Backup and Recovery Procedures (🟢 Completed)
   - **Tests Required**:
     - Test backup creation process
     - Test backup integrity verification
@@ -939,154 +858,186 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
 
 ## Phase 4: Feature Engineering
 
-### 4.1 Feature Creation (🔴 Not Started)
+**Objective**: Create new features, apply advanced preprocessing, and select optimal features to improve model performance based on Phase 3 insights and Phase 2 EDA recommendations.
 
-**Objective**: Create new features to improve model performance based on Phase 2 EDA insights
+### 4.1 Load and Validate Data (🔴 Not Started)
+- **Objective**: Ensure the processed dataset is loaded correctly and validated before feature engineering.
+- **Sub-tasks**:
+  - **4.1.1** Load `final_processed.csv` (🔴 Not Started)
+    - **Tests Required**:
+      - Test data loads correctly from `data/processed/final_processed.csv`.
+      - Test all expected columns (original and Phase 3 derived) are present.
+      - Test data types are preserved (e.g., continuous age, standardized categoricals).
+      - Test no data corruption during loading.
+      - Test expected number of records (post-deduplication and cleaning) are loaded.
+    - **Implementation**: Pandas `read_csv` with appropriate parameters and validation checks.
+    - **Database Usage**: Source: `data/processed/final_processed.csv`.
+    - **Dependencies**: 3.6.1 (Save Cleaned Dataset).
 
-#### Sub-tasks:
-**4.1.1** Load processed data with comprehensive validation (🔴 Not Started)
-- **Tests Required**:
-  - Test data loads correctly from processed.csv
-  - Test data types are preserved, especially continuous age
-  - Test no data corruption during loading
-  - Test expected number of records loaded after deduplication
-  - Test age remains continuous and age-derived features are present
-  - Test student_id analysis results are properly integrated
-- **Implementation**: 
-  - Pandas read_csv with proper data type specification
-  - Validation that age preprocessing maintained continuous nature
-  - Verification of all derived features from previous phases
-- **Database Usage**:
-  - **Source**: `data/processed/processed.csv`
-  - **Output**: In-memory DataFrame for feature engineering
-- **Dependencies**: 2.2.1, enhanced preprocessing tasks
+### 4.2 High Priority Feature Engineering (Phase 4.1) (🔴 Not Started)
+- **Objective**: Implement high-impact derived features and transformations identified in Phase 3 recommendations.
 
-- **4.1.2** Create interaction features based on EDA correlations (🔴 Not Started)
-  - **Tests Required**:
-    - Test interaction features are created correctly
-    - Test interaction features improve model performance
-    - Test interaction features don't cause multicollinearity issues
-  - **Implementation**: 
-    - Create meaningful feature interactions based on EDA correlation findings
-    - Focus on high-correlation pairs: study_hours * attendance_rate
-    - Parent_education * family_income interactions
-  - **Database Usage**: In-memory feature engineering on train/val/test splits
-  - **Dependencies**: 4.1.1
+#### 4.2.1 EDA-Driven Derived Features (High Priority) (🔴 Not Started)
+- **Sub-tasks**:
+  - **4.2.1.1** Create Study Efficiency Score (🔴 Not Started)
+    - **Description**: Combine `study_hours` and `attendance_rate`.
+    - **Formula**: `(study_hours * attendance_rate) / max_possible_score` (or other suitable normalization).
+    - **Rationale**: EDA showed strong correlation (>0.6) with target. Ref: `notebook/visualization/correlation_heatmap.png`.
+    - **Tests Required**: Test score calculation, normalization, distribution.
+    - **Implementation**: Pandas operations.
+    - **Dependencies**: 4.1.1.
+  - **4.2.1.2** Create Academic Support Index (🔴 Not Started)
+    - **Description**: Weighted combination of `tuition`, `direct_admission`, `extracurricular_activities`.
+    - **Rationale**: EDA categorical analysis showed these as key differentiators. Ref: `notebook/visualization/categorical_features_distribution.png`.
+    - **Tests Required**: Test index calculation, weighting logic, distribution.
+    - **Implementation**: Pandas operations, define weighting scheme.
+    - **Dependencies**: 4.1.1.
 
-- **4.1.3** Create polynomial features for key variables (🔴 Not Started)
-  - **Tests Required**:
-    - Test polynomial features are generated correctly (degree 2-3)
-    - Test polynomial degree selection is optimal
-    - Test polynomial features improve model performance
-    - Test feature selection prevents overfitting
-  - **Implementation**: 
-    - Generate polynomial features for variables with non-linear relationships
-    - Focus on numerical features identified in EDA
-    - Apply feature selection to manage dimensionality
-  - **Database Usage**: In-memory feature engineering
-  - **Dependencies**: 4.1.2
+#### 4.2.2 High-Impact Interaction Features (Primary) (🔴 Not Started)
+- **Sub-tasks**:
+  - **4.2.2.1** Create Study × Attendance Interaction (🔴 Not Started)
+    - **Description**: `study_hours * attendance_rate`.
+    - **Justification**: Highest correlation pair in EDA (r = 0.67). Expected primary predictor.
+    - **Tests Required**: Test interaction term calculation, impact on model.
+    - **Implementation**: Pandas operations.
+    - **Dependencies**: 4.1.1.
 
-- **4.1.4** Create study intensity score (🔴 Not Started)
-  - **Tests Required**:
-    - Test composite score calculation
-    - Test score normalization works correctly
-    - Test missing values in components are handled
-    - Test score distribution is reasonable
-  - **Implementation**: Weighted combination of hours_per_week and attendance_rate
-  - **Database Usage**: In-memory feature engineering
-  - **Dependencies**: 4.1.1
+#### 4.2.3 Distribution-Based Transformations (High Priority) (🔴 Not Started)
+- **Sub-tasks**:
+  - **4.2.3.1** Transform Right-Skewed Variables (🔴 Not Started)
+    - **Variables**: `study_hours` (skewness = 1.2), `previous_score` (skewness = 0.8).
+    - **Transformations**: Log for `study_hours`, Box-Cox for `previous_score`.
+    - **Rationale**: Identified in EDA. Ref: `notebook/visualization/numerical_features_distribution.png`.
+    - **Tests Required**: Test transformation application, resulting skewness.
+    - **Implementation**: Scikit-learn `PowerTransformer` or `FunctionTransformer`.
+    - **Dependencies**: 4.1.1.
 
-- **4.1.5** Create additional domain-specific features (🔴 Not Started)
-  - **Tests Required**:
-    - Test sleep category assignment logic
-    - Test academic support index calculation
-    - Test all new features have expected distributions
-    - Test features align with EDA insights
-  - **Implementation**: 
-    - Sleep category: Early/Normal/Late based on sleep_time
-    - Academic support index: Combination of tuition, direct_admission, CCA
-    - Age-based groupings identified in EDA
-  - **Database Usage**: In-memory feature engineering
-  - **Dependencies**: 4.1.1
+### 4.3 Medium Priority Feature Engineering (Phase 4.2) (🔴 Not Started)
+- **Objective**: Implement additional valuable features and encoding strategies.
 
-### 4.2 Feature Encoding and Scaling (🔴 Not Started)
+#### 4.3.1 Time-Based Derived Features (Medium Priority) (🔴 Not Started)
+- **Sub-tasks**:
+  - **4.3.1.1** Create Study Time Categories (🔴 Not Started)
+    - **Description**: Categorize study times (e.g., Early, Peak, Afternoon, Evening).
+    - **Rationale**: Based on EDA distribution analysis. Ref: `notebook/visualization/numerical_features_distribution.png`.
+    - **Tests Required**: Test categorization logic, distribution of categories.
+    - **Implementation**: Pandas `cut` or custom mapping.
+    - **Dependencies**: 4.1.1.
+  - **4.3.1.2** Create Sleep Quality Indicator (🔴 Not Started)
+    - **Description**: Categorize sleep duration (e.g., Optimal, Insufficient, Excessive).
+    - **Rationale**: EDA showed non-linear relationship with performance.
+    - **Tests Required**: Test sleep duration calculation (if not already done), categorization logic.
+    - **Implementation**: Pandas operations based on `sleep_time` and `wake_time`.
+    - **Dependencies**: 4.1.1.
 
-**Objective**: Prepare features for machine learning algorithms based on Phase 2 EDA recommendations
+#### 4.3.2 High-Impact Interaction Features (Secondary) (🔴 Not Started)
+- **Sub-tasks**:
+  - **4.3.2.1** Create Parent Education × Socioeconomic Interaction (🔴 Not Started)
+    - **Description**: Cross-categorical interaction.
+    - **Justification**: EDA showed compound effect. Consider target encoding for high-cardinality combinations.
+    - **Tests Required**: Test interaction creation, encoding strategy if used.
+    - **Implementation**: Pandas, potentially scikit-learn encoders.
+    - **Dependencies**: 4.1.1.
+  - **4.3.2.2** Create Sleep × Study Hours Interaction (🔴 Not Started)
+    - **Rationale**: Non-linear interaction for optimal study conditions.
+    - **Tests Required**: Test interaction term calculation.
+    - **Implementation**: Pandas operations.
+    - **Dependencies**: 4.1.1.
+  - **4.3.2.3** Create Exercise × Academic Performance Interaction (🔴 Not Started)
+    - **Rationale**: Balance indicator from EDA insights.
+    - **Tests Required**: Test interaction term calculation.
+    - **Implementation**: Pandas operations.
+    - **Dependencies**: 4.1.1.
+  - **4.3.2.4** Create Transport × Attendance Interaction (🔴 Not Started)
+    - **Rationale**: Accessibility impact on consistent attendance.
+    - **Tests Required**: Test interaction term calculation.
+    - **Implementation**: Pandas operations.
+    - **Dependencies**: 4.1.1.
 
-#### Sub-tasks:
-- **4.2.1** Implement categorical encoding based on EDA insights (🔴 Not Started)
-  - **Tests Required**:
-    - Test one-hot encoding creates correct number of columns
-    - Test target encoding doesn't cause data leakage
-    - Test binary encoding preserves information
-    - Test ordinal encoding maintains order
-    - Test tuition encoding standardization (identified in EDA)
-  - **Implementation**:
-    - One-hot: gender, learning_style, mode_of_transport, bag_color
-    - Target: CCA, sleep_time, wake_time
-    - Binary: direct_admission, tuition (standardize encoding from EDA findings)
-    - Ordinal: number_of_siblings
-    - Handle inconsistent tuition encoding identified in EDA
-  - **Database Usage**: In-memory feature transformation
-  - **Dependencies**: 4.1.5
+#### 4.3.3 Advanced Categorical Encoding Strategy (Medium Priority) (🔴 Not Started)
+- **Sub-tasks**:
+  - **4.3.3.1** Implement One-Hot Encoding (🔴 Not Started)
+    - **Variables**: Low cardinality features (e.g., `gender`, `transport_mode`, `learning_style`).
+    - **Tests Required**: Test correct number of columns created, no data leakage.
+    - **Implementation**: Scikit-learn `OneHotEncoder`.
+    - **Dependencies**: 4.1.1.
+  - **4.3.3.2** Implement Target Encoding (🔴 Not Started)
+    - **Variables**: High cardinality features (e.g., `extracurricular_activities`, `sleep_time`, `wake_time`).
+    - **Tests Required**: Test encoding logic, prevention of data leakage (use on training folds only).
+    - **Implementation**: `category_encoders` library or custom implementation.
+    - **Dependencies**: 4.1.1.
+  - **Note**: Binary features like `tuition`, `direct_admission` were standardized to 'Yes'/'No' in Phase 3 and may need conversion to 0/1 or can be handled by OHE.
 
-- **4.2.2** Implement feature scaling and normalization (🔴 Not Started)
-  - **Tests Required**:
-    - Test numerical features are properly scaled
-    - Test scaling preserves feature relationships
-    - Test inverse transform works correctly
-    - Test scaling parameters are saved for inference
-    - Test skewed distributions are normalized appropriately
-  - **Implementation**: 
-    - StandardScaler for numerical features
-    - Log transformation for right-skewed variables (identified in EDA)
-    - Robust scaling for features with outliers
-    - Fit scaler on training data only to prevent data leakage
-  - **Database Usage**: In-memory feature transformation
-  - **Dependencies**: 4.2.1
+### 4.4 Enhancement Feature Engineering & Selection (Phase 4.3) (🔴 Not Started)
+- **Objective**: Implement ID-based features if promising, and apply feature selection techniques.
 
-- **4.2.3** Feature selection and dimensionality reduction (🔴 Not Started)
-  - **Tests Required**:
-    - Test feature importance ranking
-    - Test correlation analysis identifies redundant features
-    - Test dimensionality reduction preserves information
-    - Test selected features improve model performance
-  - **Implementation**: 
-    - Correlation analysis (build on EDA correlation matrix)
-    - Recursive feature elimination
-    - Principal component analysis (leverage EDA PCA findings)
-    - Remove highly correlated features (>0.9 correlation)
-  - **Database Usage**: In-memory feature analysis
-  - **Dependencies**: 4.2.2
+#### 4.4.1 ID-Based Features (Enhancement) (🔴 Not Started)
+- **Sub-tasks**:
+  - **4.4.1.1** Create Enrollment Cohort Feature (🔴 Not Started)
+    - **Description**: Extract year/semester patterns from student ID if Phase 3 analysis confirmed utility.
+    - **Reference**: Results from `src/data/id_structure_analysis.py`.
+    - **Tests Required**: Test extraction logic, feature distribution.
+    - **Implementation**: Pandas string operations based on ID patterns.
+    - **Dependencies**: 4.1.1, `src/data/id_structure_analysis.py` findings.
 
-### 4.3 Final Dataset Preparation (🔴 Not Started)
+#### 4.4.2 Feature Scaling (Enhancement) (🔴 Not Started)
+- **Sub-tasks**:
+  - **4.4.2.1** Apply Outlier-Robust Scaling (🔴 Not Started)
+    - **Rationale**: For features with outliers identified in EDA. Ref: `notebook/visualization/numerical_features_boxplots.png`.
+    - **Tests Required**: Test scaler application, effect on distributions.
+    - **Implementation**: Scikit-learn `RobustScaler`.
+    - **Dependencies**: All numerical features created/transformed.
+  - **Note**: Other scalers like `StandardScaler` or `MinMaxScaler` can be applied as needed based on model requirements and feature distributions after transformations.
 
-**Objective**: Create ML-ready dataset for model training
+#### 4.4.3 Feature Selection Strategy (Enhancement) (🔴 Not Started)
+- **Sub-tasks**:
+  - **4.4.3.1** Correlation-Based Selection (🔴 Not Started)
+    - **Action**: Remove features with correlation > 0.9 (multicollinearity threshold).
+    - **Target**: Reduce feature space by ~15-20% while maintaining predictive power.
+    - **Tests Required**: Test correlation calculation, feature removal.
+    - **Implementation**: Pandas `corr()`, identify and drop columns.
+    - **Dependencies**: All features created.
+  - **4.4.3.2** Importance-Based Selection (🔴 Not Started)
+    - **Methods**: Random Forest feature importance as baseline, Recursive Feature Elimination (RFE).
+    - **Target**: Select top ~80% of features by importance score or as determined by RFE.
+    - **Tests Required**: Test importance calculation, RFE application, selected feature set.
+    - **Implementation**: Scikit-learn `RandomForestRegressor`, `RFE`.
+    - **Dependencies**: All features created.
 
-#### Sub-tasks:
-- **4.3.1** Save feature-engineered dataset (🔴 Not Started)
-  - **Tests Required**:
-    - Test feature dataset saves correctly
-    - Test all engineered features are preserved
-    - Test feature names are descriptive and consistent
-    - Test dataset can be reloaded for model training
-  - **Implementation**: Save processed features to CSV with metadata
-  - **Database Usage**:
-    - **Source**: In-memory engineered features DataFrame
-    - **Output**: `data/feature/train_features.csv`, `data/feature/val_features.csv`, `data/feature/test_features.csv`
-  - **Dependencies**: 4.2.3
+### 4.5 Final Validation and Quality Checks (🔴 Not Started)
+- **Objective**: Ensure all engineered features meet quality targets before model training.
+- **Sub-tasks**:
+  - **4.5.1** Validate Feature Completeness (🔴 Not Started)
+    - **Target**: Maintain 100% (achieved in Phase 3 for base features).
+    - **Tests Required**: Check for NaNs in all engineered features.
+  - **4.5.2** Validate Feature Consistency (🔴 Not Started)
+    - **Target**: Maintain 100% categorical standardization/encoding.
+    - **Tests Required**: Verify encoding schemes are applied correctly.
+  - **4.5.3** Validate Feature Validity (🔴 Not Started)
+    - **Target**: All derived features pass domain validation (e.g., ranges, logical sense).
+    - **Tests Required**: Implement specific checks for new features.
+  - **4.5.4** Check Correlation Threshold (🔴 Not Started)
+    - **Target**: No feature pairs with |r| > 0.95 (after selection step 4.4.3.1).
+    - **Tests Required**: Re-calculate correlation matrix on final feature set.
+  - **4.5.5** Assess Feature Engineering Quality Score (🔴 Not Started)
+    - **Target**: >85% (define specific metrics for this score).
+  - **4.5.6** Assess Model Readiness Score (🔴 Not Started)
+    - **Target**: >90% (define specific metrics).
+  - **4.5.7** Ensure Feature Interpretability (🔴 Not Started)
+    - **Target**: All features have clear business/domain meaning.
+    - **Action**: Document each new feature's derivation and meaning.
 
-- **4.3.2** Create feature documentation (🔴 Not Started)
-  - **Tests Required**:
-    - Test feature documentation is complete
-    - Test feature descriptions are accurate
-    - Test feature engineering steps are documented
-    - Test documentation format is consistent
-  - **Implementation**: Generate feature dictionary and transformation log
-  - **Database Usage**:
-    - **Source**: Feature engineering metadata
-    - **Output**: `data/feature/feature_documentation.md`
-  - **Dependencies**: 4.3.1
+### 4.6 Save Feature-Engineered Dataset and Documentation (🔴 Not Started)
+- **Objective**: Persist the final feature set and its documentation.
+- **Sub-tasks**:
+  - **4.6.1** Save Feature-Engineered Datasets (🔴 Not Started)
+    - **Implementation**: Save processed features (train, validation, test splits if applicable) to CSV or other format.
+    - **Output**: e.g., `data/featured/train_features.csv`, `data/featured/validation_features.csv`, `data/featured/test_features.csv`.
+    - **Dependencies**: 4.5 (All validation tasks).
+  - **4.6.2** Create/Update Feature Documentation (🔴 Not Started)
+    - **Implementation**: Generate/update feature dictionary, transformation log, and definitions for all new and modified features.
+    - **Output**: Update `data/featured/feature_definitions.json` or create a new comprehensive `Phase4_Feature_Documentation.md`.
+    - **Dependencies**: 4.6.1.
 
 ---
 

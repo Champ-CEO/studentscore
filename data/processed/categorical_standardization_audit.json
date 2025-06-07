@@ -1,0 +1,31 @@
+[
+  {
+    "timestamp": "2025-06-07T17:05:35.497236",
+    "action": "categorical_standardization",
+    "column": "CCA",
+    "mapping_applied": {
+      "Sports": "Sports",
+      "Clubs": "Clubs",
+      "Arts": "Arts",
+      "ARTS": "Arts",
+      "SPORTS": "Sports",
+      "CLUBS": "Clubs",
+      "NONE": "None"
+    },
+    "values_changed": 4337,
+    "details": "Standardized 4337 values in column CCA"
+  },
+  {
+    "timestamp": "2025-06-07T17:05:35.517876",
+    "action": "categorical_standardization",
+    "column": "tuition",
+    "mapping_applied": {
+      "No": "No",
+      "Yes": "Yes",
+      "Y": "Yes",
+      "N": "No"
+    },
+    "values_changed": 588,
+    "details": "Standardized 588 values in column tuition"
+  }
+]
