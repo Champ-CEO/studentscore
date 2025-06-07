@@ -24,7 +24,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
 ### Phase 1: Project Setup & Infrastructure (🟢 Completed)
 ### Phase 2: Exploratory Data Analysis (EDA) (🟢 Completed)
 ### Phase 3: Data Preprocessing and Cleaning (🟢 Completed)
-### Phase 4: Feature Engineering (🔴 Not Started)
+### Phase 4: Feature Engineering (🟢 Completed)
 ### Phase 5: Model Development (🔴 Not Started)
 ### Phase 6: Testing & Validation (🔴 Not Started)
 
@@ -860,10 +860,10 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
 
 **Objective**: Create new features, apply advanced preprocessing, and select optimal features to improve model performance based on Phase 3 insights and Phase 2 EDA recommendations.
 
-### 4.1 Load and Validate Data (🔴 Not Started)
+### 4.1 Load and Validate Data (🟢 Completed)
 - **Objective**: Ensure the processed dataset is loaded correctly and validated before feature engineering.
 - **Sub-tasks**:
-  - **4.1.1** Load `final_processed.csv` (🔴 Not Started)
+  - **4.1.1** Load `final_processed.csv` (🟢 Completed)
     - **Tests Required**:
       - Test data loads correctly from `data/processed/final_processed.csv`.
       - Test all expected columns (original and Phase 3 derived) are present.
@@ -874,37 +874,37 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - **Database Usage**: Source: `data/processed/final_processed.csv`.
     - **Dependencies**: 3.6.1 (Save Cleaned Dataset).
 
-### 4.2 High Priority Feature Engineering (Phase 4.1) (🔴 Not Started)
+### 4.2 High Priority Feature Engineering (Phase 4.1) (🟡 In Progress)
 - **Objective**: Implement high-impact derived features and transformations identified in Phase 3 recommendations.
 
-#### 4.2.1 EDA-Driven Derived Features (High Priority) (🔴 Not Started)
+#### 4.2.1 EDA-Driven Derived Features (High Priority) (🟢 Completed)
 - **Sub-tasks**:
-  - **4.2.1.1** Create Study Efficiency Score (🔴 Not Started)
+  - **4.2.1.1** Create Study Efficiency Score (🟢 Completed)
     - **Description**: Combine `study_hours` and `attendance_rate`.
     - **Formula**: `(study_hours * attendance_rate) / max_possible_score` (or other suitable normalization).
     - **Rationale**: EDA showed strong correlation (>0.6) with target. Ref: `notebook/visualization/correlation_heatmap.png`.
     - **Tests Required**: Test score calculation, normalization, distribution.
     - **Implementation**: Pandas operations.
     - **Dependencies**: 4.1.1.
-  - **4.2.1.2** Create Academic Support Index (🔴 Not Started)
+  - **4.2.1.2** Create Academic Support Index (🟢 Completed)
     - **Description**: Weighted combination of `tuition`, `direct_admission`, `extracurricular_activities`.
     - **Rationale**: EDA categorical analysis showed these as key differentiators. Ref: `notebook/visualization/categorical_features_distribution.png`.
     - **Tests Required**: Test index calculation, weighting logic, distribution.
     - **Implementation**: Pandas operations, define weighting scheme.
     - **Dependencies**: 4.1.1.
 
-#### 4.2.2 High-Impact Interaction Features (Primary) (🔴 Not Started)
+#### 4.2.2 High-Impact Interaction Features (Primary) (🟢 Completed)
 - **Sub-tasks**:
-  - **4.2.2.1** Create Study × Attendance Interaction (🔴 Not Started)
+  - **4.2.2.1** Create Study × Attendance Interaction (🟢 Completed)
     - **Description**: `study_hours * attendance_rate`.
     - **Justification**: Highest correlation pair in EDA (r = 0.67). Expected primary predictor.
     - **Tests Required**: Test interaction term calculation, impact on model.
     - **Implementation**: Pandas operations.
     - **Dependencies**: 4.1.1.
 
-#### 4.2.3 Distribution-Based Transformations (High Priority) (🔴 Not Started)
+#### 4.2.3 Distribution-Based Transformations (High Priority) (🟢 Completed)
 - **Sub-tasks**:
-  - **4.2.3.1** Transform Right-Skewed Variables (🔴 Not Started)
+  - **4.2.3.1** Transform Right-Skewed Variables (🟢 Completed)
     - **Variables**: `study_hours` (skewness = 1.2), `previous_score` (skewness = 0.8).
     - **Transformations**: Log for `study_hours`, Box-Cox for `previous_score`.
     - **Rationale**: Identified in EDA. Ref: `notebook/visualization/numerical_features_distribution.png`.
@@ -912,175 +912,190 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - **Implementation**: Scikit-learn `PowerTransformer` or `FunctionTransformer`.
     - **Dependencies**: 4.1.1.
 
-### 4.3 Medium Priority Feature Engineering (Phase 4.2) (🔴 Not Started)
+### 4.3 Medium Priority Feature Engineering (Phase 4.2) (🟢 Completed)
 - **Objective**: Implement additional valuable features and encoding strategies.
 
-#### 4.3.1 Time-Based Derived Features (Medium Priority) (🔴 Not Started)
+#### 4.3.1 Time-Based Derived Features (Medium Priority) (🟢 Completed)
 - **Sub-tasks**:
-  - **4.3.1.1** Create Study Time Categories (🔴 Not Started)
+  - **4.3.1.1** Create Study Time Categories (🟢 Completed)
     - **Description**: Categorize study times (e.g., Early, Peak, Afternoon, Evening).
     - **Rationale**: Based on EDA distribution analysis. Ref: `notebook/visualization/numerical_features_distribution.png`.
     - **Tests Required**: Test categorization logic, distribution of categories.
     - **Implementation**: Pandas `cut` or custom mapping.
     - **Dependencies**: 4.1.1.
-  - **4.3.1.2** Create Sleep Quality Indicator (🔴 Not Started)
+  - **4.3.1.2** Create Sleep Quality Indicator (🟢 Completed)
     - **Description**: Categorize sleep duration (e.g., Optimal, Insufficient, Excessive).
     - **Rationale**: EDA showed non-linear relationship with performance.
     - **Tests Required**: Test sleep duration calculation (if not already done), categorization logic.
     - **Implementation**: Pandas operations based on `sleep_time` and `wake_time`.
     - **Dependencies**: 4.1.1.
 
-#### 4.3.2 High-Impact Interaction Features (Secondary) (🔴 Not Started)
+#### 4.3.2 High-Impact Interaction Features (Secondary) (🟢 Completed)
 - **Sub-tasks**:
-  - **4.3.2.1** Create Parent Education × Socioeconomic Interaction (🔴 Not Started)
+  - **4.3.2.1** Create Parent Education × Socioeconomic Interaction (🟢 Completed)
     - **Description**: Cross-categorical interaction.
     - **Justification**: EDA showed compound effect. Consider target encoding for high-cardinality combinations.
     - **Tests Required**: Test interaction creation, encoding strategy if used.
     - **Implementation**: Pandas, potentially scikit-learn encoders.
     - **Dependencies**: 4.1.1.
-  - **4.3.2.2** Create Sleep × Study Hours Interaction (🔴 Not Started)
+  - **4.3.2.2** Create Sleep × Study Hours Interaction (🟢 Completed)
     - **Rationale**: Non-linear interaction for optimal study conditions.
     - **Tests Required**: Test interaction term calculation.
     - **Implementation**: Pandas operations.
     - **Dependencies**: 4.1.1.
-  - **4.3.2.3** Create Exercise × Academic Performance Interaction (🔴 Not Started)
+  - **4.3.2.3** Create Exercise × Academic Performance Interaction (🟢 Completed)
     - **Rationale**: Balance indicator from EDA insights.
     - **Tests Required**: Test interaction term calculation.
     - **Implementation**: Pandas operations.
     - **Dependencies**: 4.1.1.
-  - **4.3.2.4** Create Transport × Attendance Interaction (🔴 Not Started)
+  - **4.3.2.4** Create Transport × Attendance Interaction (🟢 Completed)
     - **Rationale**: Accessibility impact on consistent attendance.
     - **Tests Required**: Test interaction term calculation.
     - **Implementation**: Pandas operations.
     - **Dependencies**: 4.1.1.
 
-#### 4.3.3 Advanced Categorical Encoding Strategy (Medium Priority) (🔴 Not Started)
+#### 4.3.3 Advanced Categorical Encoding Strategy (Medium Priority) (🟢 Completed)
 - **Sub-tasks**:
-  - **4.3.3.1** Implement One-Hot Encoding (🔴 Not Started)
+  - **4.3.3.1** Implement One-Hot Encoding (🟢 Completed)
     - **Variables**: Low cardinality features (e.g., `gender`, `transport_mode`, `learning_style`).
     - **Tests Required**: Test correct number of columns created, no data leakage.
     - **Implementation**: Scikit-learn `OneHotEncoder`.
     - **Dependencies**: 4.1.1.
-  - **4.3.3.2** Implement Target Encoding (🔴 Not Started)
+  - **4.3.3.2** Implement Target Encoding (🟢 Completed)
     - **Variables**: High cardinality features (e.g., `extracurricular_activities`, `sleep_time`, `wake_time`).
     - **Tests Required**: Test encoding logic, prevention of data leakage (use on training folds only).
     - **Implementation**: `category_encoders` library or custom implementation.
     - **Dependencies**: 4.1.1.
   - **Note**: Binary features like `tuition`, `direct_admission` were standardized to 'Yes'/'No' in Phase 3 and may need conversion to 0/1 or can be handled by OHE.
 
-### 4.4 Enhancement Feature Engineering & Selection (Phase 4.3) (🔴 Not Started)
+### 4.4 Enhancement Feature Engineering & Selection (Phase 4.3) (🟢 Completed)
 - **Objective**: Implement ID-based features if promising, and apply feature selection techniques.
 
-#### 4.4.1 ID-Based Features (Enhancement) (🔴 Not Started)
+#### 4.4.1 ID-Based Features (Enhancement) (🟢 Completed)
 - **Sub-tasks**:
-  - **4.4.1.1** Create Enrollment Cohort Feature (🔴 Not Started)
+  - **4.4.1.1** Create Enrollment Cohort Feature (🟢 Completed)
     - **Description**: Extract year/semester patterns from student ID if Phase 3 analysis confirmed utility.
     - **Reference**: Results from `src/data/id_structure_analysis.py`.
     - **Tests Required**: Test extraction logic, feature distribution.
     - **Implementation**: Pandas string operations based on ID patterns.
     - **Dependencies**: 4.1.1, `src/data/id_structure_analysis.py` findings.
 
-#### 4.4.2 Feature Scaling (Enhancement) (🔴 Not Started)
+#### 4.4.2 Feature Scaling (Enhancement) (🟢 Completed)
 - **Sub-tasks**:
-  - **4.4.2.1** Apply Outlier-Robust Scaling (🔴 Not Started)
+  - **4.4.2.1** Apply Outlier-Robust Scaling (🟢 Completed)
     - **Rationale**: For features with outliers identified in EDA. Ref: `notebook/visualization/numerical_features_boxplots.png`.
     - **Tests Required**: Test scaler application, effect on distributions.
     - **Implementation**: Scikit-learn `RobustScaler`.
     - **Dependencies**: All numerical features created/transformed.
   - **Note**: Other scalers like `StandardScaler` or `MinMaxScaler` can be applied as needed based on model requirements and feature distributions after transformations.
 
-#### 4.4.3 Feature Selection Strategy (Enhancement) (🔴 Not Started)
+#### 4.4.3 Feature Selection Strategy (Enhancement) (🟢 Completed)
 - **Sub-tasks**:
-  - **4.4.3.1** Correlation-Based Selection (🔴 Not Started)
+  - **4.4.3.1** Correlation-Based Selection (🟢 Completed)
     - **Action**: Remove features with correlation > 0.9 (multicollinearity threshold).
     - **Target**: Reduce feature space by ~15-20% while maintaining predictive power.
     - **Tests Required**: Test correlation calculation, feature removal.
     - **Implementation**: Pandas `corr()`, identify and drop columns.
     - **Dependencies**: All features created.
-  - **4.4.3.2** Importance-Based Selection (🔴 Not Started)
+  - **4.4.3.2** Importance-Based Selection (🟢 Completed)
     - **Methods**: Random Forest feature importance as baseline, Recursive Feature Elimination (RFE).
     - **Target**: Select top ~80% of features by importance score or as determined by RFE.
     - **Tests Required**: Test importance calculation, RFE application, selected feature set.
     - **Implementation**: Scikit-learn `RandomForestRegressor`, `RFE`.
     - **Dependencies**: All features created.
 
-### 4.5 Final Validation and Quality Checks (🔴 Not Started)
+### 4.5 Final Validation and Quality Checks (🟢 Completed)
 - **Objective**: Ensure all engineered features meet quality targets before model training.
 - **Sub-tasks**:
-  - **4.5.1** Validate Feature Completeness (🔴 Not Started)
+  - **4.5.1** Validate Feature Completeness (🟢 Completed)
     - **Target**: Maintain 100% (achieved in Phase 3 for base features).
     - **Tests Required**: Check for NaNs in all engineered features.
-  - **4.5.2** Validate Feature Consistency (🔴 Not Started)
+  - **4.5.2** Validate Feature Consistency (🟢 Completed)
     - **Target**: Maintain 100% categorical standardization/encoding.
     - **Tests Required**: Verify encoding schemes are applied correctly.
-  - **4.5.3** Validate Feature Validity (🔴 Not Started)
+  - **4.5.3** Validate Feature Validity (🟢 Completed)
     - **Target**: All derived features pass domain validation (e.g., ranges, logical sense).
     - **Tests Required**: Implement specific checks for new features.
-  - **4.5.4** Check Correlation Threshold (🔴 Not Started)
+  - **4.5.4** Check Correlation Threshold (🟢 Completed)
     - **Target**: No feature pairs with |r| > 0.95 (after selection step 4.4.3.1).
     - **Tests Required**: Re-calculate correlation matrix on final feature set.
-  - **4.5.5** Assess Feature Engineering Quality Score (🔴 Not Started)
+  - **4.5.5** Assess Feature Engineering Quality Score (🟢 Completed)
     - **Target**: >85% (define specific metrics for this score).
-  - **4.5.6** Assess Model Readiness Score (🔴 Not Started)
+  - **4.5.6** Assess Model Readiness Score (🟢 Completed)
     - **Target**: >90% (define specific metrics).
-  - **4.5.7** Ensure Feature Interpretability (🔴 Not Started)
+  - **4.5.7** Ensure Feature Interpretability (🟢 Completed)
     - **Target**: All features have clear business/domain meaning.
     - **Action**: Document each new feature's derivation and meaning.
 
-### 4.6 Save Feature-Engineered Dataset and Documentation (🔴 Not Started)
+### 4.6 Save Feature-Engineered Dataset and Documentation (🟢 Completed)
 - **Objective**: Persist the final feature set and its documentation.
 - **Sub-tasks**:
-  - **4.6.1** Save Feature-Engineered Datasets (🔴 Not Started)
+  - **4.6.1** Save Feature-Engineered Datasets (🟢 Completed)
     - **Implementation**: Save processed features (train, validation, test splits if applicable) to CSV or other format.
     - **Output**: e.g., `data/featured/train_features.csv`, `data/featured/validation_features.csv`, `data/featured/test_features.csv`.
     - **Dependencies**: 4.5 (All validation tasks).
-  - **4.6.2** Create/Update Feature Documentation (🔴 Not Started)
+  - **4.6.2** Create/Update Feature Documentation (🟢 Completed)
     - **Implementation**: Generate/update feature dictionary, transformation log, and definitions for all new and modified features.
     - **Output**: Update `data/featured/feature_definitions.json` or create a new comprehensive `Phase4_Feature_Documentation.md`.
     - **Dependencies**: 4.6.1.
 
 ---
 
-## Phase 5: Model Development
-
-- **2.1.5** Address Imbalanced Data (if identified) (🔴 Not Started)
-  - **Tests Required**:
-    - Test imbalance detection in target variable or key features
-    - Test application of chosen balancing technique (e.g., SMOTE, undersampling)
-    - Test evaluation metrics suitable for imbalanced data are used (e.g., F1-score, AUC-PR)
-  - **Implementation**:
-    - Analyze distribution of target variable (`final_test`) and key categorical features
-    - If significant imbalance is found, apply appropriate techniques (e.g., SMOTE, ADASYN, random undersampling, or using class weights in models)
-    - Select evaluation metrics robust to imbalanced data
-  - **Database Usage**:
-    - **Source**: `data/processed/processed.csv`
-    - **Output**: Potentially resampled `data/processed/processed_balanced.csv` or integrated into modeling pipeline
-  - **Dependencies**: 2.1.4
+## Phase 5: Model Development (🔴 Not Started)
 
 ### 5.1 Model Training Infrastructure (🔴 Not Started)
 
 **Objective**: Setup robust model training and evaluation framework
 
 #### Sub-tasks:
-- **5.1.1** Setup cross-validation framework (🔴 Not Started)
+- **5.1.3** Address Imbalanced Data (if identified) (🔴 Not Started)
+  - **Description**: Analyze target variable distribution and apply appropriate balancing techniques if significant imbalance is identified. This was a re-prioritized task.
   - **Tests Required**:
-    - Test 5-fold stratified CV maintains distributions
-    - Test CV folds are reproducible
-    - Test CV scoring metrics are calculated correctly
-    - Test CV handles missing values appropriately
-  - **Implementation**: StratifiedKFold with consistent random state
-  - **Database Usage**: In-memory cross-validation on training data
-  - **Dependencies**: 4.3.1
+    - Test imbalance detection in target variable (`final_test`).
+    - Test application of chosen balancing technique (e.g., SMOTE, class weights) if imbalance is confirmed.
+    - Test evaluation metrics suitable for imbalanced data are used if balancing is applied (e.g., F1-score, AUC-PR, balanced accuracy).
+  - **Implementation**:
+    - Analyze distribution of target variable (`final_test`).
+    - If significant imbalance is found, apply techniques like SMOTE, ADASYN, random undersampling, or using class weights in models.
+    - Select evaluation metrics robust to imbalanced data if applicable.
+  - **Database Usage**:
+    - **Source**: `data/processed/final_processed.csv` (or equivalent from Phase 4)
+    - **Output**: Potentially resampled data or models trained with class weights.
+  - **Dependencies**: 5.1.2
+
+- **5.1.4** Integrate Phase 4 Feature Documentation (🔴 Not Started)
+  - **Description**: Utilize the comprehensive feature documentation from Phase 4 for model interpretation and stakeholder communication, as recommended (Rec 10).
+  - **Tests Required**:
+    - Test that feature definitions are accessible during modeling.
+    - Test that model reports can reference feature documentation.
+  - **Implementation**:
+    - Develop a mechanism to link model outputs (e.g., feature importance) back to feature definitions from `data/featured/feature_definitions.json` and `interaction_definitions.json`.
+    - Ensure reporting tools can leverage this documentation.
+  - **Database Usage**:
+    - **Source**: `data/featured/feature_definitions.json`, `data/featured/interaction_definitions.json`
+    - **Output**: Enhanced model reports and interpretability.
+  - **Dependencies**: Phase 4 Documentation Artifacts
+
+- **5.1.1** Setup cross-validation framework (🔴 Not Started)
+  - **Description**: Implement stratified k-fold cross-validation (k=5 or k=10) to ensure robust evaluation across different score ranges, as recommended in Phase 4 report (Rec 4).
+  - **Tests Required**:
+    - Test k-fold split generation is correct (e.g., 5 or 10 folds).
+    - Test stratification is applied based on target variable.
+    - Test evaluation metrics are calculated per fold and averaged.
+    - Test CV folds are reproducible with a consistent random state.
+  - **Implementation**: StratifiedKFold from scikit-learn or similar, ensuring consistent random state for reproducibility.
+  - **Database Usage**: In-memory cross-validation on training data.
+  - **Dependencies**: 4.3.1, 5.1.2
 
 - **5.1.2** Implement model evaluation metrics (🔴 Not Started)
   - **Tests Required**:
-    - Test MAE calculation is mathematically correct
-    - Test RMSE penalizes large errors appropriately
-    - Test R² score interpretation is accurate
-    - Test custom metrics (MAPE, median AE) work correctly
-  - **Implementation**: Comprehensive evaluation metric suite
-  - **Database Usage**: In-memory metric calculations
-  - **Dependencies**: 5.1.1
+    - Test MAE calculation is mathematically correct.
+    - Test RMSE penalizes large errors appropriately.
+    - Test R² score interpretation is accurate.
+    - Test custom metrics (e.g., MAPE, median Absolute Error) work correctly if implemented.
+  - **Implementation**: Develop a comprehensive suite of evaluation metrics (MAE, RMSE, R², etc.) for model comparison.
+  - **Database Usage**: In-memory metric calculations on model predictions.
+  - **Dependencies**: None directly, but used by subsequent model training/evaluation tasks.
 
 ### 5.2 Algorithm Implementation (🔴 Not Started)
 
@@ -1088,69 +1103,79 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
 
 #### Sub-tasks:
 - **5.2.1** Implement Random Forest Regressor (🔴 Not Started)
+  - **Description**: Implement Random Forest as one of the primary algorithms, given its ability to handle interactions well (Phase 4 Rec 3).
   - **Tests Required**:
-    - Test model trains without errors
-    - Test hyperparameter tuning improves performance
-    - Test feature importance extraction works
-    - Test model achieves target performance (MAE < 8, R² > 0.75)
+    - Test model trains without errors using the Phase 4 feature set.
+    - Test hyperparameter tuning (e.g., using GridSearchCV or RandomizedSearchCV) improves performance.
+    - Test feature importance extraction (e.g., `feature_importances_` attribute) works and aligns with Phase 4 findings (Rec 6).
+    - Test model achieves target performance (e.g., MAE < 8, R² > 0.75, or as defined by project goals).
   - **Implementation**:
-    - RandomForestRegressor with GridSearchCV
-    - Feature importance analysis
-    - Performance optimization
-  - **Database Usage**: Training on in-memory feature data
-  - **Dependencies**: 5.1.2
+    - `RandomForestRegressor` from scikit-learn.
+    - Include key Phase 4 features (Study × Attendance, Study Efficiency Score, Academic Support Index - Rec 1 & 2).
+    - Feature importance analysis and documentation.
+  - **Database Usage**: Training on in-memory feature data from `data/featured/final_features.csv`.
+  - **Dependencies**: 5.1.1, 5.1.2, Phase 4 Feature Set
 
 - **5.2.2** Implement XGBoost Regressor (🔴 Not Started)
+  - **Description**: Implement XGBoost, another key algorithm recommended for its performance and handling of interactions (Phase 4 Rec 3). Focus on hyperparameter tuning for this model (Rec 5).
   - **Tests Required**:
-    - Test XGBoost installation and import
-    - Test model handles categorical features correctly
-    - Test hyperparameter optimization works
-    - Test model achieves target performance (MAE < 7, R² > 0.80)
+    - Test XGBoost installation and import.
+    - Test model handles categorical features correctly (if applicable, or ensure proper encoding from Phase 4).
+    - Test hyperparameter optimization (e.g., GridSearchCV, RandomizedSearchCV, or Bayesian Optimization) improves performance.
+    - Test model achieves target performance (e.g., MAE < 7, R² > 0.80, or as defined).
+    - Test SHAP value generation for interpretability (Rec 8).
   - **Implementation**:
-    - XGBRegressor with Bayesian optimization
-    - SHAP value analysis for interpretability
-    - Early stopping and regularization
-  - **Database Usage**: Training on in-memory feature data
-  - **Dependencies**: 5.1.2
+    - `XGBRegressor` from the XGBoost library.
+    - Include key Phase 4 features (Rec 1 & 2).
+    - Implement early stopping and regularization to prevent overfitting (Rec 7).
+    - SHAP value analysis for feature importance and model explanation.
+  - **Database Usage**: Training on in-memory feature data from `data/featured/final_features.csv`.
+  - **Dependencies**: 5.1.1, 5.1.2, Phase 4 Feature Set
 
 - **5.2.3** Implement Linear Regression baseline (🔴 Not Started)
+  - **Description**: Implement Linear Regression as a baseline model for comparison and to establish initial performance benchmarks (Phase 4 Rec 9). Also explore SVR as part of algorithm selection (Rec 3).
   - **Tests Required**:
-    - Test linear regression with polynomial features
-    - Test regularization (Ridge/Lasso) improves generalization
-    - Test coefficient interpretation is meaningful
-    - Test model provides interpretable baseline
+    - Test `LinearRegression` (potentially with polynomial features) trains correctly.
+    - Test regularization (Ridge/Lasso) can be applied and its impact evaluated (Rec 7).
+    - Test coefficient interpretation is meaningful for the linear model.
+    - Test `SVR` (Support Vector Regression) with different kernels trains correctly.
+    - Test both models provide interpretable baseline performance metrics.
   - **Implementation**:
-    - LinearRegression with PolynomialFeatures
-    - Ridge/Lasso regularization
-    - Coefficient analysis and interpretation
-  - **Database Usage**: Training on in-memory feature data
-  - **Dependencies**: 5.1.2
+    - `LinearRegression` from scikit-learn, potentially with `PolynomialFeatures`.
+    - `Ridge` and `Lasso` for regularization.
+    - `SVR` from scikit-learn with linear and RBF kernels.
+    - Coefficient analysis for Linear Regression.
+  - **Database Usage**: Training on in-memory feature data from `data/featured/final_features.csv`.
+  - **Dependencies**: 5.1.1, 5.1.2, Phase 4 Feature Set
 
-- **5.2.4** Implement Support Vector Regression (🔴 Not Started)
-  - **Tests Required**:
-    - Test SVR with different kernels (linear, RBF)
-    - Test hyperparameter optimization (C, gamma, epsilon)
-    - Test model handles scaled features correctly
-    - Test model achieves reasonable performance
-  - **Implementation**:
-    - SVR with kernel selection
-    - Hyperparameter tuning with GridSearchCV
-    - Performance comparison across kernels
-  - **Database Usage**: Training on in-memory feature data
-  - **Dependencies**: 4.1.3
 
-- **5.2.5** Implement Neural Network (🔴 Not Started)
+
+- **5.2.4** Implement Neural Network (🔴 Not Started)
+  - **Description**: Implement a Neural Network, with a focus on hyperparameter tuning and overfitting monitoring (Phase 4 Rec 3, 5, 7).
   - **Tests Required**:
-    - Test neural network architecture is appropriate
-    - Test training converges without overfitting
-    - Test early stopping prevents overfitting
-    - Test model achieves competitive performance
+    - Test neural network architecture (e.g., MLPRegressor or Keras Sequential) is appropriate for the regression task.
+    - Test training converges without significant overfitting (monitor validation loss).
+    - Test early stopping callback prevents overfitting effectively.
+    - Test model achieves competitive performance compared to other algorithms.
   - **Implementation**:
-    - MLPRegressor or Keras Sequential model
-    - Architecture optimization
-    - Regularization and dropout
-  - **Database Usage**: Training on in-memory feature data
-  - **Dependencies**: 5.1.2
+    - `MLPRegressor` from scikit-learn or a Keras/TensorFlow `Sequential` model.
+    - Architecture optimization (layers, neurons, activation functions).
+    - Implement regularization (e.g., L2, dropout) and early stopping.
+  - **Database Usage**: Training on in-memory feature data from `data/featured/final_features.csv`.
+  - **Dependencies**: 5.1.1, 5.1.2, Phase 4 Feature Set
+
+- **5.2.5** Prioritize Key Interaction and Composite Features (🔴 Not Started)
+    - **Description**: Ensure high-priority features identified in Phase 4 (Study × Attendance interaction, Study Efficiency Score, Academic Support Index) are included and evaluated in all models, as per recommendations (Rec 1 & 2).
+    - **Tests Required**:
+      - Test that models can be configured to include/exclude these specific features.
+      - Test that the impact of these features on model performance is measurable.
+    - **Implementation**:
+      - Explicitly include `Study_X_Attendance`, `Study_Efficiency_Score`, and `Academic_Support_Index` (or their equivalents from Phase 4 feature engineering) in the feature set for initial model runs.
+      - Analyze model performance with and without these key features to quantify their impact.
+    - **Database Usage**:
+      - **Source**: `data/featured/final_features.csv` (containing these key features)
+      - **Output**: Model performance metrics highlighting the contribution of these features.
+    - **Dependencies**: Phase 4 Feature Set, 5.2.1, 5.2.2, 5.2.3, 5.2.4
 
 ### 5.3 Model Selection and Optimization (🔴 Not Started)
 
@@ -1158,17 +1183,19 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
 
 #### Sub-tasks:
 - **5.3.1** Hyperparameter optimization (🔴 Not Started)
+  - **Description**: Perform systematic hyperparameter tuning for promising models, with a particular focus on XGBoost and Neural Networks as recommended (Phase 4 Rec 5).
   - **Tests Required**:
-    - Test hyperparameter search improves performance
-    - Test optimization doesn't overfit to validation set
-    - Test best parameters are reproducible
-    - Test optimization time is reasonable
+    - Test hyperparameter search (e.g., GridSearchCV, RandomizedSearchCV, Optuna) improves performance over default parameters.
+    - Test that the optimization process uses cross-validation to prevent overfitting to a single validation split.
+    - Test best parameters are reproducible and can be logged.
+    - Test optimization time is within acceptable limits.
   - **Implementation**:
-    - GridSearchCV/RandomizedSearchCV for each model
-    - Bayesian optimization for complex models
-    - Cross-validation during optimization
-  - **Database Usage**: In-memory training data for optimization
-  - **Dependencies**: 5.2.5
+    - Define appropriate hyperparameter grids/distributions for each model type.
+    - Use techniques like `GridSearchCV`, `RandomizedSearchCV`, or Bayesian Optimization (e.g., Optuna, Hyperopt).
+    - Ensure tuning is performed within the cross-validation framework (Task 5.1.1).
+    - Store best parameter configurations for each model.
+  - **Database Usage**: In-memory training data for optimization, leveraging CV splits.
+  - **Dependencies**: 5.2.1, 5.2.2, 5.2.3, 5.2.4 (i.e., implemented models)
 
 - **5.3.2** Model comparison and selection (🔴 Not Started)
   - **Tests Required**:
@@ -1184,17 +1211,50 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Dependencies**: 5.3.1
 
 - **5.3.3** Final model training and validation (🔴 Not Started)
+  - **Description**: Train the selected best model(s) on the full training dataset using optimized hyperparameters and evaluate on the unseen test set.
   - **Tests Required**:
-    - Test final model trains on full training set
-    - Test model performance on held-out test set
-    - Test model generalization is satisfactory
-    - Test model meets all success criteria
+    - Test final model trains on the complete training dataset without errors.
+    - Test model performance on the held-out test set meets or exceeds defined benchmarks (Phase 4 Rec 9).
+    - Test model generalization is satisfactory (i.e., performance on test set is close to cross-validation performance).
+    - Test model meets all predefined success criteria for the project.
   - **Implementation**:
-    - Train best model on full training data
-    - Final evaluation on test set
-    - Performance validation against requirements
-  - **Database Usage**: Full training data for final model
+    - Train the chosen model(s) from Task 5.3.2 on the entire training portion of `data/featured/final_features.csv`.
+    - Perform final evaluation on the designated test split.
+    - Document final performance metrics and compare against project goals.
+  - **Database Usage**: Full training data for final model training; test data for final validation.
   - **Dependencies**: 5.3.2
+
+- **5.3.4** Implement Overfitting Monitoring and Mitigation (🔴 Not Started)
+    - **Description**: Implement early stopping for complex models (e.g., NNs, XGBoost) and use regularization (L1/L2) for linear models to prevent overfitting, as recommended (Rec 7).
+    - **Tests Required**:
+      - Test learning curves show convergence without significant overfitting.
+      - Test regularization parameters are tunable and effective for linear models.
+      - Test early stopping callback functions correctly halt training for iterative models.
+    - **Implementation**:
+      - Plot learning curves (training vs. validation loss/metric over epochs/iterations) during training of iterative models.
+      - Implement L1/L2 regularization in relevant scikit-learn models (e.g., LinearRegression, LogisticRegression if used).
+      - Use early stopping callbacks in Keras/TensorFlow, XGBoost, LightGBM based on validation set performance.
+    - **Database Usage**:
+      - **Source**: Model training logs, performance metrics from validation folds/sets.
+      - **Output**: Optimized models with reduced overfitting, learning curve plots.
+    - **Dependencies**: 5.2.1, 5.2.2, 5.2.3, 5.2.4, 5.3.1
+
+- **5.3.5** Implement Model Interpretability Techniques (🔴 Not Started)
+    - **Description**: Leverage techniques like SHAP values or LIME to explain model predictions, especially for complex models and the engineered interaction features, as recommended (Rec 8). This should also validate engineered features from Phase 4 (Rec 6).
+    - **Tests Required**:
+      - Test SHAP/LIME explanations can be generated for selected models (especially RF, XGBoost, NN).
+      - Test visualizations of feature contributions (e.g., SHAP summary plots, dependence plots) are clear and informative.
+      - Test local (individual prediction) and global (overall model behavior) explanations can be derived.
+      - Test if interpretability results align with Phase 4 feature importance findings.
+    - **Implementation**:
+      - Integrate SHAP or LIME libraries with trained models.
+      - Generate summary plots (e.g., SHAP summary plot, feature importance from SHAP values).
+      - Implement functionality to explain individual predictions for case studies.
+      - Document insights from interpretability analysis, linking back to Phase 4 documentation (Rec 10).
+    - **Database Usage**:
+      - **Source**: Trained models, `data/featured/final_features.csv`.
+      - **Output**: SHAP/LIME values, interpretability plots, explanation reports.
+    - **Dependencies**: 5.3.2, 5.1.4
 
 ### 5.4 Model Persistence and Registry (🔴 Not Started)
 
