@@ -21,14 +21,12 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
 
 ## Project Phases Overview
 
-### Phase 1: Project Setup & Infrastructure (🔴 Not Started)
-### Phase 2: Exploratory Data Analysis (EDA) (🔴 Not Started)
-### Phase 4: Data Processing Pipeline (🔴 Not Started)
-### Phase 5: Feature Engineering (🔴 Not Started)
-### Phase 6: Model Development (🔴 Not Started)
-### Phase 7: API Development (🔴 Not Started)
-### Phase 8: Testing & Validation (🔴 Not Started)
-### Phase 9: Deployment & Monitoring (🔴 Not Started)
+### Phase 1: Project Setup & Infrastructure (🟢 Completed)
+### Phase 2: Exploratory Data Analysis (EDA) (🟢 Completed)
+### Phase 3: Data Preprocessing and Cleaning (🔴 Not Started)
+### Phase 4: Feature Engineering (🔴 Not Started)
+### Phase 5: Model Development (🔴 Not Started)
+### Phase 6: Testing & Validation (🔴 Not Started)
 
 ---
 
@@ -66,7 +64,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: N/A
   - **Dependencies**: 1.1.1
 
-### 1.2 Database Setup (🔴 Not Started)
+### 1.2 Database Setup (🟢 Completed)
 
 **Objective**: Establish database connection and verify data integrity
 
@@ -107,12 +105,12 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
 
 **Objective**: Conduct comprehensive exploratory data analysis to understand data patterns, relationships, and inform preprocessing decisions
 
-### 2.1 Data Loading and Initial Exploration (🔴 Not Started)
+### 2.1 Data Loading and Initial Exploration (🟢 Completed)
 
 **Objective**: Load data and perform initial exploration
 
 #### Sub-tasks:
-- **2.1.1** Setup EDA environment and data loading (🔴 Not Started)
+- **2.1.1** Setup EDA environment and data loading (🟢 Completed)
   - **Tests Required**:
     - Test data loads correctly from SQLite database
     - Test all 17 features are present and accessible
@@ -127,7 +125,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - **Output**: In-memory DataFrame for analysis
   - **Dependencies**: 1.2.3
 
-- **2.1.2** Data overview and basic statistics (🔴 Not Started)
+- **2.1.2** Data overview and basic statistics (🟢 Completed)
   - **Tests Required**:
     - Test summary statistics are calculated for all numerical features
     - Test categorical feature value counts are generated
@@ -141,12 +139,12 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.1.1
 
-### 2.2 Missing Data Analysis (🔴 Not Started)
+### 2.2 Missing Data Analysis (🟢 Completed)
 
 **Objective**: Comprehensive analysis of missing data patterns
 
 #### Sub-tasks:
-- **2.2.1** Missing data pattern analysis (🔴 Not Started)
+- **2.2.1** Missing data pattern analysis (🟢 Completed)
   - **Tests Required**:
     - Test missing value heatmap is generated correctly
     - Test missing data patterns are identified (MCAR, MAR, MNAR)
@@ -160,7 +158,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.1.2
 
-- **2.2.2** Missing data visualization (🔴 Not Started)
+- **2.2.2** Missing data visualization (🟢 Completed)
   - **Tests Required**:
     - Test missing value bar chart shows correct percentages
     - Test missing value matrix visualization is clear
@@ -172,12 +170,12 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.2.1
 
-### 2.3 Univariate Analysis (🔴 Not Started)
+### 2.3 Univariate Analysis (🟢 Completed)
 
 **Objective**: Analyze individual feature distributions and characteristics
 
 #### Sub-tasks:
-- **2.3.1** Numerical feature analysis (🔴 Not Started)
+- **2.3.1** Numerical feature analysis (🟢 Completed)
   - **Tests Required**:
     - Test histograms are generated for all numerical features
     - Test box plots identify outliers correctly
@@ -191,7 +189,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.1.2
 
-- **2.3.2** Categorical feature analysis (🔴 Not Started)
+- **2.3.2** Categorical feature analysis (🟢 Completed)
   - **Tests Required**:
     - Test bar charts show correct category frequencies
     - Test pie charts display proportions accurately
@@ -205,7 +203,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.1.2
 
-- **2.3.3** Target variable analysis (🔴 Not Started)
+- **2.3.3** Target variable analysis (🟢 Completed)
   - **Tests Required**:
     - Test target variable distribution is visualized
     - Test target variable statistics are calculated
@@ -219,12 +217,12 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.1.2
 
-### 2.4 Bivariate Analysis (🔴 Not Started)
+### 2.4 Bivariate Analysis (🟢 Completed)
 
 **Objective**: Analyze relationships between features and with target variable
 
 #### Sub-tasks:
-- **2.4.1** Feature correlation analysis (🔴 Not Started)
+- **2.4.1** Feature correlation analysis (🟢 Completed)
   - **Tests Required**:
     - Test correlation matrix is calculated correctly
     - Test correlation heatmap is visually clear
@@ -238,7 +236,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.3.3
 
-- **2.4.2** Numerical vs target analysis (🔴 Not Started)
+- **2.4.2** Numerical vs target analysis (🟢 Completed)
   - **Tests Required**:
     - Test scatter plots show feature-target relationships
     - Test regression lines indicate relationship strength
@@ -252,7 +250,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.4.1
 
-- **2.4.3** Categorical vs target analysis (🔴 Not Started)
+- **2.4.3** Categorical vs target analysis (🟢 Completed)
   - **Tests Required**:
     - Test box plots show target distribution by category
     - Test violin plots reveal distribution shapes
@@ -266,12 +264,12 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.4.1
 
-### 2.5 Multivariate Analysis (🔴 Not Started)
+### 2.5 Multivariate Analysis (🟢 Completed)
 
 **Objective**: Analyze complex relationships between multiple features
 
 #### Sub-tasks:
-- **2.5.1** Feature interaction analysis (🔴 Not Started)
+- **2.5.1** Feature interaction analysis (🟢 Completed)
   - **Tests Required**:
     - Test interaction plots reveal meaningful patterns
     - Test three-way relationships are explored
@@ -285,7 +283,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.4.3
 
-- **2.5.2** Dimensionality reduction exploration (🔴 Not Started)
+- **2.5.2** Dimensionality reduction exploration (🟢 Completed)
   - **Tests Required**:
     - Test PCA explains variance correctly
     - Test t-SNE reveals cluster patterns
@@ -299,12 +297,12 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.5.1
 
-### 2.6 Data Quality Assessment (🔴 Not Started)
+### 2.6 Data Quality Assessment (🟢 Completed)
 
 **Objective**: Identify data quality issues and anomalies
 
 #### Sub-tasks:
-- **2.6.1** Outlier detection and analysis (🔴 Not Started)
+- **2.6.1** Outlier detection and analysis (🟢 Completed)
   - **Tests Required**:
     - Test multiple outlier detection methods are applied
     - Test outliers are visualized clearly
@@ -318,7 +316,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.3.1
 
-- **2.6.2** Data consistency checks (🔴 Not Started)
+- **2.6.2** Data consistency checks (🟢 Completed)
   - **Tests Required**:
     - Test logical consistency rules are validated
     - Test impossible value combinations are identified
@@ -332,7 +330,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.6.1
 
-- **2.6.3** Duplicate analysis (🔴 Not Started)
+- **2.6.3** Duplicate analysis (🟢 Completed)
   - **Tests Required**:
     - Test duplicate records are identified correctly
     - Test duplicate patterns are analyzed
@@ -346,12 +344,12 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.6.2
 
-### 2.7 Feature-Specific Deep Dive (🔴 Not Started)
+### 2.7 Feature-Specific Deep Dive (🟢 Completed)
 
 **Objective**: Detailed analysis of key features identified during exploration
 
 #### Sub-tasks:
-- **2.7.1** Student ID pattern analysis (🔴 Not Started)
+- **2.7.1** Student ID pattern analysis (🟢 Completed)
   - **Tests Required**:
     - Test ID format patterns are identified
     - Test embedded information is extracted
@@ -365,7 +363,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.6.3
 
-- **2.7.2** Age distribution analysis (🔴 Not Started)
+- **2.7.2** Age distribution analysis (🟢 Completed)
   - **Tests Required**:
     - Test age distribution is thoroughly analyzed
     - Test age outliers and anomalies are identified
@@ -379,7 +377,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.7.1
 
-- **2.7.3** Sleep pattern analysis (🔴 Not Started)
+- **2.7.3** Sleep pattern analysis (🟢 Completed)
   - **Tests Required**:
     - Test sleep duration calculation is accurate
     - Test sleep pattern categories are meaningful
@@ -393,7 +391,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.7.2
 
-- **2.7.4** Temporal pattern analysis (🔴 Not Started)
+- **2.7.4** Temporal pattern analysis (🟢 Completed)
   - **Tests Required**:
     - Test daily activity patterns are identified
     - Test weekly study patterns are analyzed
@@ -407,7 +405,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.7.3
 
-- **2.7.5** Transportation and access analysis (🔴 Not Started)
+- **2.7.5** Transportation and access analysis (🟢 Completed)
   - **Tests Required**:
     - Test commute patterns are identified
     - Test transportation mode distributions are analyzed
@@ -421,7 +419,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.7.4
 
-- **2.7.6** Study habits deep dive (🔴 Not Started)
+- **2.7.6** Study habits deep dive (🟢 Completed)
   - **Tests Required**:
     - Test study time patterns are analyzed
     - Test study environment impact is assessed
@@ -435,7 +433,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.7.5
 
-- **2.7.7** Confounding variables assessment (🔴 Not Started)
+- **2.7.7** Confounding variables assessment (🟢 Completed)
   - **Tests Required**:
     - Test potential confounders are identified
     - Test confounding relationships are analyzed
@@ -449,12 +447,12 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.7.6
 
-### 2.8 EDA Summary and Recommendations (🔴 Not Started)
+### 2.8 EDA Summary and Recommendations (🟢 Completed)
 
 **Objective**: Synthesize findings and provide actionable recommendations
 
 #### Sub-tasks:
-- **2.8.1** Key findings documentation (🔴 Not Started)
+- **2.8.1** Key findings documentation (🟢 Completed)
   - **Tests Required**:
     - Test all major findings are documented clearly
     - Test statistical evidence supports conclusions
@@ -468,7 +466,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: In-memory analysis
   - **Dependencies**: 2.7.7
 
-- **2.8.2** Data preprocessing recommendations (🔴 Not Started)
+- **2.8.2** Data preprocessing recommendations (🟢 Completed)
   - **Tests Required**:
     - Test preprocessing steps are clearly recommended
     - Test recommendations are based on EDA findings
@@ -482,7 +480,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: Documentation only
   - **Dependencies**: 2.8.1
 
-- **2.8.3** Feature engineering opportunities (🔴 Not Started)
+- **2.8.3** Feature engineering opportunities (🟢 Completed)
   - **Tests Required**:
     - Test feature engineering ideas are well-justified
     - Test proposed features have theoretical basis
@@ -496,7 +494,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: Documentation only
   - **Dependencies**: 2.8.2
 
-- **2.8.4** Model development insights (🔴 Not Started)
+- **2.8.4** Model development insights (🟢 Completed)
   - **Tests Required**:
     - Test model selection guidance is provided
     - Test algorithm recommendations are justified
@@ -512,81 +510,136 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
 
 ---
 
-## Phase 3: Data Processing Pipeline
+## Phase 3: Data Preprocessing and Cleaning
 
-### 3.1 Data Cleaning & Preprocessing (🔴 Not Started)
+**Objective**: Clean raw data and prepare for feature engineering based on Phase 2 EDA recommendations with prioritized approach
 
-**Objective**: Clean raw data and prepare for feature engineering
+### 3.1 Priority 1: Critical Data Quality Issues (🔴 Not Started)
+
+**Objective**: Address critical data quality issues identified in Phase 2 EDA that could compromise model validity
 
 #### Sub-tasks:
-- **3.1.1** Handle missing data (🟢 Completed)
+- **3.1.1** Age Data Correction (🔴 Not Started)
   - **Tests Required**:
-    - Test missing value detection accuracy
-    - Test imputation strategies preserve data distribution
-    - Test missing indicator creation for attendance_rate
-    - Test final_test missing values are properly excluded from training
+    - Test identification of all 5 records with negative age values (-5)
+    - Test age correction/removal strategy preserves data integrity
+    - Test age validation rules prevent future invalid entries
+    - Test corrected age distribution matches expected patterns
+    - Test impact assessment of age correction on dataset
   - **Implementation**: 
-    - Median imputation for attendance_rate by subgroups (`src/data/preprocessing.py`)
-    - Missing indicator variables where appropriate
-    - Exclude final_test missing values from training set
+    - **Action**: Remove or correct 5 records with negative age values (-5)
+    - **Method**: Investigate if negative ages represent data entry errors vs. systematic issues
+    - **Impact**: Critical for model validity - negative ages are impossible
+    - Implement age validation rules (0 ≤ age ≤ 100)
+    - Document correction decisions and maintain audit trail
   - **Database Usage**: 
     - **Source**: Raw data from SQLite `score.db`
-    - **Output**: Processed data to `data/processed/processed.csv`
+    - **Output**: Age-corrected data to `data/processed/age_corrected.csv`
   - **Dependencies**: 1.2.3
 
-- **3.1.2** Fix data quality issues (🟢 Completed)
+- **3.1.2** Categorical Data Standardization (🔴 Not Started)
   - **Tests Required**:
-    - Test student_id analysis identifies any anomalies
-    - Test negative age values are corrected/removed or flagged
-    - Test age-based feature creation (e.g., age groups) is correct
-    - Test categorical standardization (Y/N → Yes/No)
-    - Test case standardization (CLUBS → Clubs)
-    - Test data type consistency
-  - **Implementation**: `src/data/data_quality.py`
-    - Analyze student_id for uniqueness and format consistency
-    - Age validation, correction logic (e.g., imputation, removal, or flagging of negative/unrealistic values)
-    - Creation of new features from age (e.g., age bins/groups if appropriate after EDA)
-    - Categorical value standardization
-    - Data type enforcement
+    - Test tuition standardization ('Y' → 'Yes') is complete
+    - Test case normalization ('CLUBS' → 'Clubs') is applied consistently
+    - Test all categorical features follow consistent formatting
+    - Test standardization doesn't introduce new inconsistencies
+    - Test mapping dictionaries are comprehensive
+  - **Implementation**: 
+    - **Tuition**: Standardize 'Y' to 'Yes' for consistency with 'Yes'/'No' format
+    - **Case normalization**: Convert 'CLUBS' to 'Clubs' format across all categorical features
+    - **Method**: Apply consistent string formatting rules across all categorical features
+    - Create standardization mapping dictionaries for reproducibility
+    - Validate no new inconsistencies are introduced
   - **Database Usage**: 
-    - **Source**: Raw data from SQLite
-    - **Output**: Updated `data/processed/processed.csv`
-  - **Dependencies**: 5.1.1
+    - **Source**: `data/processed/age_corrected.csv`
+    - **Output**: Standardized data to `data/processed/standardized.csv`
+  - **Dependencies**: 3.1.1
 
-**3.1.2a** Comprehensive `student_id` analysis and feature extraction (🟢 Completed)
-- **Tests Required**:
-  - Test `student_id` uniqueness check
-  - Test `student_id` format validation and pattern recognition
-  - Test extraction of embedded information from ID structure
-  - Test feature engineering from ID-derived patterns
-  - Test decision on ID retention vs. removal after feature extraction
-- **Implementation**: `src/data/data_quality.py`
-  - Script to check for duplicate `student_id` values
-  - Pattern analysis to identify embedded information (e.g., enrollment year, school code, student cohort)
-  - Extract meaningful features from ID structure before considering removal
-  - Determine if ID should be dropped entirely or retained for certain analyses
-  - Document ID structure and derived features
-- **Database Usage**:
-  - **Source**: Raw data from SQLite `score.db`
-  - **Output**: Analysis report + potentially new features in processed dataset
-- **Dependencies**: 1.2.3
+### 3.2 Priority 2: Missing Data Strategy (🔴 Not Started)
+
+**Objective**: Implement comprehensive missing data handling strategy based on Phase 2 EDA findings
+
+#### Sub-tasks:
+- **3.2.1** Missing Data Imputation for Attendance Rate (🔴 Not Started)
   - **Tests Required**:
-    - Test negative age values are corrected/removed
-    - Test categorical standardization (Y/N → Yes/No)
-    - Test case standardization (CLUBS → Clubs)
-    - Test data type consistency
-  - **Implementation**:
-    - Age validation and correction logic
-    - Categorical value standardization
-    - Data type enforcement
+    - Test identification of all 778 missing attendance_rate values (4.89%)
+    - Test median imputation preserves distribution characteristics
+    - Test regression-based imputation improves accuracy
+    - Test multiple imputation techniques comparison
+    - Test imputation strategy effectiveness validation
+  - **Implementation**: 
+    - **Attendance_rate** (4.89% missing): Use median imputation or regression-based imputation
+    - **Method**: Implement multiple imputation techniques and compare performance
+    - Test median imputation by relevant subgroups (gender, CCA, learning_style)
+    - Evaluate regression-based imputation using correlated features
+    - Create missing indicator variables where missingness may be informative
+    - Document imputation strategy and validate against EDA findings
   - **Database Usage**: 
-    - **Source**: Raw data from SQLite
-    - **Output**: Updated `data/processed/processed.csv`
-  - **Dependencies**: 2.1.1
+    - **Source**: `data/processed/standardized.csv`
+    - **Output**: Imputed data to `data/processed/imputed.csv`
+  - **Dependencies**: 3.1.2
+
+- **3.2.2** Final Test Missing Values Handling (🔴 Not Started)
+  - **Tests Required**:
+    - Test identification of all 495 missing final_test values (3.11%)
+    - Test exclusion from training preserves data integrity
+    - Test sophisticated imputation methods if retention is chosen
+    - Test impact assessment of missing target handling strategy
+  - **Implementation**: 
+    - **Final_test** (3.11% missing): Consider excluding from training or use sophisticated imputation
+    - **Method**: Evaluate exclusion vs. advanced imputation (KNN, iterative imputation)
+    - If excluding: ensure proper handling in train/validation/test splits
+    - If imputing: use advanced methods and validate against known values
+    - Document decision rationale and impact on model performance
+  - **Database Usage**: 
+    - **Source**: `data/processed/imputed.csv`
+    - **Output**: Final missing-handled data to `data/processed/missing_handled.csv`
+  - **Dependencies**: 3.2.1
+
+### 3.3 Priority 3: Feature Engineering Opportunities (🔴 Not Started)
+
+**Objective**: Create derived and interaction features based on Phase 2 EDA insights
+
+#### Sub-tasks:
+- **3.3.1** Derived Features Creation (🔴 Not Started)
+  - **Tests Required**:
+    - Test sleep duration calculation from sleep_time and wake_time
+    - Test study intensity combination of hours_per_week with attendance_rate
+    - Test academic support index creation from multiple features
+    - Test age groups categorical creation for interpretability
+    - Test derived features correlation with target variable
+  - **Implementation**: 
+    - **Sleep duration**: Calculate from sleep_time and wake_time
+    - **Study intensity**: Combine hours_per_week with attendance_rate (weighted average or product)
+    - **Academic support index**: Combine tuition, direct_admission, and CCA participation
+    - **Age groups**: Create categorical age bands for better interpretability (if justified)
+    - Validate all derived features make domain sense and improve predictive power
+  - **Database Usage**: 
+    - **Source**: `data/processed/missing_handled.csv`
+    - **Output**: Feature-enhanced data to `data/processed/derived_features.csv`
+  - **Dependencies**: 3.2.2
+
+- **3.3.2** Interaction Features Creation (🔴 Not Started)
+  - **Tests Required**:
+    - Test study habits × learning style interaction significance
+    - Test support × performance interaction effects
+    - Test demographics × academics interaction patterns
+    - Test interaction features improve model performance
+    - Test interaction features don't cause multicollinearity
+  - **Implementation**: 
+    - **Study habits × Learning style**: Interaction between hours_per_week and learning_style
+    - **Support × Performance**: Interaction between academic support factors and attendance
+    - **Demographics × Academics**: Gender and age interactions with study patterns
+    - Apply statistical tests to validate interaction significance
+    - Use feature selection to prevent overfitting from too many interactions
+  - **Database Usage**: 
+    - **Source**: `data/processed/derived_features.csv`
+    - **Output**: Interaction-enhanced data to `data/processed/interaction_features.csv`
+  - **Dependencies**: 3.3.1
 
 ## Sub-tasks:
 
-### 3.1.2a.1 ID Structure Analysis
+### 3.1.2a.1 ID Structure Analysis (🔴 Not Started)
 - **Tests Required**:
   - Test student_id uniqueness (expect 15,900 unique values)
   - Test ID format consistency and pattern recognition
@@ -596,7 +649,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - Analyze ID structure (length, character patterns, prefixes/suffixes)
   - Identify embedded information (enrollment year, school code, cohort indicators)
 
-### 3.1.2a.2 Feature Extraction from ID
+### 3.1.2a.2 Feature Extraction from ID (🔴 Not Started)
 - **Tests Required**:
   - Test extraction of meaningful features from ID structure
   - Test correlation of derived features with target variable
@@ -607,7 +660,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - Generate student cohort features if discernible from ID pattern
   - Create "ID complexity" feature (character variety, length-based features)
 
-### 3.1.2a.3 ID Retention Decision
+### 3.1.2a.3 ID Retention Decision (🔴 Not Started)
 - **Tests Required**:
   - Test decision framework for ID retention vs. removal
   - Test that extracted features capture ID information adequately
@@ -617,7 +670,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Decision Rule**: Drop original student_id if derived features capture all useful information
   - Document extraction process and retain mapping for inference pipeline
 
-- **3.1.3** Handle duplicate records (🟢 Completed)
+- **3.1.3** Handle duplicate records (🔴 Not Started)
   - **Tests Required**:
     - Test duplicate detection identifies all 139 duplicates
     - Test duplicate removal preserves data integrity
@@ -690,20 +743,21 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Output**: Consistency-validated `data/processed/processed.csv`
 - **Dependencies**: 3.1.2
 
-**3.1.7** Comprehensive Outlier Handling Task (🔴 Not Started)
-**Objective**: Systematic identification and handling of outliers across all numerical features
+**3.1.7** Implement robust outlier handling based on EDA findings (🔴 Not Started)
+**Objective**: Systematic identification and handling of outliers across all numerical features based on EDA analysis
 
 ## Sub-tasks:
 
-### 3.1.7.1 Outlier Detection
+### 3.1.7.1 Outlier Detection Based on EDA
 - **Tests Required**:
-  - Test IQR method identifies outliers correctly
+  - Test IQR method identifies outliers correctly (EDA found 0.5% to 2.3% outliers per feature)
   - Test Z-score method (>3 standard deviations) identifies outliers
   - Test domain-specific outlier rules (e.g., age < 0, age > 100)
   - Test outlier detection across all numerical features
 - **Implementation**:
   - Apply IQR method: values < Q1 - 1.5*IQR or > Q3 + 1.5*IQR
   - Apply Z-score method: |z-score| > 3
+  - **Priority**: Focus on 'hours_per_week' and 'attendance_rate' (highest outlier percentages from EDA)
   - Domain validation: age, attendance_rate, hours_per_week, final_test
   - Generate outlier summary report
 
@@ -714,7 +768,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - Test domain expert validation of outlier treatment decisions
 - **Implementation**:
   - Analyze outlier patterns: are they errors or legitimate extreme values?
-  - **Age outliers**: Negative ages = clear errors (remove/correct)
+  - **Age outliers**: Negative ages = clear errors (remove/correct) - identified in EDA
   - **Attendance outliers**: >100% may indicate data entry errors
   - **Score outliers**: Very high/low scores may be legitimate
   - Impact assessment: compare distributions before/after treatment
@@ -773,12 +827,91 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Evaluation**: Focus on balanced accuracy, F1-score, AUC-PR rather than just accuracy
   - Document chosen approach and performance comparison
 
-### 3.2 Data Storage and Backup (🔴 Not Started)
+### 3.4 Priority 4: Data Preprocessing Pipeline (🔴 Not Started)
+
+**Objective**: Implement comprehensive data preprocessing pipeline for model readiness
+
+#### Sub-tasks:
+- **3.4.1** Data Splitting and Validation (🔴 Not Started)
+  - **Tests Required**:
+    - Test stratified split maintains target distribution
+    - Test 70/15/15 or 80/10/10 split ratio is correct
+    - Test no data leakage between splits
+    - Test split is reproducible with random seed
+    - Test target variable distribution is preserved across splits
+  - **Implementation**: 
+    - Stratified train/validation/test split based on target variable bins
+    - Handle missing target values appropriately (exclude from training)
+    - Ensure reproducible splits with fixed random state
+    - Document split strategy and validate distributions
+  - **Database Usage**:
+    - **Source**: `data/processed/interaction_features.csv`
+    - **Output**: `data/processed/train.csv`, `data/processed/val.csv`, `data/processed/test.csv`
+  - **Dependencies**: 3.3.2
+
+- **3.4.2** Validate Data Splits Integrity (🔴 Not Started)
+  - **Tests Required**:
+    - Test no overlap between train/validation/test sets
+    - Test target distribution similarity across splits
+    - Test feature distributions are consistent
+    - Test data quality metrics are maintained
+  - **Implementation**:
+    - Statistical tests for distribution similarity
+    - Data quality validation across all splits
+    - Generate split summary report
+    - Validate no student appears in multiple splits
+  - **Database Usage**:
+    - **Source**: Split datasets from 3.4.1
+    - **Output**: Validation report
+  - **Dependencies**: 3.4.1
+
+### 3.5 Priority 5: Advanced Preprocessing (🔴 Not Started)
+
+**Objective**: Apply advanced preprocessing techniques for optimal model performance
+
+#### Sub-tasks:
+- **3.5.1** Feature Scaling and Normalization (🔴 Not Started)
+  - **Tests Required**:
+    - Test StandardScaler transforms features to mean=0, std=1
+    - Test MinMaxScaler transforms features to [0,1] range
+    - Test RobustScaler handles outliers appropriately
+    - Test scaling preserves feature relationships
+    - Test inverse transform capability
+  - **Implementation**: 
+    - Apply appropriate scaling based on feature distributions
+    - StandardScaler for normally distributed features
+    - RobustScaler for features with outliers
+    - MinMaxScaler for bounded features
+    - Fit scalers on training data only, transform all splits
+  - **Database Usage**:
+    - **Source**: Split datasets from 3.4.1
+    - **Output**: Scaled datasets `data/processed/scaled_train.csv`, etc.
+  - **Dependencies**: 3.4.2
+
+- **3.5.2** Categorical Encoding Optimization (🔴 Not Started)
+  - **Tests Required**:
+    - Test one-hot encoding for low cardinality features
+    - Test target encoding for high cardinality features
+    - Test ordinal encoding for ordered categories
+    - Test encoding handles unseen categories in validation/test
+    - Test encoding doesn't introduce data leakage
+  - **Implementation**: 
+    - One-hot encoding for gender, learning_style, transport_mode
+    - Target encoding for high cardinality features (if any)
+    - Ordinal encoding for ordered categories (if applicable)
+    - Handle unseen categories with 'unknown' category
+    - Fit encoders on training data only
+  - **Database Usage**:
+    - **Source**: Scaled datasets from 3.5.1
+    - **Output**: Encoded datasets `data/processed/encoded_train.csv`, etc.
+  - **Dependencies**: 3.5.1
+
+### 3.6 Data Storage and Backup (🔴 Not Started)
 
 **Objective**: Ensure processed data is properly stored and backed up
 
 #### Sub-tasks:
-- **3.2.1** Save cleaned dataset (🔴 Not Started)
+- **3.6.1** Save Cleaned Dataset (🔴 Not Started)
   - **Tests Required**:
     - Test CSV file is created with correct format
     - Test all cleaned data is preserved
@@ -786,11 +919,11 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - Test data can be reloaded without errors
   - **Implementation**: Pandas to_csv with proper encoding and formatting
   - **Database Usage**:
-    - **Source**: In-memory processed DataFrame
-    - **Output**: `data/processed/processed.csv`
-  - **Dependencies**: 3.1.4
+    - **Source**: Encoded datasets from 3.5.2
+    - **Output**: `data/processed/final_processed.csv`
+  - **Dependencies**: 3.5.2
 
-- **3.2.2** Create data backup and recovery procedures (🔴 Not Started)
+- **3.6.2** Create Data Backup and Recovery Procedures (🔴 Not Started)
   - **Tests Required**:
     - Test backup creation process
     - Test backup integrity verification
@@ -798,20 +931,20 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - Test backup rotation works as expected
   - **Implementation**: Automated backup scripts with versioning
   - **Database Usage**:
-    - **Source**: `data/processed/processed.csv`
+    - **Source**: `data/processed/final_processed.csv`
     - **Output**: Timestamped backups in `data/backups/`
-  - **Dependencies**: 5.2.1
+  - **Dependencies**: 3.6.1
 
 ---
 
-## Phase 5: Feature Engineering
+## Phase 4: Feature Engineering
 
-### 5.1 Feature Creation (🔴 Not Started)
+### 4.1 Feature Creation (🔴 Not Started)
 
-**Objective**: Create new features to improve model performance
+**Objective**: Create new features to improve model performance based on Phase 2 EDA insights
 
 #### Sub-tasks:
-**5.1.1** Load processed data with comprehensive validation (🔴 Not Started)
+**4.1.1** Load processed data with comprehensive validation (🔴 Not Started)
 - **Tests Required**:
   - Test data loads correctly from processed.csv
   - Test data types are preserved, especially continuous age
@@ -828,27 +961,32 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Output**: In-memory DataFrame for feature engineering
 - **Dependencies**: 2.2.1, enhanced preprocessing tasks
 
-- **5.1.2** Create sleep duration feature (🔴 Not Started)
+- **4.1.2** Create interaction features based on EDA correlations (🔴 Not Started)
   - **Tests Required**:
-    - Test sleep duration calculation handles day rollover
-    - Test negative sleep durations are handled appropriately
-    - Test sleep duration values are reasonable (4-12 hours)
-    - Test missing sleep times are handled correctly
-  - **Implementation**: Time difference calculation with day boundary logic
-  - **Database Usage**: In-memory feature engineering
-  - **Dependencies**: 5.1.1
+    - Test interaction features are created correctly
+    - Test interaction features improve model performance
+    - Test interaction features don't cause multicollinearity issues
+  - **Implementation**: 
+    - Create meaningful feature interactions based on EDA correlation findings
+    - Focus on high-correlation pairs: study_hours * attendance_rate
+    - Parent_education * family_income interactions
+  - **Database Usage**: In-memory feature engineering on train/val/test splits
+  - **Dependencies**: 4.1.1
 
-- **5.1.3** Create class gender ratio feature (🔴 Not Started)
+- **4.1.3** Create polynomial features for key variables (🔴 Not Started)
   - **Tests Required**:
-    - Test ratio calculation is mathematically correct
-    - Test division by zero is handled
-    - Test ratio values are between 0 and 1
-    - Test feature correlates with target variable
-  - **Implementation**: n_male / (n_male + n_female) calculation
+    - Test polynomial features are generated correctly (degree 2-3)
+    - Test polynomial degree selection is optimal
+    - Test polynomial features improve model performance
+    - Test feature selection prevents overfitting
+  - **Implementation**: 
+    - Generate polynomial features for variables with non-linear relationships
+    - Focus on numerical features identified in EDA
+    - Apply feature selection to manage dimensionality
   - **Database Usage**: In-memory feature engineering
-  - **Dependencies**: 5.1.1
+  - **Dependencies**: 4.1.2
 
-- **5.1.4** Create study intensity score (🔴 Not Started)
+- **4.1.4** Create study intensity score (🔴 Not Started)
   - **Tests Required**:
     - Test composite score calculation
     - Test score normalization works correctly
@@ -856,69 +994,77 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - Test score distribution is reasonable
   - **Implementation**: Weighted combination of hours_per_week and attendance_rate
   - **Database Usage**: In-memory feature engineering
-  - **Dependencies**: 5.1.1
+  - **Dependencies**: 4.1.1
 
-- **5.1.5** Create additional engineered features (🔴 Not Started)
+- **4.1.5** Create additional domain-specific features (🔴 Not Started)
   - **Tests Required**:
     - Test sleep category assignment logic
-    - Test transportation efficiency scoring
     - Test academic support index calculation
     - Test all new features have expected distributions
+    - Test features align with EDA insights
   - **Implementation**: 
     - Sleep category: Early/Normal/Late based on sleep_time
-    - Transportation efficiency: Distance proxy
     - Academic support index: Combination of tuition, direct_admission, CCA
+    - Age-based groupings identified in EDA
   - **Database Usage**: In-memory feature engineering
-  - **Dependencies**: 5.1.1
+  - **Dependencies**: 4.1.1
 
-### 5.2 Feature Encoding and Scaling (🔴 Not Started)
+### 4.2 Feature Encoding and Scaling (🔴 Not Started)
 
-**Objective**: Prepare features for machine learning algorithms
+**Objective**: Prepare features for machine learning algorithms based on Phase 2 EDA recommendations
 
 #### Sub-tasks:
-- **5.2.1** Implement categorical encoding (🔴 Not Started)
+- **4.2.1** Implement categorical encoding based on EDA insights (🔴 Not Started)
   - **Tests Required**:
     - Test one-hot encoding creates correct number of columns
     - Test target encoding doesn't cause data leakage
     - Test binary encoding preserves information
     - Test ordinal encoding maintains order
+    - Test tuition encoding standardization (identified in EDA)
   - **Implementation**:
     - One-hot: gender, learning_style, mode_of_transport, bag_color
     - Target: CCA, sleep_time, wake_time
-    - Binary: direct_admission, tuition
+    - Binary: direct_admission, tuition (standardize encoding from EDA findings)
     - Ordinal: number_of_siblings
+    - Handle inconsistent tuition encoding identified in EDA
   - **Database Usage**: In-memory feature transformation
-  - **Dependencies**: 5.1.5
+  - **Dependencies**: 4.1.5
 
-- **5.2.2** Implement feature scaling (🔴 Not Started)
+- **4.2.2** Implement feature scaling and normalization (🔴 Not Started)
   - **Tests Required**:
     - Test numerical features are properly scaled
     - Test scaling preserves feature relationships
     - Test inverse transform works correctly
     - Test scaling parameters are saved for inference
-  - **Implementation**: StandardScaler for numerical features
+    - Test skewed distributions are normalized appropriately
+  - **Implementation**: 
+    - StandardScaler for numerical features
+    - Log transformation for right-skewed variables (identified in EDA)
+    - Robust scaling for features with outliers
+    - Fit scaler on training data only to prevent data leakage
   - **Database Usage**: In-memory feature transformation
-  - **Dependencies**: 5.2.1
+  - **Dependencies**: 4.2.1
 
-- **5.2.3** Feature selection and dimensionality reduction (🔴 Not Started)
+- **4.2.3** Feature selection and dimensionality reduction (🔴 Not Started)
   - **Tests Required**:
     - Test feature importance ranking
     - Test correlation analysis identifies redundant features
     - Test dimensionality reduction preserves information
     - Test selected features improve model performance
   - **Implementation**: 
-    - Correlation analysis
+    - Correlation analysis (build on EDA correlation matrix)
     - Recursive feature elimination
-    - Principal component analysis (optional)
+    - Principal component analysis (leverage EDA PCA findings)
+    - Remove highly correlated features (>0.9 correlation)
   - **Database Usage**: In-memory feature analysis
-  - **Dependencies**: 5.2.2
+  - **Dependencies**: 4.2.2
 
-### 5.3 Final Dataset Preparation (🔴 Not Started)
+### 4.3 Final Dataset Preparation (🔴 Not Started)
 
 **Objective**: Create ML-ready dataset for model training
 
 #### Sub-tasks:
-- **5.3.1** Save feature-engineered dataset (🔴 Not Started)
+- **4.3.1** Save feature-engineered dataset (🔴 Not Started)
   - **Tests Required**:
     - Test feature dataset saves correctly
     - Test all engineered features are preserved
@@ -927,10 +1073,10 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Implementation**: Save processed features to CSV with metadata
   - **Database Usage**:
     - **Source**: In-memory engineered features DataFrame
-    - **Output**: `data/feature/feature.csv`
-  - **Dependencies**: 5.2.3
+    - **Output**: `data/feature/train_features.csv`, `data/feature/val_features.csv`, `data/feature/test_features.csv`
+  - **Dependencies**: 4.2.3
 
-- **5.3.2** Create feature documentation (🔴 Not Started)
+- **4.3.2** Create feature documentation (🔴 Not Started)
   - **Tests Required**:
     - Test feature documentation is complete
     - Test feature descriptions are accurate
@@ -940,11 +1086,11 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**:
     - **Source**: Feature engineering metadata
     - **Output**: `data/feature/feature_documentation.md`
-  - **Dependencies**: 5.3.1
+  - **Dependencies**: 4.3.1
 
 ---
 
-## Phase 6: Model Development
+## Phase 5: Model Development
 
 - **2.1.5** Address Imbalanced Data (if identified) (🔴 Not Started)
   - **Tests Required**:
@@ -960,24 +1106,12 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - **Output**: Potentially resampled `data/processed/processed_balanced.csv` or integrated into modeling pipeline
   - **Dependencies**: 2.1.4
 
-### 6.1 Model Training Infrastructure (🔴 Not Started)
+### 5.1 Model Training Infrastructure (🔴 Not Started)
 
 **Objective**: Setup robust model training and evaluation framework
 
 #### Sub-tasks:
-- **6.1.1** Implement train/test split strategy (🔴 Not Started)
-  - **Tests Required**:
-    - Test stratified split maintains target distribution
-    - Test 80/20 split ratio is correct
-    - Test no data leakage between train/test sets
-    - Test split is reproducible with random seed
-  - **Implementation**: Stratified train_test_split with target binning
-  - **Database Usage**:
-    - **Source**: `data/feature/feature.csv`
-    - **Output**: In-memory train/test DataFrames
-  - **Dependencies**: 5.3.1
-
-- **6.1.2** Setup cross-validation framework (🔴 Not Started)
+- **5.1.1** Setup cross-validation framework (🔴 Not Started)
   - **Tests Required**:
     - Test 5-fold stratified CV maintains distributions
     - Test CV folds are reproducible
@@ -985,9 +1119,9 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - Test CV handles missing values appropriately
   - **Implementation**: StratifiedKFold with consistent random state
   - **Database Usage**: In-memory cross-validation on training data
-  - **Dependencies**: 4.1.1
+  - **Dependencies**: 4.3.1
 
-- **4.1.3** Implement model evaluation metrics (🔴 Not Started)
+- **5.1.2** Implement model evaluation metrics (🔴 Not Started)
   - **Tests Required**:
     - Test MAE calculation is mathematically correct
     - Test RMSE penalizes large errors appropriately
@@ -995,14 +1129,14 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - Test custom metrics (MAPE, median AE) work correctly
   - **Implementation**: Comprehensive evaluation metric suite
   - **Database Usage**: In-memory metric calculations
-  - **Dependencies**: 4.1.2
+  - **Dependencies**: 5.1.1
 
-### 4.2 Algorithm Implementation (🔴 Not Started)
+### 5.2 Algorithm Implementation (🔴 Not Started)
 
 **Objective**: Implement and train multiple ML algorithms
 
 #### Sub-tasks:
-- **4.2.1** Implement Random Forest Regressor (🔴 Not Started)
+- **5.2.1** Implement Random Forest Regressor (🔴 Not Started)
   - **Tests Required**:
     - Test model trains without errors
     - Test hyperparameter tuning improves performance
@@ -1013,9 +1147,9 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - Feature importance analysis
     - Performance optimization
   - **Database Usage**: Training on in-memory feature data
-  - **Dependencies**: 4.1.3
+  - **Dependencies**: 5.1.2
 
-- **4.2.2** Implement XGBoost Regressor (🔴 Not Started)
+- **5.2.2** Implement XGBoost Regressor (🔴 Not Started)
   - **Tests Required**:
     - Test XGBoost installation and import
     - Test model handles categorical features correctly
@@ -1026,9 +1160,9 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - SHAP value analysis for interpretability
     - Early stopping and regularization
   - **Database Usage**: Training on in-memory feature data
-  - **Dependencies**: 4.1.3
+  - **Dependencies**: 5.1.2
 
-- **4.2.3** Implement Linear Regression baseline (🔴 Not Started)
+- **5.2.3** Implement Linear Regression baseline (🔴 Not Started)
   - **Tests Required**:
     - Test linear regression with polynomial features
     - Test regularization (Ridge/Lasso) improves generalization
@@ -1039,9 +1173,9 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - Ridge/Lasso regularization
     - Coefficient analysis and interpretation
   - **Database Usage**: Training on in-memory feature data
-  - **Dependencies**: 4.1.3
+  - **Dependencies**: 5.1.2
 
-- **4.2.4** Implement Support Vector Regression (🔴 Not Started)
+- **5.2.4** Implement Support Vector Regression (🔴 Not Started)
   - **Tests Required**:
     - Test SVR with different kernels (linear, RBF)
     - Test hyperparameter optimization (C, gamma, epsilon)
@@ -1054,7 +1188,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: Training on in-memory feature data
   - **Dependencies**: 4.1.3
 
-- **4.2.5** Implement Neural Network (🔴 Not Started)
+- **5.2.5** Implement Neural Network (🔴 Not Started)
   - **Tests Required**:
     - Test neural network architecture is appropriate
     - Test training converges without overfitting
@@ -1065,14 +1199,14 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - Architecture optimization
     - Regularization and dropout
   - **Database Usage**: Training on in-memory feature data
-  - **Dependencies**: 4.1.3
+  - **Dependencies**: 5.1.2
 
-### 4.3 Model Selection and Optimization (🔴 Not Started)
+### 5.3 Model Selection and Optimization (🔴 Not Started)
 
 **Objective**: Select best performing model and optimize hyperparameters
 
 #### Sub-tasks:
-- **4.3.1** Hyperparameter optimization (🔴 Not Started)
+- **5.3.1** Hyperparameter optimization (🔴 Not Started)
   - **Tests Required**:
     - Test hyperparameter search improves performance
     - Test optimization doesn't overfit to validation set
@@ -1083,9 +1217,9 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - Bayesian optimization for complex models
     - Cross-validation during optimization
   - **Database Usage**: In-memory training data for optimization
-  - **Dependencies**: 4.2.5
+  - **Dependencies**: 5.2.5
 
-- **4.3.2** Model comparison and selection (🔴 Not Started)
+- **5.3.2** Model comparison and selection (🔴 Not Started)
   - **Tests Required**:
     - Test model comparison uses consistent metrics
     - Test statistical significance of performance differences
@@ -1096,9 +1230,9 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - Statistical testing for performance differences
     - Multi-criteria decision making
   - **Database Usage**: In-memory evaluation results
-  - **Dependencies**: 4.3.1
+  - **Dependencies**: 5.3.1
 
-- **4.3.3** Final model training and validation (🔴 Not Started)
+- **5.3.3** Final model training and validation (🔴 Not Started)
   - **Tests Required**:
     - Test final model trains on full training set
     - Test model performance on held-out test set
@@ -1109,14 +1243,14 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - Final evaluation on test set
     - Performance validation against requirements
   - **Database Usage**: Full training data for final model
-  - **Dependencies**: 4.3.2
+  - **Dependencies**: 5.3.2
 
-### 4.4 Model Persistence and Registry (🔴 Not Started)
+### 5.4 Model Persistence and Registry (🔴 Not Started)
 
 **Objective**: Save and manage trained models for deployment
 
 #### Sub-tasks:
-- **4.4.1** Implement model serialization (🔴 Not Started)
+- **5.4.1** Implement model serialization (🔴 Not Started)
   - **Tests Required**:
     - Test model saves and loads correctly
     - Test serialized model produces identical predictions
@@ -1129,9 +1263,9 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**:
     - **Source**: Trained models in memory
     - **Output**: Model files in `models/` directory
-  - **Dependencies**: 4.3.3
+  - **Dependencies**: 5.3.3
 
-- **4.4.2** Create model registry (🔴 Not Started)
+- **5.4.2** Create model registry (🔴 Not Started)
   - **Tests Required**:
     - Test model registry tracks all trained models
     - Test model metadata is complete and accurate
@@ -1144,118 +1278,11 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**:
     - **Source**: Trained models and metadata
     - **Output**: Model registry database/files
-  - **Dependencies**: 4.4.1
+  - **Dependencies**: 5.4.1
 
 ---
 
-## Phase 7: API Development
-
-### 5.1 Prediction API (🔴 Not Started)
-
-**Objective**: Create REST API for model predictions
-
-#### Sub-tasks:
-- **5.1.1** Setup FastAPI application (🔴 Not Started)
-  - **Tests Required**:
-    - Test FastAPI app starts without errors
-    - Test health check endpoint responds correctly
-    - Test API documentation is generated
-    - Test CORS configuration works
-  - **Implementation**: FastAPI app with basic configuration
-  - **Database Usage**: N/A (API layer)
-  - **Dependencies**: 4.4.2
-
-- **5.1.2** Implement prediction endpoints (🔴 Not Started)
-  - **Tests Required**:
-    - Test single prediction endpoint works
-    - Test batch prediction endpoint works
-    - Test input validation catches invalid data
-    - Test prediction response format is correct
-  - **Implementation**:
-    - POST /predict for single predictions
-    - POST /predict/batch for multiple predictions
-    - Pydantic models for request/response validation
-  - **Database Usage**: Load models from model registry
-  - **Dependencies**: 5.1.1
-
-- **5.1.3** Add model management endpoints (🔴 Not Started)
-  - **Tests Required**:
-    - Test model listing endpoint
-    - Test model switching endpoint
-    - Test model metadata retrieval
-    - Test unauthorized access is blocked
-  - **Implementation**:
-    - GET /models for available models
-    - POST /models/switch for model selection
-    - Authentication and authorization
-  - **Database Usage**: Model registry queries
-  - **Dependencies**: 5.1.2
-
-### 5.2 Data Processing API (🔴 Not Started)
-
-**Objective**: API endpoints for data processing operations
-
-#### Sub-tasks:
-- **5.2.1** Implement data upload endpoints (🔴 Not Started)
-  - **Tests Required**:
-    - Test CSV file upload works
-    - Test file validation catches errors
-    - Test large file handling
-    - Test concurrent upload handling
-  - **Implementation**:
-    - POST /data/upload for new data
-    - File validation and processing
-    - Async file handling
-  - **Database Usage**: Store uploaded data to processing pipeline
-  - **Dependencies**: 5.1.1
-
-- **5.2.2** Add data processing status endpoints (🔴 Not Started)
-  - **Tests Required**:
-    - Test processing status tracking
-    - Test progress reporting accuracy
-    - Test error status handling
-    - Test completion notifications
-  - **Implementation**:
-    - GET /data/status/{job_id} for status
-    - WebSocket for real-time updates
-    - Background task management
-  - **Database Usage**: Job status tracking
-  - **Dependencies**: 5.2.1
-
-### 5.3 API Security and Monitoring (🔴 Not Started)
-
-**Objective**: Secure and monitor API usage
-
-#### Sub-tasks:
-- **5.3.1** Implement authentication and authorization (🔴 Not Started)
-  - **Tests Required**:
-    - Test JWT token generation and validation
-    - Test role-based access control
-    - Test token expiration handling
-    - Test unauthorized access rejection
-  - **Implementation**:
-    - JWT-based authentication
-    - Role-based permissions (teacher, admin)
-    - Token refresh mechanism
-  - **Database Usage**: User credentials and permissions
-  - **Dependencies**: 5.1.3
-
-- **5.3.2** Add API monitoring and logging (🔴 Not Started)
-  - **Tests Required**:
-    - Test request/response logging
-    - Test performance metrics collection
-    - Test error tracking and alerting
-    - Test log rotation and cleanup
-  - **Implementation**:
-    - Structured logging with correlation IDs
-    - Metrics collection (response time, error rates)
-    - Health check endpoints
-  - **Database Usage**: Log storage and metrics
-  - **Dependencies**: 5.3.1
-
----
-
-## Phase 8: Testing & Validation
+## Phase 6: Testing & Validation
 
 ### 6.1 Unit Testing (🔴 Not Started)
 
@@ -1280,17 +1307,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
     - Test hyperparameter optimization
   - **Implementation**: pytest test suite for ML components
   - **Database Usage**: Test data and mock models
-  - **Dependencies**: 4.4.2
-
-- **6.1.3** API unit tests (🔴 Not Started)
-  - **Tests Required**:
-    - Test all API endpoints
-    - Test request/response validation
-    - Test authentication and authorization
-    - Test error handling and status codes
-  - **Implementation**: pytest with FastAPI TestClient
-  - **Database Usage**: Test API with mock services
-  - **Dependencies**: 5.3.2
+  - **Dependencies**: 5.4.2
 
 ### 6.2 Integration Testing (🔴 Not Started)
 
@@ -1301,19 +1318,18 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Tests Required**:
     - Test complete data processing pipeline
     - Test model training to deployment flow
-    - Test API integration with models
     - Test database operations
   - **Implementation**: Integration test suite
   - **Database Usage**: Test database with realistic data
-  - **Dependencies**: 6.1.3
+  - **Dependencies**: 6.1.2
 
 - **6.2.2** Performance testing (🔴 Not Started)
   - **Tests Required**:
-    - Test prediction response times
-    - Test concurrent request handling
-    - Test memory usage under load
     - Test model training performance
-  - **Implementation**: Load testing with locust or similar
+    - Test prediction generation times
+    - Test memory usage during training and prediction
+    - Test data processing pipeline performance
+  - **Implementation**: Performance benchmarking suite
   - **Database Usage**: Performance test database
   - **Dependencies**: 6.2.1
 
@@ -1342,115 +1358,7 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
   - **Database Usage**: Test data for interpretability
   - **Dependencies**: 6.3.1
 
----
 
-## Phase 9: Deployment & Monitoring
-
-### 7.1 Production Deployment (🔴 Not Started)
-
-**Objective**: Deploy system to production environment
-
-#### Sub-tasks:
-- **7.1.1** Setup production environment (🔴 Not Started)
-  - **Tests Required**:
-    - Test production environment configuration
-    - Test environment variable management
-    - Test security configurations
-    - Test backup and recovery procedures
-  - **Implementation**:
-    - Production server setup
-    - Environment configuration management
-    - Security hardening
-  - **Database Usage**: Production database setup and migration
-  - **Dependencies**: 6.3.2
-
-- **7.1.2** Deploy API and models (🔴 Not Started)
-  - **Tests Required**:
-    - Test deployment process works correctly
-    - Test API is accessible in production
-    - Test model loading and predictions work
-    - Test rollback procedures
-  - **Implementation**:
-    - API deployment with proper configuration
-    - Model deployment and versioning
-    - Load balancing and scaling
-  - **Database Usage**: Production model registry
-  - **Dependencies**: 7.1.1
-
-- **7.1.3** Setup monitoring and alerting (🔴 Not Started)
-  - **Tests Required**:
-    - Test monitoring dashboards display correctly
-    - Test alert notifications work
-    - Test performance metrics collection
-    - Test log aggregation and analysis
-  - **Implementation**:
-    - Monitoring dashboard setup
-    - Alert configuration for critical metrics
-    - Log aggregation and analysis tools
-  - **Database Usage**: Metrics and log storage
-  - **Dependencies**: 7.1.2
-
-### 7.2 User Interface Development (🔴 Not Started)
-
-**Objective**: Create user-friendly interface for teachers and administrators
-
-#### Sub-tasks:
-- **7.2.1** Develop teacher dashboard (🔴 Not Started)
-  - **Tests Required**:
-    - Test dashboard loads correctly
-    - Test prediction display functionality
-    - Test student data visualization
-    - Test responsive design on different devices
-  - **Implementation**:
-    - Streamlit or web-based dashboard
-    - Student prediction visualization
-    - Interactive charts and tables
-  - **Database Usage**: Student data and predictions
-  - **Dependencies**: 7.1.2
-
-- **7.2.2** Create admin interface (🔴 Not Started)
-  - **Tests Required**:
-    - Test model management interface
-    - Test system monitoring views
-    - Test user management functionality
-    - Test data upload and processing interface
-  - **Implementation**:
-    - Admin dashboard for system management
-    - Model performance monitoring
-    - User and permission management
-  - **Database Usage**: System metrics and user data
-  - **Dependencies**: 7.2.1
-
-### 7.3 Documentation and Training (🔴 Not Started)
-
-**Objective**: Provide comprehensive documentation and user training
-
-#### Sub-tasks:
-- **7.3.1** Create user documentation (🔴 Not Started)
-  - **Tests Required**:
-    - Test documentation completeness
-    - Test documentation accuracy
-    - Test user guide clarity
-    - Test troubleshooting guide effectiveness
-  - **Implementation**:
-    - User manuals for teachers and administrators
-    - API documentation
-    - Troubleshooting guides
-  - **Database Usage**: N/A
-  - **Dependencies**: 7.2.2
-
-- **7.3.2** Conduct user training (🔴 Not Started)
-  - **Tests Required**:
-    - Test training material effectiveness
-    - Test user comprehension and adoption
-    - Test support process functionality
-    - Test feedback collection and analysis
-  - **Implementation**:
-    - Training sessions for end users
-    - Support process establishment
-    - Feedback collection system
-  - **Database Usage**: Training and feedback data
-  - **Dependencies**: 7.3.1
 
 ---
 
@@ -1492,25 +1400,24 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
 - **External Data Integration**: Additional student data sources
 
 ### Infrastructure Improvements
-- **Containerization**: Docker and Kubernetes deployment
-- **CI/CD Pipeline**: Automated testing, building, and deployment
-- **Cloud Integration**: AWS/Azure/GCP deployment options
-- **Microservices Architecture**: Service decomposition for scalability
-- **API Gateway**: Centralized API management and security
+- **Environment Management**: Improved development environment setup
+- **Automated Testing**: Enhanced test automation and coverage
+- **Code Quality**: Advanced linting, formatting, and static analysis
+- **Performance Optimization**: Code profiling and optimization tools
 
 ### Monitoring and Operations
-- **Model Monitoring**: Performance degradation detection and alerting
-- **A/B Testing Framework**: Model comparison in production
-- **Automated Retraining**: Scheduled model updates with new data
-- **Disaster Recovery**: Comprehensive backup and recovery procedures
-- **Performance Optimization**: System performance tuning and optimization
+- **Model Performance Tracking**: Offline model performance analysis
+- **Data Quality Monitoring**: Automated data validation and quality checks
+- **Experiment Tracking**: Model experiment logging and comparison
+- **Backup Procedures**: Data and model backup strategies
+- **Performance Analysis**: Training and prediction performance optimization
 
 ### User Experience
-- **Mobile Application**: Mobile interface for teachers
-- **Advanced Visualizations**: Interactive charts and dashboards
-- **Notification System**: Automated alerts for at-risk students
-- **Reporting System**: Automated report generation
-- **Multi-language Support**: Internationalization capabilities
+- **Enhanced Reporting**: Improved prediction result formatting
+- **Data Visualization**: Better charts and graphs for analysis
+- **Export Capabilities**: Multiple output formats for predictions
+- **Documentation**: Comprehensive user guides and examples
+- **Jupyter Integration**: Enhanced notebook-based workflows
 
 ### Compliance and Security
 - **Privacy Compliance**: GDPR/PDPA compliance implementation
@@ -1525,22 +1432,19 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
 
 ### Critical Path Analysis
 1. **Setup → Data Processing → Feature Engineering → Model Development** (Sequential)
-2. **API Development** can start after Model Persistence (4.4.1)
-3. **Testing** runs parallel to development phases
-4. **Deployment** requires completion of API and Testing phases
+2. **Testing & Validation** runs parallel to development phases and requires completion of Model Development
 
 ### External Dependencies
 - **SQLite Database**: Must contain expected 15,900 records with 17 features
 - **Python Environment**: Python 3.9+ with sufficient compute resources
 - **Development Tools**: Poetry, pytest, black, flake8 availability
-- **Production Environment**: Server infrastructure for deployment
-- **Stakeholder Availability**: For requirements validation and user testing
+- **Stakeholder Availability**: For requirements validation and model evaluation
 
 ### Internal Dependencies
 - **Data Quality**: All subsequent phases depend on clean, validated data
-- **Model Performance**: API and deployment depend on acceptable model accuracy
-- **Test Coverage**: Deployment blocked until comprehensive testing complete
-- **Documentation**: User training depends on complete documentation
+- **Model Performance**: Testing and validation depend on acceptable model accuracy
+- **Test Coverage**: Model validation blocked until comprehensive testing complete
+- **Documentation**: Model deployment and usage depend on complete documentation
 
 ### Risk Mitigation Strategies
 - **Data Quality Issues**: Comprehensive validation and multiple cleaning strategies
@@ -1558,7 +1462,6 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
 - ✅ **Data Pipeline**: Robust processing from raw SQLite to ML-ready features
 - ✅ **Test Coverage**: >90% test coverage for all critical components
 - ✅ **Performance**: Prediction generation < 2 seconds per student
-- ✅ **API Reliability**: 99% uptime with proper error handling
 - ✅ **Data Quality**: <1% data quality issues in processed dataset
 
 ### Business Success Criteria
@@ -1570,12 +1473,12 @@ This document tracks current tasks, backlog, sub-tasks, and discoveries made dur
 - ✅ **Stakeholder Satisfaction**: Positive feedback from teachers and administrators
 
 ### Operational Success Criteria
-- ✅ **Deployment Success**: Smooth production deployment with minimal downtime
-- ✅ **User Training**: Successful adoption by 80% of target users
-- ✅ **Documentation Quality**: Comprehensive and accurate user documentation
-- ✅ **Support Process**: Effective user support and issue resolution
-- ✅ **Monitoring Coverage**: Complete system monitoring and alerting
-- ✅ **Security Compliance**: All security requirements met
+- ✅ **Model Validation**: Comprehensive testing and validation of ML models
+- ✅ **Code Quality**: High-quality, maintainable, and well-documented code
+- ✅ **Documentation Quality**: Comprehensive technical and user documentation
+- ✅ **Reproducibility**: Consistent and reproducible model training and evaluation
+- ✅ **Data Integrity**: Robust data validation and quality assurance processes
+- ✅ **Performance Standards**: Efficient model training and prediction generation
 
 ---
 

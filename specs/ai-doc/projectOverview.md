@@ -64,7 +64,7 @@ U.A Secondary School faces a critical challenge in identifying students at risk 
 ```mermaid
 graph TB
     subgraph "Data Layer"
-        A[SQLite Database<br/>score.db<br/>15,900 records] --> B[Data Access Layer<br/>SQLAlchemy ORM]
+        A[SQLite Database<br/>score.db<br/>15,900 records] --> B[Data Access Layer<br/>SQLite/SQLAlchemy]
     end
     
     subgraph "Processing Layer"
@@ -77,22 +77,20 @@ graph TB
     subgraph "ML Layer"
         E --> G[Model Registry<br/>3+ Algorithms]
         G --> H[Model Evaluation<br/>& Selection]
-        H --> I[Best Model<br/>Deployment]
+        H --> I[Best Model<br/>Selection]
         I --> F
     end
     
-    subgraph "Application Layer"
-        F --> J[Prediction API<br/>REST/FastAPI]
-        J --> K[Web Interface<br/>Teacher Dashboard]
-        J --> L[Batch Processing<br/>Scheduled Predictions]
+    subgraph "Output Layer"
+        F --> J[Prediction Results<br/>Score Predictions]
+        J --> K[Model Evaluation<br/>Reports]
     end
     
     subgraph "Infrastructure Layer"
         M[Configuration<br/>Management] --> C
         M --> E
         N[Logging &<br/>Monitoring] --> F
-        N --> J
-        O[Model Versioning<br/>MLflow/DVC] --> G
+        O[Model Versioning<br/>Local Storage] --> G
     end
 ```
 
@@ -194,20 +192,49 @@ flowchart LR
 
 ## 3. Technology Stack
 
+### Technology Stack
+
+#### Core Technologies
+- **Language**: Python 3.9+
+- **Database**: SQLite (score.db)
+- **ML Framework**: scikit-learn, pandas, numpy
+- **Data Processing**: pandas, numpy, scipy
+- **Configuration**: YAML/JSON config files
+
+#### Development & Deployment
+- **Version Control**: Git
+- **Environment Management**: conda/pip
+- **Testing**: pytest, unittest
+- **Documentation**: Markdown, docstrings
+- **Model Storage**: Local file system
+- **Logging**: Python logging module
+
 ### Programming Languages & Frameworks
 
-#### Core Development
-- **Python 3.9+**: Primary language for ML pipeline and API development
-  - *Justification*: Rich ML ecosystem, extensive libraries, team expertise
-- **FastAPI**: Modern web framework for API development
-  - *Justification*: High performance, automatic documentation, async support
-- **Pydantic**: Data validation and settings management
-  - *Justification*: Type safety, automatic validation, FastAPI integration
+#### Primary Stack
+- **Python 3.9+**: Core development language
+  - Rich ecosystem for data science and ML
+  - Excellent library support
+  - Strong community and documentation
 
-#### Frontend (Optional)
-- **Streamlit**: Rapid dashboard development for teacher interface
-  - *Justification*: Python-native, quick prototyping, minimal frontend expertise required
-- **HTML/CSS/JavaScript**: Custom web interface if advanced UI needed
+#### ML & Data Processing
+- **scikit-learn**: Primary ML framework
+  - Comprehensive algorithm library
+  - Consistent API design
+  - Excellent documentation and examples
+- **pandas**: Data manipulation and analysis
+- **numpy**: Numerical computing foundation
+- **scipy**: Scientific computing utilities
+
+#### Database & Storage
+- **SQLite**: Lightweight, serverless database
+  - Zero configuration
+  - ACID compliant
+  - Perfect for single-user applications
+- **SQLAlchemy**: Python SQL toolkit and ORM
+  - Database abstraction
+  - Query optimization
+  - Migration support
 
 ### Machine Learning Libraries
 
@@ -228,8 +255,6 @@ flowchart LR
   - *Justification*: Deep learning capabilities, production deployment support
 
 #### Model Management
-- **MLflow 2.5+**: Experiment tracking and model registry
-  - *Justification*: Model versioning, experiment comparison, deployment tracking
 - **joblib**: Model serialization and parallel processing
   - *Justification*: Efficient model persistence, scikit-learn integration
 
@@ -264,6 +289,26 @@ flowchart LR
 - **Jupyter Lab**: Interactive development and EDA
   - *Justification*: Exploratory analysis, visualization, documentation
 
+### Infrastructure & DevOps
+
+#### Development Environment
+- **Python 3.9+**: Core runtime environment
+- **conda/pip**: Package and environment management
+- **Git**: Version control and collaboration
+- **VS Code/PyCharm**: Recommended IDEs with Python support
+
+#### Testing & Quality Assurance
+- **pytest 7.4+**: Testing framework
+  - *Features*: Fixtures, parametrized tests, coverage reporting
+- **unittest**: Built-in testing for simple test cases
+- **black**: Code formatting and style consistency
+- **flake8**: Linting and code quality checks
+- **mypy**: Static type checking
+
+#### Monitoring & Logging
+- **Python logging**: Built-in logging framework
+- **structlog**: Structured logging for better analysis
+
 ### Monitoring & Observability
 
 #### Application Monitoring
@@ -275,6 +320,11 @@ flowchart LR
 - **Model Performance Tracking**: Accuracy degradation detection
 - **Data Drift Detection**: Feature distribution monitoring
 - **Prediction Monitoring**: Output distribution analysis
+
+#### Logging Strategy
+- **Structured Logging**: JSON format for easy parsing
+- **Log Levels**: DEBUG, INFO, WARNING, ERROR, CRITICAL
+- **Log Rotation**: Automatic cleanup of old log files
 
 ### CI/CD Pipeline
 
@@ -291,6 +341,30 @@ flowchart LR
 - **Docker Containers**: Consistent deployment artifacts
 - **Environment Management**: Development, staging, production environments
 - **Blue-Green Deployment**: Zero-downtime deployments for production
+
+### Detailed Component Descriptions
+
+#### 1. Data Pipeline Components
+
+##### Data Ingestion Module
+```python
+class DataIngestion:
+    """Handles data loading from SQLite database"""
+    
+    def __init__(self, db_path: str):
+        self.db_path = db_path
+        self.engine = create_engine(f"sqlite:///{db_path}")
+    
+    def load_data(self) -> pd.DataFrame:
+        """Load student score data from database"""
+        query = "SELECT * FROM student_scores"
+        return pd.read_sql(query, self.engine)
+    
+    def validate_schema(self, df: pd.DataFrame) -> bool:
+        """Validate data schema and required columns"""
+        required_columns = ['student_id', 'math_score', 'reading_score', 'writing_score']
+        return all(col in df.columns for col in required_columns)
+```
 
 ## 4. Machine Learning Strategy
 
@@ -461,16 +535,14 @@ flowchart TD
 
 ```mermaid
 sequenceDiagram
-    participant U as User/Scheduler
-    participant API as Training API
+    participant U as Data Scientist
     participant DL as Data Loader
     participant PP as Preprocessor
     participant MT as Model Trainer
     participant ME as Model Evaluator
-    participant MR as Model Registry
+    participant MS as Model Storage
 
-    U->>API: Trigger Training
-    API->>DL: Load Data from SQLite
+    U->>DL: Load Data from SQLite
     DL->>PP: Raw Dataset
     PP->>PP: Clean & Engineer Features
     PP->>MT: Processed Dataset
@@ -479,84 +551,63 @@ sequenceDiagram
         MT->>MT: Train Model with CV
         MT->>ME: Trained Model
         ME->>ME: Evaluate Performance
-        ME->>MR: Store Model + Metrics
+        ME->>MS: Store Model + Metrics
     end
 
-    MR->>MR: Select Best Model
-    MR->>API: Best Model Info
-    API->>U: Training Complete
+    MS->>MS: Select Best Model
+    MS->>U: Training Complete
 ```
 
 ### Prediction Inference Workflow
 
 ```mermaid
 sequenceDiagram
-    participant T as Teacher/User
-    participant UI as Web Interface
-    participant API as Prediction API
+    participant U as Data Scientist
     participant PS as Prediction Service
     participant ML as ML Model
     participant DB as Database
 
-    T->>UI: Request Student Predictions
-    UI->>API: POST /predict
-    API->>PS: Student Data
+    U->>PS: Request Student Predictions
     PS->>DB: Fetch Student Features
     DB->>PS: Student Records
     PS->>PS: Preprocess Features
     PS->>ML: Processed Features
     ML->>PS: Predictions
-    PS->>API: Formatted Results
-    API->>UI: JSON Response
-    UI->>T: Prediction Dashboard
+    PS->>U: Prediction Results
 ```
 
 ### Component Interaction Architecture
 
 ```mermaid
 graph TB
-    subgraph "Presentation Layer"
-        A[Teacher Dashboard<br/>Streamlit/Web UI]
-        B[Admin Interface<br/>Model Management]
-    end
-
-    subgraph "API Gateway"
-        C[FastAPI Router<br/>Authentication & Routing]
-    end
-
-    subgraph "Business Logic"
-        D[Prediction Service<br/>Real-time Inference]
-        E[Training Service<br/>Model Development]
-        F[Data Service<br/>CRUD Operations]
+    subgraph "Core Services"
+        A[Prediction Service<br/>Score Inference]
+        B[Training Service<br/>Model Development]
+        C[Data Service<br/>Data Operations]
     end
 
     subgraph "Data Processing"
-        G[Feature Pipeline<br/>Preprocessing & Engineering]
-        H[Model Pipeline<br/>Training & Evaluation]
-        I[Validation Pipeline<br/>Data Quality Checks]
+        D[Feature Pipeline<br/>Preprocessing & Engineering]
+        E[Model Pipeline<br/>Training & Evaluation]
+        F[Validation Pipeline<br/>Data Quality Checks]
     end
 
     subgraph "Storage Layer"
-        J[SQLite Database<br/>Student Data]
-        K[Model Registry<br/>Trained Models]
-        L[Configuration Store<br/>Pipeline Settings]
+        G[SQLite Database<br/>Student Data]
+        H[Model Storage<br/>Trained Models]
+        I[Configuration Store<br/>Pipeline Settings]
     end
 
-    A --> C
-    B --> C
-    C --> D
-    C --> E
+    A --> D
+    B --> E
     C --> F
     D --> G
     E --> H
     F --> I
-    G --> J
-    H --> K
-    I --> L
 
-    D -.-> K
-    E -.-> J
-    F -.-> J
+    A -.-> H
+    B -.-> G
+    C -.-> G
 ```
 
 This comprehensive project overview provides the strategic foundation for developing the student score prediction system, balancing technical excellence with practical educational needs while ensuring scalability and maintainability.
