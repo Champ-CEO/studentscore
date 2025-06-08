@@ -12,6 +12,9 @@ plotly>=5.13.0
 # Machine Learning
 scikit-learn>=1.2.0
 joblib>=1.3.0
+xgboost>=1.7.0
+shap>=0.41.0 # For model interpretability
+matplotlib>=3.5.0 # For plotting, used by SHAP  # Added for Phase 5
 
 # Testing
 pytest>=8.3.5

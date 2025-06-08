@@ -1,0 +1,45 @@
+{
+  "algorithm_name": "ridge_regression",
+  "search_type": "grid",
+  "best_params": {
+    "regressor__alpha": 0.1
+  },
+  "best_score": NaN,
+  "best_estimator": "Pipeline(steps=[('preprocessor',\n                 ColumnTransformer(transformers=[('num',\n                                                  Pipeline(steps=[('imputer',\n                                                                   SimpleImputer(strategy='median')),\n                                                                  ('scaler',\n                                                                   StandardScaler())]),\n                                                  ['index',\n                                                   'number_of_siblings',\n                                                   'n_male', 'n_female', 'age',\n                                                   'hours_per_week',\n                                                   'attendance_rate',\n                                                   'attendance_rate_missing',\n                                                   'attendance_age_ratio',\n                                                   'engagement_score',\n                                                   'learning_style_visual',\n                                                   'lear...\n                                                                                 sparse_output=False))]),\n                                                  ['direct_admission', 'CCA',\n                                                   'learning_style',\n                                                   'student_id', 'gender',\n                                                   'tuition', 'sleep_time',\n                                                   'wake_time',\n                                                   'mode_of_transport',\n                                                   'bag_color', 'age_group',\n                                                   'attendance_category',\n                                                   'performance_level',\n                                                   'gender_x_learning_style',\n                                                   'age_group_x_attendance_category',\n                                                   'gender_x_CCA',\n                                                   'learning_style_x_tuition'])])),\n                ('regressor', Ridge(alpha=0.1, random_state=42))])",
+  "cv_results": {
+    "mean_test_score": [
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN
+    ],
+    "std_test_score": [
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN
+    ],
+    "params": [
+      {
+        "regressor__alpha": 0.1
+      },
+      {
+        "regressor__alpha": 1.0
+      },
+      {
+        "regressor__alpha": 10.0
+      },
+      {
+        "regressor__alpha": 100.0
+      },
+      {
+        "regressor__alpha": 1000.0
+      }
+    ]
+  },
+  "n_splits": 5,
+  "scoring": "neg_mean_absolute_error",
+  "tuning_timestamp": "2025-06-08T18:07:48.017067"
+}

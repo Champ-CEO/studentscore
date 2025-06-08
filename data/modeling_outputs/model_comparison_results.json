@@ -1,0 +1,36 @@
+{
+  "linear_regression": {
+    "mae_mean": 0.0017018942893694848,
+    "mae_std": 0.00016232197321841893,
+    "rmse_mean": 0.004167619031556353,
+    "rmse_std": 0.0006661384651840236,
+    "r2_mean": 0.9999999083763331,
+    "r2_std": 2.97777911217878e-08,
+    "training_time": 0,
+    "hyperparameters": {}
+  },
+  "ridge_regression": {
+    "mae_mean": 0.012893001123172767,
+    "mae_std": 0.0005271709957886204,
+    "rmse_mean": 0.01976513812444106,
+    "rmse_std": 0.0012123604584915217,
+    "r2_mean": 0.9999979886244873,
+    "r2_std": 2.7507384103842014e-07,
+    "training_time": 0,
+    "hyperparameters": {
+      "regressor__alpha": 1.0
+    }
+  },
+  "random_forest": {
+    "mae_mean": 0.025605589211643735,
+    "mae_std": 0.0037231784622199834,
+    "rmse_mean": 0.1742257987666548,
+    "rmse_std": 0.02111372410598983,
+    "r2_mean": 0.9998417417447534,
+    "r2_std": 4.000143817356472e-05,
+    "training_time": 0,
+    "hyperparameters": {
+      "regressor__max_depth": 10
+    }
+  }
+}

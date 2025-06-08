@@ -1,0 +1,154 @@
+{
+  "algorithm_type": "gradient_boosting_regression",
+  "algorithms": {
+    "gradient_boosting_standard": {
+      "description": "Standard Gradient Boosting Regressor",
+      "param_grid": {
+        "regressor__n_estimators": [
+          50,
+          100
+        ],
+        "regressor__learning_rate": [
+          0.1,
+          0.2
+        ],
+        "regressor__max_depth": [
+          3,
+          5
+        ]
+      },
+      "base_params": {
+        "random_state": 42,
+        "n_estimators": 100,
+        "learning_rate": 0.1,
+        "max_depth": 3
+      }
+    },
+    "gradient_boosting_conservative": {
+      "description": "Conservative Gradient Boosting with lower learning rate",
+      "param_grid": {
+        "regressor__n_estimators": [
+          100,
+          200
+        ],
+        "regressor__learning_rate": [
+          0.05,
+          0.1
+        ],
+        "regressor__max_depth": [
+          3,
+          4
+        ]
+      },
+      "base_params": {
+        "random_state": 42,
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 3
+      }
+    },
+    "gradient_boosting_aggressive": {
+      "description": "Aggressive Gradient Boosting with higher learning rate",
+      "param_grid": {
+        "regressor__n_estimators": [
+          50,
+          100
+        ],
+        "regressor__learning_rate": [
+          0.1,
+          0.2
+        ],
+        "regressor__max_depth": [
+          5,
+          7
+        ]
+      },
+      "base_params": {
+        "random_state": 42,
+        "n_estimators": 100,
+        "learning_rate": 0.2,
+        "max_depth": 7
+      }
+    }
+  },
+  "preprocessing": {
+    "numeric_features": [
+      "index",
+      "number_of_siblings",
+      "n_male",
+      "n_female",
+      "age",
+      "hours_per_week",
+      "attendance_rate",
+      "attendance_rate_missing",
+      "attendance_age_ratio",
+      "engagement_score",
+      "learning_style_visual",
+      "learning_style_auditory",
+      "support_seeking_score",
+      "gender_female",
+      "gender_male",
+      "high_consistency",
+      "low_attendance_risk",
+      "age_mismatch_risk",
+      "low_engagement_risk",
+      "multiple_risk_factors",
+      "age_x_attendance_rate",
+      "age_div_attendance_rate",
+      "age_minus_attendance_rate",
+      "attendance_rate_x_final_test",
+      "attendance_rate_div_final_test",
+      "attendance_rate_minus_final_test",
+      "age_x_final_test",
+      "age_div_final_test",
+      "age_minus_final_test",
+      "attendance_age_ratio_x_engagement_score",
+      "attendance_age_ratio_div_engagement_score",
+      "attendance_age_ratio_minus_engagement_score",
+      "age_squared",
+      "attendance_rate_squared",
+      "attendance_rate_mean_by_gender",
+      "attendance_rate_median_by_gender",
+      "attendance_rate_std_by_gender",
+      "attendance_rate_deviation_from_gender_mean",
+      "age_mean_by_learning_style",
+      "age_median_by_learning_style",
+      "age_std_by_learning_style",
+      "age_deviation_from_learning_style_mean",
+      "final_test_mean_by_tuition",
+      "final_test_median_by_tuition",
+      "final_test_std_by_tuition",
+      "final_test_deviation_from_tuition_mean",
+      "engagement_score_mean_by_age_group",
+      "engagement_score_median_by_age_group",
+      "engagement_score_std_by_age_group",
+      "engagement_score_deviation_from_age_group_mean",
+      "academic_support_index",
+      "performance_vs_age_peers",
+      "learning_style_effectiveness",
+      "risk_amplification_score"
+    ],
+    "categorical_features": [
+      "direct_admission",
+      "CCA",
+      "learning_style",
+      "student_id",
+      "gender",
+      "tuition",
+      "sleep_time",
+      "wake_time",
+      "mode_of_transport",
+      "bag_color",
+      "age_group",
+      "attendance_category",
+      "performance_level",
+      "gender_x_learning_style",
+      "age_group_x_attendance_category",
+      "gender_x_CCA",
+      "learning_style_x_tuition"
+    ],
+    "numeric_strategy": "median imputation",
+    "categorical_strategy": "constant imputation + one-hot encoding"
+  },
+  "implementation_timestamp": "2025-06-08T19:51:09.137174"
+}

@@ -1,0 +1,28 @@
+{
+  "best_model_name": "linear_regression",
+  "best_test_mae": 2.058497672463433e-14,
+  "best_test_r2": 1.0,
+  "selection_timestamp": "2025-06-09T00:26:29.306925",
+  "all_model_performance": {
+    "linear_regression": {
+      "test_mae": 2.058497672463433e-14,
+      "test_r2": 1.0
+    },
+    "ridge_regression": {
+      "test_mae": 0.0028971720952846954,
+      "test_r2": 0.9999998307926685
+    },
+    "random_forest": {
+      "test_mae": 0.01803896103896107,
+      "test_r2": 0.9998978308979137
+    },
+    "xgboost": {
+      "test_mae": 0.005739854837392832,
+      "test_r2": 0.9999887007682559
+    },
+    "neural_network": {
+      "test_mae": 0.2685390116108085,
+      "test_r2": 0.9992368348834484
+    }
+  }
+}

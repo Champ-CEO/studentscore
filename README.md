@@ -8,14 +8,11 @@ AI-powered system to predict student academic performance using machine learning
 # Install dependencies
 pip install -r requirements.txt
 
-# Run Phase 3 tests
-python test_phase3_simple.py
-
-# Run Phase 4 tests
-python -m pytest tests/test_phase4_implementations.py
-
-# Or run comprehensive tests
+# Run comprehensive tests
 python -m pytest tests/
+
+# (Optional) Run specific test suites if needed, e.g.:
+# python -m pytest tests/test_phase4_implementations.py
 ```
 
 ## Project Structure
@@ -28,13 +25,15 @@ studentscore/
 ├── notebook/               # EDA and visualization
 │   └── visualization/      # Generated plots and charts
 ├── src/                    # Source code
-│   └── data/              # Data processing modules
+│   ├── data/               # Data processing modules
+│   └── modeling/           # Modeling scripts (Phase 5)
 ├── tests/                  # Test suites
-│   └── data/              # Data-specific tests
+│   └── data/               # Data-specific tests
 ├── specs/                  # Project documentation
-│   ├── ai-doc/            # AI documentation
-│   └── reports/           # Phase reports
-└── test_phase3_simple.py   # Standalone test script
+│   ├── ai-doc/             # AI documentation
+│   └── reports/            # Phase reports
+├── logs/                   # Execution logs
+└── requirements.txt        # Project dependencies
 ```
 
 ## Database Schema
@@ -69,24 +68,42 @@ studentscore/
 - Feature selection and dimensionality reduction
 - Comprehensive data quality validation
 
-### 📋 Phase 5: Model Development (Planned)
-- Multiple ML algorithm implementation
-- Model training and validation
-- Performance optimization
+### ✅ Phase 5: Model Development (Completed)
+- Implemented multiple ML algorithms: Linear Regression, Ridge, Random Forest, XGBoost, Neural Network.
+- Addressed and fixed critical data leakage issues, ensuring reliable model evaluation.
+- Conducted comprehensive model training, cross-validation, and performance evaluation.
+- Selected the best performing model based on MAE, R², and overfitting analysis.
+- Generated realistic performance metrics and learning curves for all models.
+- Persisted trained models and detailed results.
+
+### 📋 Phase 6: Testing, Validation & Refinement (In Progress)
+- **Critical**: Investigate near-perfect Linear Regression performance to ensure validity.
+- **Critical**: Implement robust model interpretability (e.g., SHAP, Permutation Importance).
+- Conduct comprehensive data validation on the final modeling dataset.
+- Perform external validation and robustness analysis on selected models.
+- Finalize model documentation and prepare for potential deployment scenarios.
 
 ## Development Setup
 1. Clone the repository
 2. Set up Python 3.9+ virtual environment
 3. Install dependencies: `pip install -r requirements.txt`
-4. Run tests to verify setup: `python test_phase3_simple.py`
+4. Run tests to verify setup: `python -m pytest tests/`
 
 ## Key Data Artifacts
 
-### Processed Data
-- `data/processed/final_processed.csv` - Model-ready dataset
-- `data/processed/age_corrected.csv` - Age-corrected data
-- `data/processed/standardized.csv` - Standardized categorical data
-- `data/processed/imputed.csv` - Imputed attendance data
+### Modeling Datasets & Outputs (Phase 5)
+- `data/modeling_outputs/clean_dataset_no_leakage.csv` - Final model-ready dataset after data leakage fix.
+- `data/modeling_outputs/phase5_complete_fixed_results.json` - Comprehensive results for all implemented models (MAE, RMSE, R², overfitting metrics).
+- `data/modeling_outputs/best_model_selection_fixed.json` - Details of the selected best model.
+- `data/modeling_outputs/best_model_linear_regression_fixed.joblib` - Saved best performing model (Linear Regression).
+- `data/modeling_outputs/models/` - Directory containing all persisted trained model files.
+- `data/modeling_outputs/overfitting_plots/` - Directory containing learning curve plots for all models.
+
+### Processed Data (Phases 3 & 4)
+- `data/processed/final_processed.csv` - Dataset after initial preprocessing and cleaning (pre-leakage fix).
+- `data/processed/age_corrected.csv` - Age-corrected data.
+- `data/processed/standardized.csv` - Standardized categorical data.
+- `data/processed/imputed.csv` - Imputed attendance data.
 
 ### Feature Engineering (Phase 4 Complete)
 - `data/featured/derived_features.csv` - Engineered features (Study Efficiency Score, Academic Support Index)
@@ -101,11 +118,11 @@ studentscore/
 - `notebook/visualization/target_variable_analysis.png`
 
 ## Testing
-- Simple tests: `python test_phase3_simple.py`
 - Comprehensive tests: `python -m pytest tests/`
-- Phase 3 specific tests: `python -m pytest tests/test_phase3_implementations.py`
-- Phase 4 specific tests: `python -m pytest tests/test_phase4_implementations.py`
-- Data quality tests: `python -m pytest tests/data/`
+- Phase-specific tests (example for Phase 4):
+  `python -m pytest tests/test_phase4_implementations.py`
+- Data-specific tests:
+  `python -m pytest tests/data/`
 
 ## Data Quality Metrics
 - **Data Completeness**: 100% (after Phase 3 preprocessing)

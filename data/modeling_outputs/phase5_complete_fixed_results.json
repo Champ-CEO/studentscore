@@ -1,0 +1,132 @@
+{
+  "phase5_fixed_execution": {
+    "start_time": "2025-06-09T00:24:36.647331",
+    "data_leakage_fixed": true,
+    "realistic_performance_expected": true,
+    "end_time": "2025-06-09T00:26:29.331842",
+    "status": "completed"
+  },
+  "data_loading": "success",
+  "algorithm_implementation": {
+    "algorithms_implemented": [
+      "linear_regression",
+      "ridge_regression",
+      "random_forest",
+      "xgboost",
+      "neural_network"
+    ],
+    "total_count": 5,
+    "xgboost_available": true,
+    "neural_network_available": true
+  },
+  "model_evaluation": {
+    "linear_regression": {
+      "cv_mae_mean": 1.852832461771833e-14,
+      "cv_mae_std": 5.984752024676405e-15,
+      "test_mae": 2.058497672463433e-14,
+      "test_rmse": 2.6799472978829946e-14,
+      "test_r2": 1.0,
+      "model": "Pipeline(steps=[('preprocessor',\n                 ColumnTransformer(transformers=[('num',\n                                                  Pipeline(steps=[('imputer',\n                                                                   SimpleImputer(strategy='median')),\n                                                                  ('scaler',\n                                                                   StandardScaler())]),\n                                                  ['number_of_siblings',\n                                                   'n_male', 'n_female', 'age',\n                                                   'hours_per_week',\n                                                   'attendance_rate',\n                                                   'attendance_rate_missing',\n                                                   'attendance_age_ratio',\n                                                   'engagement_score',\n                                                   'learning_style_visual',\n                                                   'learning_sty...\n                                                                   OneHotEncoder(drop='first',\n                                                                                 handle_unknown='ignore',\n                                                                                 sparse_output=False))]),\n                                                  ['direct_admission', 'CCA',\n                                                   'learning_style', 'gender',\n                                                   'tuition', 'sleep_time',\n                                                   'wake_time',\n                                                   'mode_of_transport',\n                                                   'bag_color', 'age_group',\n                                                   'attendance_category',\n                                                   'gender_x_learning_style',\n                                                   'age_group_x_attendance_category',\n                                                   'gender_x_CCA',\n                                                   'learning_style_x_tuition'])])),\n                ('regressor', LinearRegression())])"
+    },
+    "ridge_regression": {
+      "cv_mae_mean": 0.0035583699759741483,
+      "cv_mae_std": 0.00010090620673613422,
+      "test_mae": 0.0028971720952846954,
+      "test_rmse": 0.005720293245798913,
+      "test_r2": 0.9999998307926685,
+      "model": "Pipeline(steps=[('preprocessor',\n                 ColumnTransformer(transformers=[('num',\n                                                  Pipeline(steps=[('imputer',\n                                                                   SimpleImputer(strategy='median')),\n                                                                  ('scaler',\n                                                                   StandardScaler())]),\n                                                  ['number_of_siblings',\n                                                   'n_male', 'n_female', 'age',\n                                                   'hours_per_week',\n                                                   'attendance_rate',\n                                                   'attendance_rate_missing',\n                                                   'attendance_age_ratio',\n                                                   'engagement_score',\n                                                   'learning_style_visual',\n                                                   'learning_sty...\n                                                                   OneHotEncoder(drop='first',\n                                                                                 handle_unknown='ignore',\n                                                                                 sparse_output=False))]),\n                                                  ['direct_admission', 'CCA',\n                                                   'learning_style', 'gender',\n                                                   'tuition', 'sleep_time',\n                                                   'wake_time',\n                                                   'mode_of_transport',\n                                                   'bag_color', 'age_group',\n                                                   'attendance_category',\n                                                   'gender_x_learning_style',\n                                                   'age_group_x_attendance_category',\n                                                   'gender_x_CCA',\n                                                   'learning_style_x_tuition'])])),\n                ('regressor', Ridge(random_state=42))])"
+    },
+    "random_forest": {
+      "cv_mae_mean": 0.021642845117845137,
+      "cv_mae_std": 0.002686874060476654,
+      "test_mae": 0.01803896103896107,
+      "test_rmse": 0.14056218293953485,
+      "test_r2": 0.9998978308979137,
+      "model": "Pipeline(steps=[('preprocessor',\n                 ColumnTransformer(transformers=[('num',\n                                                  Pipeline(steps=[('imputer',\n                                                                   SimpleImputer(strategy='median')),\n                                                                  ('scaler',\n                                                                   StandardScaler())]),\n                                                  ['number_of_siblings',\n                                                   'n_male', 'n_female', 'age',\n                                                   'hours_per_week',\n                                                   'attendance_rate',\n                                                   'attendance_rate_missing',\n                                                   'attendance_age_ratio',\n                                                   'engagement_score',\n                                                   'learning_style_visual',\n                                                   'learning_sty...\n                                                                                 sparse_output=False))]),\n                                                  ['direct_admission', 'CCA',\n                                                   'learning_style', 'gender',\n                                                   'tuition', 'sleep_time',\n                                                   'wake_time',\n                                                   'mode_of_transport',\n                                                   'bag_color', 'age_group',\n                                                   'attendance_category',\n                                                   'gender_x_learning_style',\n                                                   'age_group_x_attendance_category',\n                                                   'gender_x_CCA',\n                                                   'learning_style_x_tuition'])])),\n                ('regressor',\n                 RandomForestRegressor(max_depth=10, n_jobs=-1,\n                                       random_state=42))])"
+    },
+    "xgboost": {
+      "cv_mae_mean": 0.009930705404900885,
+      "cv_mae_std": 0.0013539267577905574,
+      "test_mae": 0.005739854837392832,
+      "test_rmse": 0.04674478459633544,
+      "test_r2": 0.9999887007682559,
+      "model": "Pipeline(steps=[('preprocessor',\n                 ColumnTransformer(transformers=[('num',\n                                                  Pipeline(steps=[('imputer',\n                                                                   SimpleImputer(strategy='median')),\n                                                                  ('scaler',\n                                                                   StandardScaler())]),\n                                                  ['number_of_siblings',\n                                                   'n_male', 'n_female', 'age',\n                                                   'hours_per_week',\n                                                   'attendance_rate',\n                                                   'attendance_rate_missing',\n                                                   'attendance_age_ratio',\n                                                   'engagement_score',\n                                                   'learning_style_visual',\n                                                   'learning_sty...\n                              feature_types=None, feature_weights=None,\n                              gamma=None, grow_policy=None,\n                              importance_type=None,\n                              interaction_constraints=None, learning_rate=0.1,\n                              max_bin=None, max_cat_threshold=None,\n                              max_cat_to_onehot=None, max_delta_step=None,\n                              max_depth=6, max_leaves=None,\n                              min_child_weight=None, missing=nan,\n                              monotone_constraints=None, multi_strategy=None,\n                              n_estimators=100, n_jobs=-1,\n                              num_parallel_tree=None, ...))])"
+    },
+    "neural_network": {
+      "cv_mae_mean": 0.2931817373759025,
+      "cv_mae_std": 0.017181232800171985,
+      "test_mae": 0.2685390116108085,
+      "test_rmse": 0.3841651461088199,
+      "test_r2": 0.9992368348834484,
+      "model": "Pipeline(steps=[('preprocessor',\n                 ColumnTransformer(transformers=[('num',\n                                                  Pipeline(steps=[('imputer',\n                                                                   SimpleImputer(strategy='median')),\n                                                                  ('scaler',\n                                                                   StandardScaler())]),\n                                                  ['number_of_siblings',\n                                                   'n_male', 'n_female', 'age',\n                                                   'hours_per_week',\n                                                   'attendance_rate',\n                                                   'attendance_rate_missing',\n                                                   'attendance_age_ratio',\n                                                   'engagement_score',\n                                                   'learning_style_visual',\n                                                   'learning_sty...\n                                                   'learning_style', 'gender',\n                                                   'tuition', 'sleep_time',\n                                                   'wake_time',\n                                                   'mode_of_transport',\n                                                   'bag_color', 'age_group',\n                                                   'attendance_category',\n                                                   'gender_x_learning_style',\n                                                   'age_group_x_attendance_category',\n                                                   'gender_x_CCA',\n                                                   'learning_style_x_tuition'])])),\n                ('regressor',\n                 MLPRegressor(alpha=0.001, early_stopping=True,\n                              hidden_layer_sizes=(100, 50), max_iter=500,\n                              random_state=42))])"
+    }
+  },
+  "overfitting_monitoring": {
+    "linear_regression": {
+      "final_training_mae": 1.8499631840848145e-14,
+      "final_validation_mae": 1.852832461771833e-14,
+      "overfitting_gap": 2.869277687018447e-17,
+      "overfitting_severity": "low",
+      "learning_curve_plot": "data\\modeling_outputs\\overfitting_plots\\linear_regression_learning_curves.png"
+    },
+    "ridge_regression": {
+      "final_training_mae": 0.0035214709429255706,
+      "final_validation_mae": 0.0035583699759741483,
+      "overfitting_gap": 3.689903304857772e-05,
+      "overfitting_severity": "low",
+      "learning_curve_plot": "data\\modeling_outputs\\overfitting_plots\\ridge_regression_learning_curves.png"
+    },
+    "random_forest": {
+      "final_training_mae": 0.007988183095839355,
+      "final_validation_mae": 0.021642845117845137,
+      "overfitting_gap": 0.013654662022005782,
+      "overfitting_severity": "low",
+      "learning_curve_plot": "data\\modeling_outputs\\overfitting_plots\\random_forest_learning_curves.png"
+    },
+    "xgboost": {
+      "final_training_mae": 0.0018060821217375917,
+      "final_validation_mae": 0.009930705404900885,
+      "overfitting_gap": 0.008124623283163294,
+      "overfitting_severity": "low",
+      "learning_curve_plot": "data\\modeling_outputs\\overfitting_plots\\xgboost_learning_curves.png"
+    },
+    "neural_network": {
+      "final_training_mae": 0.269181970218156,
+      "final_validation_mae": 0.2931817373759025,
+      "overfitting_gap": 0.023999767157746488,
+      "overfitting_severity": "low",
+      "learning_curve_plot": "data\\modeling_outputs\\overfitting_plots\\neural_network_learning_curves.png"
+    }
+  },
+  "model_selection": {
+    "best_model_name": "linear_regression",
+    "best_test_mae": 2.058497672463433e-14,
+    "best_test_r2": 1.0,
+    "selection_timestamp": "2025-06-09T00:26:29.306925",
+    "all_model_performance": {
+      "linear_regression": {
+        "test_mae": 2.058497672463433e-14,
+        "test_r2": 1.0
+      },
+      "ridge_regression": {
+        "test_mae": 0.0028971720952846954,
+        "test_r2": 0.9999998307926685
+      },
+      "random_forest": {
+        "test_mae": 0.01803896103896107,
+        "test_r2": 0.9998978308979137
+      },
+      "xgboost": {
+        "test_mae": 0.005739854837392832,
+        "test_r2": 0.9999887007682559
+      },
+      "neural_network": {
+        "test_mae": 0.2685390116108085,
+        "test_r2": 0.9992368348834484
+      }
+    }
+  },
+  "interpretability": {
+    "error": "The passed model is not callable and cannot be analyzed directly with the given masker! Model: Pipeline(steps=[('preprocessor',\n                 ColumnTransformer(transformers=[('num',\n                                                  Pipeline(steps=[('imputer',\n                                                                   SimpleImputer(strategy='median')),\n                                                                  ('scaler',\n                                                                   StandardScaler())]),\n                                                  ['number_of_siblings',\n                                                   'n_male', 'n_female', 'age',\n                                                   'hours_per_week',\n                                                   'attendance_rate',\n                                                   'attendance_rate_missing',\n                                                   'attendance_age_ratio',\n                                                   'engagement_score',\n                                                   'learning_style_visual',\n                                                   'learning_sty...\n                                                                   OneHotEncoder(drop='first',\n                                                                                 handle_unknown='ignore',\n                                                                                 sparse_output=False))]),\n                                                  ['direct_admission', 'CCA',\n                                                   'learning_style', 'gender',\n                                                   'tuition', 'sleep_time',\n                                                   'wake_time',\n                                                   'mode_of_transport',\n                                                   'bag_color', 'age_group',\n                                                   'attendance_category',\n                                                   'gender_x_learning_style',\n                                                   'age_group_x_attendance_category',\n                                                   'gender_x_CCA',\n                                                   'learning_style_x_tuition'])])),\n                ('regressor', LinearRegression())])"
+  }
+}

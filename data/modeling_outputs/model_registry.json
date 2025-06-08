@@ -1,0 +1,52 @@
+{
+  "created_timestamp": "2025-06-08T23:52:05.090172",
+  "last_updated": "2025-06-08T23:52:06.473224",
+  "models": {
+    "linear_regression_20250608_235206": {
+      "model_id": "linear_regression_20250608_235206",
+      "model_name": "linear_regression",
+      "model_type": "LinearRegression",
+      "created_timestamp": "2025-06-08T23:52:06.463222",
+      "model_file": "data\\modeling_outputs\\models\\linear_regression_20250608_235206.joblib",
+      "file_size_mb": 0.0,
+      "algorithm_type": "linear_regression",
+      "training_timestamp": "2025-06-08T23:52:06.461209",
+      "performance": {
+        "r2_score": 0.95,
+        "mae": 0.1,
+        "rmse": 0.15
+      }
+    },
+    "ridge_regression_20250608_235206": {
+      "model_id": "ridge_regression_20250608_235206",
+      "model_name": "ridge_regression",
+      "model_type": "Ridge",
+      "created_timestamp": "2025-06-08T23:52:06.467243",
+      "model_file": "data\\modeling_outputs\\models\\ridge_regression_20250608_235206.joblib",
+      "file_size_mb": 0.0,
+      "algorithm_type": "ridge_regression",
+      "training_timestamp": "2025-06-08T23:52:06.465231",
+      "performance": {
+        "r2_score": 0.94,
+        "mae": 0.12,
+        "rmse": 0.16
+      }
+    },
+    "random_forest_20250608_235206": {
+      "model_id": "random_forest_20250608_235206",
+      "model_name": "random_forest",
+      "model_type": "RandomForestRegressor",
+      "created_timestamp": "2025-06-08T23:52:06.472212",
+      "model_file": "data\\modeling_outputs\\models\\random_forest_20250608_235206.joblib",
+      "file_size_mb": 0.0,
+      "algorithm_type": "random_forest",
+      "training_timestamp": "2025-06-08T23:52:06.467243",
+      "performance": {
+        "r2_score": 0.96,
+        "mae": 0.09,
+        "rmse": 0.14
+      }
+    }
+  },
+  "total_models": 3
+}

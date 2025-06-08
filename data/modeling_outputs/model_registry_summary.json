@@ -1,0 +1,11 @@
+{
+  "total_models": 3,
+  "registry_created": "2025-06-08T23:52:05.090172",
+  "last_updated": "2025-06-08T23:52:06.473224",
+  "models_by_type": {
+    "linear_regression": 1,
+    "ridge_regression": 1,
+    "random_forest": 1
+  },
+  "total_size_mb": 0.0
+}

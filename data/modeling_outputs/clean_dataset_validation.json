@@ -1,0 +1,17 @@
+{
+  "validation_timestamp": "2025-06-09T00:19:40.335085",
+  "dataset_shape": [
+    15895,
+    61
+  ],
+  "remaining_leaky_features": [],
+  "leakage_free": true,
+  "target_statistics": {
+    "count": 15400,
+    "mean": 67.16603896103896,
+    "std": 13.977913516062584,
+    "min": 32.0,
+    "max": 100.0
+  },
+  "feature_count": 60,
+  "missing_values": 

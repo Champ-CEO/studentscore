@@ -1,0 +1,37 @@
+{
+  "linear_regression": {
+    "final_training_mae": 1.8499631840848145e-14,
+    "final_validation_mae": 1.852832461771833e-14,
+    "overfitting_gap": 2.869277687018447e-17,
+    "overfitting_severity": "low",
+    "learning_curve_plot": "data\\modeling_outputs\\overfitting_plots\\linear_regression_learning_curves.png"
+  },
+  "ridge_regression": {
+    "final_training_mae": 0.0035214709429255706,
+    "final_validation_mae": 0.0035583699759741483,
+    "overfitting_gap": 3.689903304857772e-05,
+    "overfitting_severity": "low",
+    "learning_curve_plot": "data\\modeling_outputs\\overfitting_plots\\ridge_regression_learning_curves.png"
+  },
+  "random_forest": {
+    "final_training_mae": 0.007988183095839355,
+    "final_validation_mae": 0.021642845117845137,
+    "overfitting_gap": 0.013654662022005782,
+    "overfitting_severity": "low",
+    "learning_curve_plot": "data\\modeling_outputs\\overfitting_plots\\random_forest_learning_curves.png"
+  },
+  "xgboost": {
+    "final_training_mae": 0.0018060821217375917,
+    "final_validation_mae": 0.009930705404900885,
+    "overfitting_gap": 0.008124623283163294,
+    "overfitting_severity": "low",
+    "learning_curve_plot": "data\\modeling_outputs\\overfitting_plots\\xgboost_learning_curves.png"
+  },
+  "neural_network": {
+    "final_training_mae": 0.269181970218156,
+    "final_validation_mae": 0.2931817373759025,
+    "overfitting_gap": 0.023999767157746488,
+    "overfitting_severity": "low",
+    "learning_curve_plot": "data\\modeling_outputs\\overfitting_plots\\neural_network_learning_curves.png"
+  }
+}

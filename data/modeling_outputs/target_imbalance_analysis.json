@@ -1,0 +1,16 @@
+{
+  "is_imbalanced": "True",
+  "imbalance_ratio": 33.061728395061735,
+  "statistics": {
+    "mean": 67.16603896103896,
+    "median": 68.0,
+    "std": 13.977913516062584,
+    "min": 32.0,
+    "max": 100.0,
+    "skewness": 0.05554590416043833,
+    "kurtosis": -0.7289460334722695
+  },
+  "bin_analysis": {
+    "n_bins": 10,
+    "bin_counts": {
+      

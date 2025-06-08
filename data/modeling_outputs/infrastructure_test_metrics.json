@@ -1,0 +1,18 @@
+{
+  "model_name": "Infrastructure_Test",
+  "metrics": {
+    "mae": 11.65297547647158,
+    "rmse": 13.977459680334091,
+    "mse": 195.36937911536518,
+    "r2": 0.0,
+    "median_ae": 10.833961038961036,
+    "mape": 0.18730690815144505,
+    "mean_residual": -3.277724412233605e-15,
+    "std_residual": 13.977459680334091,
+    "max_error": 35.166038961038964,
+    "q95_error": 25.833961038961036,
+    "explained_variance": 0.0
+  },
+  "n_samples": 15400,
+  "evaluation_timestamp": "2025-06-08T23:15:46.875444"
+}
