@@ -1,0 +1,83 @@
+{
+  "analysis_timestamp": "2025-06-09T11:45:44.479128",
+  "dataset_info": {
+    "data_path": "data\\modeling_outputs\\clean_dataset_no_leakage.csv",
+    "data_shape": [
+      15895,
+      61
+    ],
+    "features_count": 60,
+    "numerical_features": 44,
+    "categorical_features": 16,
+    "target_name": "final_test"
+  },
+  "training_results": {
+    "models_trained": [
+      "LinearRegression",
+      "Ridge",
+      "Lasso",
+      "RandomForest",
+      "MLP"
+    ],
+    "performance": {
+      "LinearRegression": {
+        "train_r2": 1.0,
+        "test_r2": 0.999999866358904,
+        "train_mae": 5.205994365756591e-14,
+        "test_mae": 0.0020575778811935735
+      },
+      "Ridge": {
+        "train_r2": 0.9999998699019693,
+        "test_r2": 0.9999995385820198,
+        "train_mae": 0.0025718757856557748,
+        "test_mae": 0.004916639802270816
+      },
+      "Lasso": {
+        "train_r2": 0.9941689892481734,
+        "test_r2": 0.9941350681548604,
+        "train_mae": 0.8738184765920809,
+        "test_mae": 0.8670250746120807
+      },
+      "RandomForest": {
+        "train_r2": 0.999984753370092,
+        "test_r2": 0.9998800443428013,
+        "train_mae": 0.006891233766233764,
+        "test_mae": 0.018922077922077937
+      },
+      "MLP": {
+        "train_r2": 0.9999138802072821,
+        "test_r2": 0.9912036946311676,
+        "train_mae": 0.08858711436477465,
+        "test_mae": 0.9183621058615757
+      }
+    },
+    "training_errors": []
+  },
+  "shap_analysis_results": {
+    "LinearRegression": {
+      "error": "SHAP not available"
+    },
+    "Ridge": {
+      "error": "SHAP not available"
+    },
+    "Lasso": {
+      "error": "SHAP not available"
+    },
+    "RandomForest": {
+      "error": "SHAP not available"
+    },
+    "MLP": {
+      "error": "SHAP not available"
+    }
+  },
+  "plot_results": {},
+  "successful_analyses": [],
+  "failed_analyses": [
+    "LinearRegression",
+    "Ridge",
+    "Lasso",
+    "RandomForest",
+    "MLP"
+  ],
+  "overall_status": "FAILED"
+}

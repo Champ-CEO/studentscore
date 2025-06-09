@@ -1,0 +1,868 @@
+{
+  "investigation_timestamp": "2025-06-09T16:06:21.924177",
+  "dataset_info": {
+    "shape": [
+      15895,
+      61
+    ],
+    "columns": [
+      "index",
+      "number_of_siblings",
+      "direct_admission",
+      "CCA",
+      "learning_style",
+      "student_id",
+      "gender",
+      "tuition",
+      "final_test",
+      "n_male",
+      "n_female",
+      "age",
+      "hours_per_week",
+      "attendance_rate",
+      "sleep_time",
+      "wake_time",
+      "mode_of_transport",
+      "bag_color",
+      "attendance_rate_missing",
+      "age_group",
+      "attendance_category",
+      "attendance_age_ratio",
+      "engagement_score",
+      "learning_style_visual",
+      "learning_style_auditory",
+      "support_seeking_score",
+      "gender_female",
+      "gender_male",
+      "high_consistency",
+      "low_attendance_risk",
+      "age_mismatch_risk",
+      "low_engagement_risk",
+      "multiple_risk_factors",
+      "age_x_attendance_rate",
+      "age_div_attendance_rate",
+      "age_minus_attendance_rate",
+      "attendance_age_ratio_x_engagement_score",
+      "attendance_age_ratio_div_engagement_score",
+      "attendance_age_ratio_minus_engagement_score",
+      "age_squared",
+      "attendance_rate_squared",
+      "gender_x_learning_style",
+      "age_group_x_attendance_category",
+      "gender_x_CCA",
+      "learning_style_x_tuition",
+      "attendance_rate_mean_by_gender",
+      "attendance_rate_median_by_gender",
+      "attendance_rate_std_by_gender",
+      "attendance_rate_deviation_from_gender_mean",
+      "age_mean_by_learning_style",
+      "age_median_by_learning_style",
+      "age_std_by_learning_style",
+      "age_deviation_from_learning_style_mean",
+      "engagement_score_mean_by_age_group",
+      "engagement_score_median_by_age_group",
+      "engagement_score_std_by_age_group",
+      "engagement_score_deviation_from_age_group_mean",
+      "academic_support_index",
+      "performance_vs_age_peers",
+      "learning_style_effectiveness",
+      "risk_amplification_score"
+    ],
+    "dtypes": {
+      "index": "int64",
+      "number_of_siblings": "int64",
+      "direct_admission": "object",
+      "CCA": "object",
+      "learning_style": "object",
+      "student_id": "object",
+      "gender": "object",
+      "tuition": "object",
+      "final_test": "float64",
+      "n_male": "float64",
+      "n_female": "float64",
+      "age": "float64",
+      "hours_per_week": "float64",
+      "attendance_rate": "float64",
+      "sleep_time": "object",
+      "wake_time": "object",
+      "mode_of_transport": "object",
+      "bag_color": "object",
+      "attendance_rate_missing": "int64",
+      "age_group": "object",
+      "attendance_category": "object",
+      "attendance_age_ratio": "float64",
+      "engagement_score": "float64",
+      "learning_style_visual": "int64",
+      "learning_style_auditory": "int64",
+      "support_seeking_score": "float64",
+      "gender_female": "int64",
+      "gender_male": "int64",
+      "high_consistency": "int64",
+      "low_attendance_risk": "int64",
+      "age_mismatch_risk": "int64",
+      "low_engagement_risk": "int64",
+      "multiple_risk_factors": "int64",
+      "age_x_attendance_rate": "float64",
+      "age_div_attendance_rate": "float64",
+      "age_minus_attendance_rate": "float64",
+      "attendance_age_ratio_x_engagement_score": "float64",
+      "attendance_age_ratio_div_engagement_score": "float64",
+      "attendance_age_ratio_minus_engagement_score": "float64",
+      "age_squared": "float64",
+      "attendance_rate_squared": "float64",
+      "gender_x_learning_style": "object",
+      "age_group_x_attendance_category": "object",
+      "gender_x_CCA": "object",
+      "learning_style_x_tuition": "object",
+      "attendance_rate_mean_by_gender": "float64",
+      "attendance_rate_median_by_gender": "float64",
+      "attendance_rate_std_by_gender": "float64",
+      "attendance_rate_deviation_from_gender_mean": "float64",
+      "age_mean_by_learning_style": "float64",
+      "age_median_by_learning_style": "float64",
+      "age_std_by_learning_style": "float64",
+      "age_deviation_from_learning_style_mean": "float64",
+      "engagement_score_mean_by_age_group": "float64",
+      "engagement_score_median_by_age_group": "float64",
+      "engagement_score_std_by_age_group": "float64",
+      "engagement_score_deviation_from_age_group_mean": "float64",
+      "academic_support_index": "float64",
+      "performance_vs_age_peers": "float64",
+      "learning_style_effectiveness": "float64",
+      "risk_amplification_score": "float64"
+    }
+  },
+  "target_investigation": {
+    "basic_stats": {
+      "count": 15400,
+      "mean": 67.16603896103896,
+      "std": 13.977913516062584,
+      "min": 32.0,
+      "max": 100.0,
+      "median": 68.0,
+      "unique_values": 68,
+      "missing_values": 495
+    },
+    "distribution_analysis": {
+      "skewness": 0.05554590416043833,
+      "kurtosis": -0.7289460334722695,
+      "is_normal": false,
+      "normality_pvalue": 4.856520024145593e-205
+    },
+    "value_patterns": {
+      "value_counts": {
+        "69.0": 498,
+        "79.0": 479,
+        "72.0": 430,
+        "74.0": 428,
+        "70.0": 425,
+        "59.0": 415,
+        "68.0": 399,
+        "73.0": 394,
+        "78.0": 392,
+        "62.0": 366
+      },
+      "repeated_values_pct": 100.0,
+      "single_occurrence_pct": 0.0
+    },
+    "potential_issues": []
+  },
+  "feature_target_relationships": {
+    "total_numerical_features": 44,
+    "correlations_calculated": 38,
+    "perfect_predictors": [
+      "performance_vs_age_peers"
+    ],
+    "near_perfect_predictors": [],
+    "top_correlations": [
+      {
+        "feature": "performance_vs_age_peers",
+        "correlation": 0.9996376071370742,
+        "p_value": 0.0,
+        "abs_correlation": 0.9996376071370742,
+        "sample_size": 15400
+      },
+      {
+        "feature": "number_of_siblings",
+        "correlation": -0.3637183137577985,
+        "p_value": 0.0,
+        "abs_correlation": 0.3637183137577985,
+        "sample_size": 15400
+      },
+      {
+        "feature": "academic_support_index",
+        "correlation": 0.3540058693337325,
+        "p_value": 0.0,
+        "abs_correlation": 0.3540058693337325,
+        "sample_size": 15400
+      },
+      {
+        "feature": "engagement_score_deviation_from_age_group_mean",
+        "correlation": 0.3442497984039389,
+        "p_value": 0.0,
+        "abs_correlation": 0.3442497984039389,
+        "sample_size": 15400
+      },
+      {
+        "feature": "engagement_score",
+        "correlation": 0.3442103398891023,
+        "p_value": 0.0,
+        "abs_correlation": 0.3442103398891023,
+        "sample_size": 15400
+      },
+      {
+        "feature": "attendance_rate",
+        "correlation": 0.34074117788952263,
+        "p_value": 0.0,
+        "abs_correlation": 0.34074117788952263,
+        "sample_size": 15400
+      },
+      {
+        "feature": "attendance_rate_deviation_from_gender_mean",
+        "correlation": 0.3405737723522734,
+        "p_value": 0.0,
+        "abs_correlation": 0.3405737723522734,
+        "sample_size": 15400
+      },
+      {
+        "feature": "attendance_rate_squared",
+        "correlation": 0.33748745010468906,
+        "p_value": 0.0,
+        "abs_correlation": 0.33748745010468906,
+        "sample_size": 15400
+      },
+      {
+        "feature": "age_minus_attendance_rate",
+        "correlation": -0.32991998377021925,
+        "p_value": 0.0,
+        "abs_correlation": 0.32991998377021925,
+        "sample_size": 15400
+      },
+      {
+        "feature": "attendance_age_ratio_x_engagement_score",
+        "correlation": 0.27303298651459873,
+        "p_value": 2.1570990941045096e-261,
+        "abs_correlation": 0.27303298651459873,
+        "sample_size": 15400
+      },
+      {
+        "feature": "learning_style_effectiveness",
+        "correlation": 0.27219687330653525,
+        "p_value": 9.590750250962726e-260,
+        "abs_correlation": 0.27219687330653525,
+        "sample_size": 15400
+      },
+      {
+        "feature": "learning_style_visual",
+        "correlation": 0.2721968733065352,
+        "p_value": 9.590750250962726e-260,
+        "abs_correlation": 0.2721968733065352,
+        "sample_size": 15400
+      },
+      {
+        "feature": "learning_style_auditory",
+        "correlation": -0.2721968733065352,
+        "p_value": 9.590750250962726e-260,
+        "abs_correlation": 0.2721968733065352,
+        "sample_size": 15400
+      },
+      {
+        "feature": "age_mean_by_learning_style",
+        "correlation": -0.2721968733065352,
+        "p_value": 9.590750250962726e-260,
+        "abs_correlation": 0.2721968733065352,
+        "sample_size": 15400
+      },
+      {
+        "feature": "age_std_by_learning_style",
+        "correlation": 0.27219687330653514,
+        "p_value": 9.590750250962726e-260,
+        "abs_correlation": 0.27219687330653514,
+        "sample_size": 15400
+      },
+      {
+        "feature": "support_seeking_score",
+        "correlation": 0.26937265259986887,
+        "p_value": 3.2001904597435266e-254,
+        "abs_correlation": 0.26937265259986887,
+        "sample_size": 15400
+      },
+      {
+        "feature": "age_div_attendance_rate",
+        "correlation": -0.2407234593946935,
+        "p_value": 6.752458377218313e-202,
+        "abs_correlation": 0.2407234593946935,
+        "sample_size": 15400
+      },
+      {
+        "feature": "age_x_attendance_rate",
+        "correlation": 0.21399909074299853,
+        "p_value": 5.450271347220044e-159,
+        "abs_correlation": 0.21399909074299853,
+        "sample_size": 15400
+      },
+      {
+        "feature": "attendance_age_ratio",
+        "correlation": 0.2139990907429985,
+        "p_value": 5.450271347220044e-159,
+        "abs_correlation": 0.2139990907429985,
+        "sample_size": 15400
+      },
+      {
+        "feature": "n_female",
+        "correlation": -0.1719313809230785,
+        "p_value": 1.7477740412275496e-102,
+        "abs_correlation": 0.1719313809230785,
+        "sample_size": 15400
+      }
+    ],
+    "correlation_stats": {
+      "max_correlation": 0.9996376071370742,
+      "mean_correlation": 0.1861318045692386,
+      "median_correlation": 0.19296523583303848
+    }
+  },
+  "data_split_investigation": {
+    "data_size": 15400,
+    "feature_count": 60,
+    "numerical_feature_count": 44,
+    "missing_target_count": 495,
+    "split_experiments": [
+      {
+        "random_state": 42,
+        "test_size": 0.2,
+        "train_size": 12320,
+        "test_size_actual": 3080,
+        "mae": 2.0458094093248598e-14,
+        "r2": 1.0,
+        "perfect_performance": true
+      },
+      {
+        "random_state": 42,
+        "test_size": 0.25,
+        "train_size": 11550,
+        "test_size_actual": 3850,
+        "mae": 1.1290062679841135e-13,
+        "r2": 1.0,
+        "perfect_performance": true
+      },
+      {
+        "random_state": 42,
+        "test_size": 0.3,
+        "train_size": 10780,
+        "test_size_actual": 4620,
+        "mae": 1.489678991032972e-14,
+        "r2": 1.0,
+        "perfect_performance": true
+      },
+      {
+        "random_state": 123,
+        "test_size": 0.2,
+        "train_size": 12320,
+        "test_size_actual": 3080,
+        "mae": 1.6891538672842383e-14,
+        "r2": 1.0,
+        "perfect_performance": true
+      },
+      {
+        "random_state": 123,
+        "test_size": 0.25,
+        "train_size": 11550,
+        "test_size_actual": 3850,
+        "mae": 2.3482976025484453e-14,
+        "r2": 1.0,
+        "perfect_performance": true
+      },
+      {
+        "random_state": 123,
+        "test_size": 0.3,
+        "train_size": 10780,
+        "test_size_actual": 4620,
+        "mae": 1.9498400008585605e-14,
+        "r2": 1.0,
+        "perfect_performance": true
+      },
+      {
+        "random_state": 456,
+        "test_size": 0.2,
+        "train_size": 12320,
+        "test_size_actual": 3080,
+        "mae": 2.265893100855748e-14,
+        "r2": 1.0,
+        "perfect_performance": true
+      },
+      {
+        "random_state": 456,
+        "test_size": 0.25,
+        "train_size": 11550,
+        "test_size_actual": 3850,
+        "mae": 2.935187446630814e-14,
+        "r2": 1.0,
+        "perfect_performance": true
+      },
+      {
+        "random_state": 456,
+        "test_size": 0.3,
+        "train_size": 10780,
+        "test_size_actual": 4620,
+        "mae": 3.509958076951733e-14,
+        "r2": 1.0,
+        "perfect_performance": true
+      },
+      {
+        "random_state": 789,
+        "test_size": 0.2,
+        "train_size": 12320,
+        "test_size_actual": 3080,
+        "mae": 2.1219389881562992e-14,
+        "r2": 1.0,
+        "perfect_performance": true
+      },
+      {
+        "random_state": 789,
+        "test_size": 0.25,
+        "train_size": 11550,
+        "test_size_actual": 3850,
+        "mae": 7.706343499843829e-14,
+        "r2": 1.0,
+        "perfect_performance": true
+      },
+      {
+        "random_state": 789,
+        "test_size": 0.3,
+        "train_size": 10780,
+        "test_size_actual": 4620,
+        "mae": 9.412691886144946e-14,
+        "r2": 1.0,
+        "perfect_performance": true
+      },
+      {
+        "random_state": 999,
+        "test_size": 0.2,
+        "train_size": 12320,
+        "test_size_actual": 3080,
+        "mae": 2.525195060269499e-14,
+        "r2": 1.0,
+        "perfect_performance": true
+      },
+      {
+        "random_state": 999,
+        "test_size": 0.25,
+        "train_size": 11550,
+        "test_size_actual": 3850,
+        "mae": 2.2892395050307227e-14,
+        "r2": 1.0,
+        "perfect_performance": true
+      },
+      {
+        "random_state": 999,
+        "test_size": 0.3,
+        "train_size": 10780,
+        "test_size_actual": 4620,
+        "mae": 2.1660787641656387e-14,
+        "r2": 1.0,
+        "perfect_performance": true
+      }
+    ],
+    "perfect_performance_count": 15,
+    "total_experiments": 15,
+    "perfect_performance_rate": 1.0
+  },
+  "cross_validation_investigation": {
+    "data_size": 15400,
+    "cv_experiments": [
+      {
+        "cv_strategy": "5-fold",
+        "model": "LinearRegression",
+        "r2_scores": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "r2_mean": 1.0,
+        "r2_std": 0.0,
+        "mae_scores": [
+          3.4166032196776243e-14,
+          1.9411612288717765e-12,
+          2.9086113027478384e-14,
+          2.323936137322385e-12,
+          1.0542331798300343e-13
+        ],
+        "mae_mean": 8.867545658802837e-13,
+        "mae_std": 1.0247190036280074e-12,
+        "perfect_folds": 5,
+        "near_perfect_folds": 5
+      },
+      {
+        "cv_strategy": "5-fold",
+        "model": "Ridge",
+        "r2_scores": [
+          0.9999997846425115,
+          0.9999998599987527,
+          0.99999981438417,
+          0.9999997589038008,
+          0.9999997254461652
+        ],
+        "r2_mean": 0.9999997886750801,
+        "r2_std": 4.6148694324054715e-08,
+        "mae_scores": [
+          0.0017303908800200508,
+          0.0014818796858760423,
+          0.001697248308651299,
+          0.0018747241248851432,
+          0.001845164560186234
+        ],
+        "mae_mean": 0.0017258815119237541,
+        "mae_std": 0.0001391112180097999,
+        "perfect_folds": 5,
+        "near_perfect_folds": 5
+      },
+      {
+        "cv_strategy": "5-fold",
+        "model": "RandomForest",
+        "r2_scores": [
+          0.999898374534552,
+          0.999913506167965,
+          0.9998893304397367,
+          0.9998716611552716,
+          0.9999218472702908
+        ],
+        "r2_mean": 0.9998989439135633,
+        "r2_std": 1.7740997571292254e-05,
+        "mae_scores": [
+          0.01724025974025972,
+          0.014123376623376607,
+          0.017629870129870145,
+          0.019902597402597415,
+          0.01672077922077923
+        ],
+        "mae_mean": 0.017123376623376627,
+        "mae_std": 0.0018523687615247294,
+        "perfect_folds": 5,
+        "near_perfect_folds": 5
+      },
+      {
+        "cv_strategy": "10-fold",
+        "model": "LinearRegression",
+        "r2_scores": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "r2_mean": 1.0,
+        "r2_std": 0.0,
+        "mae_scores": [
+          2.270045623337463e-14,
+          4.167287006094302e-14,
+          2.8643177296095464e-14,
+          2.4970040465325234e-12,
+          2.5081235789557823e-14,
+          3.323863550919326e-14,
+          2.378933990635764e-14,
+          2.784958411070107e-14,
+          3.235276404642742e-14,
+          6.740928161983808e-14
+        ],
+        "mae_mean": 2.7997413911050115e-13,
+        "mae_std": 7.391151813491979e-13,
+        "perfect_folds": 10,
+        "near_perfect_folds": 10
+      },
+      {
+        "cv_strategy": "10-fold",
+        "model": "Ridge",
+        "r2_scores": [
+          0.9999998398457284,
+          0.9999998218769071,
+          0.9999998966066435,
+          0.9999998700155641,
+          0.9999998381978,
+          0.9999998703457079,
+          0.9999998265397486,
+          0.9999998052356752,
+          0.9999998992525567,
+          0.999999625413302
+        ],
+        "r2_mean": 0.9999998293329634,
+        "r2_std": 7.427517940359253e-08,
+        "mae_scores": [
+          0.0015270697285554608,
+          0.0015515665158884868,
+          0.0012569712092311714,
+          0.001423841254502043,
+          0.0016002969719407037,
+          0.001414056881451694,
+          0.0015504002807650247,
+          0.0017349828632201648,
+          0.0013703374503164542,
+          0.001951559956027173
+        ],
+        "mae_mean": 0.0015381083111898376,
+        "mae_std": 0.0001869904267063513,
+        "perfect_folds": 10,
+        "near_perfect_folds": 10
+      },
+      {
+        "cv_strategy": "10-fold",
+        "model": "RandomForest",
+        "r2_scores": [
+          0.9999155820674386,
+          0.9999140298856544,
+          0.999926111837617,
+          0.9999074917418618,
+          0.9998697599724812,
+          0.9999522666264894,
+          0.9999172665421793,
+          0.9998756245509494,
+          0.9999643599727681,
+          0.9998863573170885
+        ],
+        "r2_mean": 0.9999128850514527,
+        "r2_std": 2.895553774927979e-05,
+        "mae_scores": [
+          0.015259740259740251,
+          0.015519480519480537,
+          0.012207792207792228,
+          0.01597402597402597,
+          0.019415584415584452,
+          0.011363636363636367,
+          0.01389610389610389,
+          0.019545454545454557,
+          0.009285714285714307,
+          0.020129870129870144
+        ],
+        "mae_mean": 0.01525974025974027,
+        "mae_std": 0.003492516636669428,
+        "perfect_folds": 10,
+        "near_perfect_folds": 10
+      },
+      {
+        "cv_strategy": "5-fold-no-shuffle",
+        "model": "LinearRegression",
+        "r2_scores": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "r2_mean": 1.0,
+        "r2_std": 0.0,
+        "mae_scores": [
+          4.637675524995226e-13,
+          1.3791449944548802e-13,
+          2.3581713782271897e-14,
+          2.2210043328284103e-12,
+          4.2411096279914554e-14
+        ],
+        "mae_mean": 5.777358389671215e-13,
+        "mae_std": 8.367104993399596e-13,
+        "perfect_folds": 5,
+        "near_perfect_folds": 5
+      },
+      {
+        "cv_strategy": "5-fold-no-shuffle",
+        "model": "Ridge",
+        "r2_scores": [
+          0.9999997738502896,
+          0.9999998242654126,
+          0.9999998431255738,
+          0.9999998151762778,
+          0.9999997339852081
+        ],
+        "r2_mean": 0.9999997980805524,
+        "r2_std": 3.9248652129858844e-08,
+        "mae_scores": [
+          0.001803428125918459,
+          0.0015632559986517784,
+          0.0015155177197277256,
+          0.0016776045343333392,
+          0.002063137659014581
+        ],
+        "mae_mean": 0.0017245888075291768,
+        "mae_std": 0.0001963555346144677,
+        "perfect_folds": 5,
+        "near_perfect_folds": 5
+      },
+      {
+        "cv_strategy": "5-fold-no-shuffle",
+        "model": "RandomForest",
+        "r2_scores": [
+          0.999885599796801,
+          0.9999327452492297,
+          0.9998886255846512,
+          0.9999007853760482,
+          0.9998771723352576
+        ],
+        "r2_mean": 0.9998969856683976,
+        "r2_std": 1.941794346419654e-05,
+        "mae_scores": [
+          0.019318181818181814,
+          0.013636363636363636,
+          0.014805194805194807,
+          0.016655844155844153,
+          0.021396103896103878
+        ],
+        "mae_mean": 0.017162337662337657,
+        "mae_std": 0.002857187130707735,
+        "perfect_folds": 5,
+        "near_perfect_folds": 5
+      }
+    ]
+  },
+  "feature_engineering_investigation": {
+    "total_features": 60,
+    "feature_types": {
+      "int64": [
+        "index",
+        "number_of_siblings",
+        "attendance_rate_missing",
+        "learning_style_visual",
+        "learning_style_auditory",
+        "gender_female",
+        "gender_male",
+        "high_consistency",
+        "low_attendance_risk",
+        "age_mismatch_risk",
+        "low_engagement_risk",
+        "multiple_risk_factors"
+      ],
+      "object": [
+        "direct_admission",
+        "CCA",
+        "learning_style",
+        "student_id",
+        "gender",
+        "tuition",
+        "sleep_time",
+        "wake_time",
+        "mode_of_transport",
+        "bag_color",
+        "age_group",
+        "attendance_category",
+        "gender_x_learning_style",
+        "age_group_x_attendance_category",
+        "gender_x_CCA",
+        "learning_style_x_tuition"
+      ],
+      "float64": [
+        "n_male",
+        "n_female",
+        "age",
+        "hours_per_week",
+        "attendance_rate",
+        "attendance_age_ratio",
+        "engagement_score",
+        "support_seeking_score",
+        "age_x_attendance_rate",
+        "age_div_attendance_rate",
+        "age_minus_attendance_rate",
+        "attendance_age_ratio_x_engagement_score",
+        "attendance_age_ratio_div_engagement_score",
+        "attendance_age_ratio_minus_engagement_score",
+        "age_squared",
+        "attendance_rate_squared",
+        "attendance_rate_mean_by_gender",
+        "attendance_rate_median_by_gender",
+        "attendance_rate_std_by_gender",
+        "attendance_rate_deviation_from_gender_mean",
+        "age_mean_by_learning_style",
+        "age_median_by_learning_style",
+        "age_std_by_learning_style",
+        "age_deviation_from_learning_style_mean",
+        "engagement_score_mean_by_age_group",
+        "engagement_score_median_by_age_group",
+        "engagement_score_std_by_age_group",
+        "engagement_score_deviation_from_age_group_mean",
+        "academic_support_index",
+        "performance_vs_age_peers",
+        "learning_style_effectiveness",
+        "risk_amplification_score"
+      ]
+    },
+    "derived_features": [
+      "attendance_category",
+      "attendance_age_ratio",
+      "engagement_score",
+      "support_seeking_score",
+      "attendance_age_ratio_x_engagement_score",
+      "attendance_age_ratio_div_engagement_score",
+      "attendance_age_ratio_minus_engagement_score",
+      "age_squared",
+      "attendance_rate_squared",
+      "age_group_x_attendance_category",
+      "engagement_score_mean_by_age_group",
+      "engagement_score_median_by_age_group",
+      "engagement_score_std_by_age_group",
+      "engagement_score_deviation_from_age_group_mean",
+      "academic_support_index",
+      "risk_amplification_score"
+    ],
+    "interaction_features": [
+      "age_x_attendance_rate",
+      "age_div_attendance_rate",
+      "age_minus_attendance_rate",
+      "attendance_age_ratio_x_engagement_score",
+      "attendance_age_ratio_div_engagement_score",
+      "attendance_age_ratio_minus_engagement_score",
+      "gender_x_learning_style",
+      "age_group_x_attendance_category",
+      "gender_x_CCA",
+      "learning_style_x_tuition"
+    ],
+    "aggregated_features": [
+      "attendance_rate_mean_by_gender",
+      "attendance_rate_median_by_gender",
+      "attendance_rate_std_by_gender",
+      "attendance_rate_deviation_from_gender_mean",
+      "age_mean_by_learning_style",
+      "age_median_by_learning_style",
+      "age_std_by_learning_style",
+      "age_deviation_from_learning_style_mean",
+      "engagement_score_mean_by_age_group",
+      "engagement_score_median_by_age_group",
+      "engagement_score_std_by_age_group",
+      "engagement_score_deviation_from_age_group_mean"
+    ],
+    "potential_leakage_features": [
+      "engagement_score",
+      "support_seeking_score",
+      "attendance_age_ratio_x_engagement_score",
+      "attendance_age_ratio_div_engagement_score",
+      "attendance_age_ratio_minus_engagement_score",
+      "engagement_score_mean_by_age_group",
+      "engagement_score_median_by_age_group",
+      "engagement_score_std_by_age_group",
+      "engagement_score_deviation_from_age_group_mean",
+      "performance_vs_age_peers",
+      "risk_amplification_score"
+    ]
+  },
+  "summary": {
+    "critical_findings": [
+      "Found 1 perfect predictors"
+    ],
+    "data_quality_issues": [],
+    "model_performance_patterns": [
+      "Perfect performance in 9 CV experiments"
+    ],
+    "feature_engineering_issues": [
+      "Found 11 potential leakage features"
+    ]
+  },
+  "recommendations": [
+    "URGENT: Remove perfect predictor features - they indicate data leakage",
+    "Review and potentially remove features with performance-related names",
+    "Consider using more complex validation strategies (time-based, group-based)",
+    "Implement feature importance analysis to understand model behavior"
+  ]
+}

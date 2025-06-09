@@ -1,0 +1,207 @@
+{
+  "timestamp": "2025-06-09T16:10:05.141759",
+  "status": "completed",
+  "leakage_features_removed": [
+    "performance_vs_age_peers"
+  ],
+  "clean_dataset_path": "C:\\Users\\ellie\\VSProjects\\aisg\\studentscore\\data\\modeling_outputs\\clean_dataset_final_no_leakage.csv",
+  "validation_results": {
+    "data_info": {
+      "total_samples": 15400,
+      "total_features": 59,
+      "numerical_features": 43,
+      "missing_target_count": 495
+    },
+    "model_performance": {
+      "LinearRegression": {
+        "individual_results": [
+          {
+            "random_state": 42,
+            "mae": 7.506339419563445,
+            "r2": 0.5506042146186474,
+            "rmse": 9.322302739143671,
+            "perfect_performance": false
+          },
+          {
+            "random_state": 123,
+            "mae": 7.630307216710767,
+            "r2": 0.5350833925092939,
+            "rmse": 9.50217427176806,
+            "perfect_performance": false
+          },
+          {
+            "random_state": 456,
+            "mae": 7.615785132311835,
+            "r2": 0.5445258364041099,
+            "rmse": 9.529090200791066,
+            "perfect_performance": false
+          }
+        ],
+        "mean_mae": 7.584143922862015,
+        "mean_r2": 0.5434044811773504,
+        "mean_rmse": 9.4511890705676,
+        "perfect_performance_count": 0,
+        "total_experiments": 3
+      },
+      "Ridge": {
+        "individual_results": [
+          {
+            "random_state": 42,
+            "mae": 7.53035526083514,
+            "r2": 0.5481236661384999,
+            "rmse": 9.347995683089973,
+            "perfect_performance": false
+          },
+          {
+            "random_state": 123,
+            "mae": 7.654542464186139,
+            "r2": 0.5318712758640973,
+            "rmse": 9.534943109854565,
+            "perfect_performance": false
+          },
+          {
+            "random_state": 456,
+            "mae": 7.634081731778787,
+            "r2": 0.5420729419004009,
+            "rmse": 9.554714561200441,
+            "perfect_performance": false
+          }
+        ],
+        "mean_mae": 7.606326485600022,
+        "mean_r2": 0.5406892946343328,
+        "mean_rmse": 9.479217784714992,
+        "perfect_performance_count": 0,
+        "total_experiments": 3
+      },
+      "RandomForest": {
+        "individual_results": [
+          {
+            "random_state": 42,
+            "mae": 5.571207792207792,
+            "r2": 0.7188724538075728,
+            "rmse": 7.373274554927252,
+            "perfect_performance": false
+          },
+          {
+            "random_state": 123,
+            "mae": 5.711071428571428,
+            "r2": 0.701252443944421,
+            "rmse": 7.617064650907454,
+            "perfect_performance": false
+          },
+          {
+            "random_state": 456,
+            "mae": 5.619025974025973,
+            "r2": 0.7155780821703319,
+            "rmse": 7.530106085729315,
+            "perfect_performance": false
+          }
+        ],
+        "mean_mae": 5.633768398268398,
+        "mean_r2": 0.7119009933074419,
+        "mean_rmse": 7.506815097188007,
+        "perfect_performance_count": 0,
+        "total_experiments": 3
+      }
+    },
+    "cross_validation_results": {
+      "LinearRegression": {
+        "r2_scores": [
+          0.5506042146186492,
+          0.5378407568809426,
+          0.5389764646619533,
+          0.539774196522997,
+          0.5365313411926593
+        ],
+        "r2_mean": 0.5407453947754404,
+        "r2_std": 0.005049036291996732,
+        "mae_scores": [
+          7.5063394195634405,
+          7.645074123854467,
+          7.506368379890409,
+          7.452093934416464,
+          7.770583853652722
+        ],
+        "mae_mean": 7.576091942275501,
+        "mae_std": 0.11635114137466161,
+        "perfect_folds": 0
+      },
+      "Ridge": {
+        "r2_scores": [
+          0.548123666138496,
+          0.5357472400834012,
+          0.5358518686628435,
+          0.5368939821179797,
+          0.5351864957555625
+        ],
+        "r2_mean": 0.5383606505516566,
+        "r2_std": 0.004912570592958488,
+        "mae_scores": [
+          7.53035526083524,
+          7.667447911993041,
+          7.537151846555429,
+          7.476916658492026,
+          7.781711016680568
+        ],
+        "mae_mean": 7.59871653891126,
+        "mae_std": 0.11091408124757048,
+        "perfect_folds": 0
+      },
+      "RandomForest": {
+        "r2_scores": [
+          0.7166415335791452,
+          0.7177570813361995,
+          0.6866040755172037,
+          0.6907652315963387,
+          0.707211282109437
+        ],
+        "r2_mean": 0.7037958408276648,
+        "r2_std": 0.012937904539617793,
+        "mae_scores": [
+          5.597915584415585,
+          5.560136363636364,
+          5.750246753246753,
+          5.704961038961039,
+          5.812954545454546
+        ],
+        "mae_mean": 5.685242857142857,
+        "mae_std": 0.09402369468787808,
+        "perfect_folds": 0
+      }
+    },
+    "performance_fixed": true
+  },
+  "retrain_results": {
+    "timestamp": "2025-06-09T16:09:48.654651",
+    "data_info": {
+      "train_size": 12320,
+      "test_size": 3080,
+      "feature_count": 43
+    },
+    "model_results": {
+      "linear_regression": {
+        "train_mae": 7.5849307808735675,
+        "test_mae": 7.506339419563445,
+        "train_r2": 0.5393872805539782,
+        "test_r2": 0.5506042146186474,
+        "overfitting_ratio": 0.9896384866809462
+      },
+      "ridge_regression": {
+        "train_mae": 7.608627000294499,
+        "test_mae": 7.53035526083514,
+        "train_r2": 0.5369303542958241,
+        "test_r2": 0.5481236661384999,
+        "overfitting_ratio": 0.9897127642797671
+      },
+      "random_forest": {
+        "train_mae": 2.118038961038961,
+        "test_mae": 5.542931818181818,
+        "train_r2": 0.9582165156999936,
+        "test_r2": 0.721500854182303,
+        "overfitting_ratio": 2.6170112637884833
+      }
+    },
+    "best_model": "random_forest"
+  },
+  "performance_fixed": true
+}

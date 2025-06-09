@@ -1,0 +1,502 @@
+{
+  "timestamp": "2025-06-09T17:59:52.543272",
+  "analysis_type": "simplified_external_validation",
+  "dataset_info": {
+    "shape": [
+      15895,
+      60
+    ],
+    "features_used": [
+      "index",
+      "number_of_siblings",
+      "n_male",
+      "n_female",
+      "age",
+      "hours_per_week",
+      "attendance_rate",
+      "attendance_rate_missing",
+      "attendance_age_ratio",
+      "engagement_score",
+      "learning_style_visual",
+      "learning_style_auditory",
+      "support_seeking_score",
+      "gender_female",
+      "gender_male",
+      "high_consistency",
+      "low_attendance_risk",
+      "age_mismatch_risk",
+      "low_engagement_risk",
+      "multiple_risk_factors",
+      "age_x_attendance_rate",
+      "age_div_attendance_rate",
+      "age_minus_attendance_rate",
+      "attendance_age_ratio_x_engagement_score",
+      "attendance_age_ratio_div_engagement_score",
+      "attendance_age_ratio_minus_engagement_score",
+      "age_squared",
+      "attendance_rate_squared",
+      "attendance_rate_mean_by_gender",
+      "attendance_rate_median_by_gender",
+      "attendance_rate_std_by_gender",
+      "attendance_rate_deviation_from_gender_mean",
+      "age_mean_by_learning_style",
+      "age_median_by_learning_style",
+      "age_std_by_learning_style",
+      "age_deviation_from_learning_style_mean",
+      "engagement_score_mean_by_age_group",
+      "engagement_score_median_by_age_group",
+      "engagement_score_std_by_age_group",
+      "engagement_score_deviation_from_age_group_mean",
+      "academic_support_index",
+      "learning_style_effectiveness",
+      "risk_amplification_score"
+    ],
+    "target_variable": "final_test"
+  },
+  "models_analyzed": [
+    "LinearRegression",
+    "Ridge",
+    "Lasso",
+    "RandomForest",
+    "GradientBoosting"
+  ],
+  "temporal_validation": {
+    "LinearRegression": {
+      "validation_r2": 0.5321973679287654,
+      "validation_mae": 7.566620295133393,
+      "validation_rmse": 9.423658937487232,
+      "test_r2": 0.547669802546356,
+      "test_mae": 7.508597859124444,
+      "test_rmse": 9.405694075367373,
+      "train_size": 9240,
+      "val_size": 3080,
+      "test_size": 3080
+    },
+    "Ridge": {
+      "validation_r2": 0.5288893532895671,
+      "validation_mae": 7.605505062217919,
+      "validation_rmse": 9.456919423226447,
+      "test_r2": 0.5450664101052589,
+      "test_mae": 7.533921634902739,
+      "test_rmse": 9.43272253889533,
+      "train_size": 9240,
+      "val_size": 3080,
+      "test_size": 3080
+    },
+    "Lasso": {
+      "validation_r2": 0.4887346214413397,
+      "validation_mae": 7.855270835534778,
+      "validation_rmse": 9.851705512834407,
+      "test_r2": 0.5080475895131664,
+      "test_mae": 7.786400466305247,
+      "test_rmse": 9.808997060681921,
+      "train_size": 9240,
+      "val_size": 3080,
+      "test_size": 3080
+    },
+    "RandomForest": {
+      "validation_r2": 0.6526328700016888,
+      "validation_mae": 6.171610389610389,
+      "validation_rmse": 8.120496610109827,
+      "test_r2": 0.6741784590140263,
+      "test_mae": 6.044438311688311,
+      "test_rmse": 7.982757833597994,
+      "train_size": 9240,
+      "val_size": 3080,
+      "test_size": 3080
+    },
+    "GradientBoosting": {
+      "validation_r2": 0.6384845426342012,
+      "validation_mae": 6.436424610904431,
+      "validation_rmse": 8.284220783061755,
+      "test_r2": 0.6613161156203993,
+      "test_mae": 6.275178339992917,
+      "test_rmse": 8.138799017545015,
+      "train_size": 9240,
+      "val_size": 3080,
+      "test_size": 3080
+    }
+  },
+  "cross_validation": {
+    "LinearRegression": {
+      "r2_mean": 0.5407453947754404,
+      "r2_std": 0.005049036291996732,
+      "r2_scores": [
+        0.5506042146186492,
+        0.5378407568809426,
+        0.5389764646619533,
+        0.539774196522997,
+        0.5365313411926593
+      ],
+      "mae_mean": 7.576091942275501,
+      "mae_std": 0.11635114137466161,
+      "mae_scores": [
+        7.5063394195634405,
+        7.645074123854467,
+        7.506368379890409,
+        7.452093934416464,
+        7.770583853652722
+      ],
+      "rmse_mean": 9.47092824678326,
+      "rmse_std": 0.14812069040418663,
+      "rmse_scores": [
+        9.322302739143653,
+        9.558935986811894,
+        9.376962538863149,
+        9.376338904897164,
+        9.720101064200437
+      ]
+    },
+    "Ridge": {
+      "r2_mean": 0.5383606505516566,
+      "r2_std": 0.004912570592958488,
+      "r2_scores": [
+        0.548123666138496,
+        0.5357472400834012,
+        0.5358518686628435,
+        0.5368939821179797,
+        0.5351864957555625
+      ],
+      "mae_mean": 7.59871653891126,
+      "mae_std": 0.11091408124757048,
+      "mae_scores": [
+        7.53035526083524,
+        7.667447911993041,
+        7.537151846555429,
+        7.476916658492026,
+        7.781711016680568
+      ],
+      "rmse_mean": 9.495413773436225,
+      "rmse_std": 0.1425344679060257,
+      "rmse_scores": [
+        9.347995683090014,
+        9.580561846167173,
+        9.408685152683256,
+        9.405632944276656,
+        9.734193240964023
+      ]
+    },
+    "Lasso": {
+      "r2_mean": 0.49867031720061705,
+      "r2_std": 0.004854120222409666,
+      "r2_scores": [
+        0.5066852661026489,
+        0.49357889838211955,
+        0.49391460221733985,
+        0.5008816294049917,
+        0.4982911898959852
+      ],
+      "mae_mean": 7.889603811908552,
+      "mae_std": 0.12558691787534393,
+      "mae_scores": [
+        7.8358645058919985,
+        7.980771407978029,
+        7.850514945495569,
+        7.708594049647902,
+        8.072274150529262
+      ],
+      "rmse_mean": 9.895122643948744,
+      "rmse_std": 0.14020165319392752,
+      "rmse_scores": [
+        9.767215012594026,
+        10.006210352145253,
+        9.824547029922455,
+        9.764490596580913,
+        10.113150228501079
+      ]
+    },
+    "RandomForest": {
+      "r2_mean": 0.707862597106907,
+      "r2_std": 0.013131475091462348,
+      "r2_scores": [
+        0.7224385044857766,
+        0.7189395525217791,
+        0.691046496706113,
+        0.6933151301737108,
+        0.7135733016471549
+      ],
+      "mae_mean": 5.652771428571429,
+      "mae_std": 0.09108931089570027,
+      "mae_scores": [
+        5.542814935064936,
+        5.545217532467532,
+        5.72272077922078,
+        5.694551948051949,
+        5.758551948051948
+      ],
+      "rmse_mean": 7.550478359716801,
+      "rmse_std": 0.13729707753714318,
+      "rmse_scores": [
+        7.326360998955279,
+        7.454415537551787,
+        7.676216139529894,
+        7.65409748935976,
+        7.641301633187283
+      ]
+    },
+    "GradientBoosting": {
+      "r2_mean": 0.6533167650188538,
+      "r2_std": 0.00823846186287251,
+      "r2_scores": [
+        0.6671690406961226,
+        0.6582795383750419,
+        0.6484474422238559,
+        0.645370592117186,
+        0.6473172116820634
+      ],
+      "mae_mean": 6.356147605804807,
+      "mae_std": 0.11767357962446526,
+      "mae_scores": [
+        6.20352960904226,
+        6.326405255646394,
+        6.342127580323042,
+        6.341246435279867,
+        6.567429148732474
+      ],
+      "rmse_mean": 8.228087715425714,
+      "rmse_std": 0.14620501629579485,
+      "rmse_scores": [
+        8.022700197476075,
+        8.219572374260956,
+        8.188338044866327,
+        8.230669963965909,
+        8.479157996559303
+      ]
+    }
+  },
+  "robustness_testing": {
+    "LinearRegression": {
+      "baseline_r2": 0.5506042146186474,
+      "baseline_mae": 7.506339419563445,
+      "noise_0.01": {
+        "r2": 0.19221252761456997,
+        "mae": 10.00377144097855,
+        "r2_degradation": 0.6509061817703342,
+        "mae_increase": 0.3327097113282883
+      },
+      "noise_0.05": {
+        "r2": -8.50086209398562,
+        "mae": 34.32537037345003,
+        "r2_degradation": 16.43915187767566,
+        "mae_increase": 3.5728508204664062
+      },
+      "noise_0.1": {
+        "r2": -35.70109808654959,
+        "mae": 67.48174647781393,
+        "r2_degradation": 65.83985617741128,
+        "mae_increase": 7.989967373702712
+      },
+      "noise_0.2": {
+        "r2": -144.54787912355673,
+        "mae": 134.37192401892986,
+        "r2_degradation": 263.5259220430626,
+        "mae_increase": 16.90112550316099
+      }
+    },
+    "Ridge": {
+      "baseline_r2": 0.5481236661384999,
+      "baseline_mae": 7.53035526083514,
+      "noise_0.01": {
+        "r2": 0.5481740852237524,
+        "mae": 7.5301198189586565,
+        "r2_degradation": -9.198487196820945e-05,
+        "mae_increase": -3.126570637488378e-05
+      },
+      "noise_0.05": {
+        "r2": 0.5461763984254818,
+        "mae": 7.546722485892043,
+        "r2_degradation": 0.0035526065253421906,
+        "mae_increase": 0.002173499720793719
+      },
+      "noise_0.1": {
+        "r2": 0.5387307228642524,
+        "mae": 7.602964645305138,
+        "r2_degradation": 0.0171365402636604,
+        "mae_increase": 0.009642225626144679
+      },
+      "noise_0.2": {
+        "r2": 0.5073441481971637,
+        "mae": 7.829960438084931,
+        "r2_degradation": 0.07439838937921739,
+        "mae_increase": 0.039786327055247504
+      }
+    },
+    "Lasso": {
+      "baseline_r2": 0.5066852661026486,
+      "baseline_mae": 7.835864505892002,
+      "noise_0.01": {
+        "r2": 0.5066096505578364,
+        "mae": 7.836686253107773,
+        "r2_degradation": 0.00014923572851033106,
+        "mae_increase": 0.00010487001340481624
+      },
+      "noise_0.05": {
+        "r2": 0.5060047358047715,
+        "mae": 7.841824276591702,
+        "r2_degradation": 0.0013431025991967808,
+        "mae_increase": 0.000760576027727255
+      },
+      "noise_0.1": {
+        "r2": 0.5045680740723459,
+        "mae": 7.853862331377635,
+        "r2_degradation": 0.004178515090023904,
+        "mae_increase": 0.0022968525645255785
+      },
+      "noise_0.2": {
+        "r2": 0.499426356303855,
+        "mae": 7.895825716035745,
+        "r2_degradation": 0.0143262697465591,
+        "mae_increase": 0.007652149944483637
+      }
+    },
+    "RandomForest": {
+      "baseline_r2": 0.721500854182303,
+      "baseline_mae": 5.542931818181818,
+      "noise_0.01": {
+        "r2": 0.7233247912005007,
+        "mae": 5.535610389610389,
+        "r2_degradation": -0.0025279762423356202,
+        "mae_increase": -0.0013208584935886544
+      },
+      "noise_0.05": {
+        "r2": 0.7163433475399341,
+        "mae": 5.6901266233766234,
+        "r2_degradation": 0.007148302891774203,
+        "mae_increase": 0.02655540606001687
+      },
+      "noise_0.1": {
+        "r2": 0.7055329778558509,
+        "mae": 5.832178571428572,
+        "r2_degradation": 0.022131472518558515,
+        "mae_increase": 0.05218298956843968
+      },
+      "noise_0.2": {
+        "r2": 0.6811544524251627,
+        "mae": 6.095957792207792,
+        "r2_degradation": 0.05592010255187574,
+        "mae_increase": 0.09977138311749557
+      }
+    },
+    "GradientBoosting": {
+      "baseline_r2": 0.6671690406961226,
+      "baseline_mae": 6.20352960904226,
+      "noise_0.01": {
+        "r2": 0.6667476754847476,
+        "mae": 6.20396198197774,
+        "r2_degradation": 0.0006315718890903331,
+        "mae_increase": 6.969789180172405e-05
+      },
+      "noise_0.05": {
+        "r2": 0.6595366410804042,
+        "mae": 6.299704643553403,
+        "r2_degradation": 0.011439978701281986,
+        "mae_increase": 0.015503276452643718
+      },
+      "noise_0.1": {
+        "r2": 0.6535560663260155,
+        "mae": 6.363566841088285,
+        "r2_degradation": 0.02040408583093629,
+        "mae_increase": 0.025797770323003684
+      },
+      "noise_0.2": {
+        "r2": 0.6329705141087885,
+        "mae": 6.5517894261666685,
+        "r2_degradation": 0.05125916297262755,
+        "mae_increase": 0.05613897878665485
+      }
+    }
+  },
+  "outlier_sensitivity": {
+    "LinearRegression": {
+      "original_r2": 0.5506042146186474,
+      "original_mae": 7.506339419563445,
+      "clean_r2": 0.5506042146186474,
+      "clean_mae": 7.506339419563445,
+      "r2_change": 0.0,
+      "mae_change": 0.0,
+      "n_outliers": 0,
+      "outlier_percentage": 0.0,
+      "outlier_sensitivity": 0.0
+    },
+    "Ridge": {
+      "original_r2": 0.5481236661384999,
+      "original_mae": 7.53035526083514,
+      "clean_r2": 0.5481236661384999,
+      "clean_mae": 7.53035526083514,
+      "r2_change": 0.0,
+      "mae_change": 0.0,
+      "n_outliers": 0,
+      "outlier_percentage": 0.0,
+      "outlier_sensitivity": 0.0
+    },
+    "Lasso": {
+      "original_r2": 0.5066852661026486,
+      "original_mae": 7.835864505892002,
+      "clean_r2": 0.5066852661026486,
+      "clean_mae": 7.835864505892002,
+      "r2_change": 0.0,
+      "mae_change": 0.0,
+      "n_outliers": 0,
+      "outlier_percentage": 0.0,
+      "outlier_sensitivity": 0.0
+    },
+    "RandomForest": {
+      "original_r2": 0.721500854182303,
+      "original_mae": 5.542931818181818,
+      "clean_r2": 0.721500854182303,
+      "clean_mae": 5.542931818181818,
+      "r2_change": 0.0,
+      "mae_change": 0.0,
+      "n_outliers": 0,
+      "outlier_percentage": 0.0,
+      "outlier_sensitivity": 0.0
+    },
+    "GradientBoosting": {
+      "original_r2": 0.6671690406961226,
+      "original_mae": 6.20352960904226,
+      "clean_r2": 0.6671690406961226,
+      "clean_mae": 6.20352960904226,
+      "r2_change": 0.0,
+      "mae_change": 0.0,
+      "n_outliers": 0,
+      "outlier_percentage": 0.0,
+      "outlier_sensitivity": 0.0
+    }
+  },
+  "summary": {
+    "best_performing_model": "RandomForest",
+    "most_robust_model": "Lasso",
+    "validation_consistency": {
+      "LinearRegression": {
+        "cv_std": 0.005049036291996732
+      },
+      "Ridge": {
+        "cv_std": 0.004912570592958488
+      },
+      "Lasso": {
+        "cv_std": 0.004854120222409666
+      },
+      "RandomForest": {
+        "cv_std": 0.013131475091462348
+      },
+      "GradientBoosting": {
+        "cv_std": 0.00823846186287251
+      }
+    },
+    "key_findings": [
+      "Best performing model: RandomForest",
+      "Most robust model: Lasso",
+      "Models analyzed: 5"
+    ]
+  },
+  "recommendations": [
+    "Use cross-validation as primary model selection criterion",
+    "Monitor model performance degradation under noise",
+    "Consider temporal stability for production deployment",
+    "Recommend RandomForest based on cross-validation performance (R\u00b2=0.708)",
+    "Models sensitive to noise: LinearRegression",
+    "Consider feature scaling or regularization for noise-sensitive models",
+    "Monitor temporal stability of model performance",
+    "Consider retraining frequency based on temporal validation results"
+  ]
+}

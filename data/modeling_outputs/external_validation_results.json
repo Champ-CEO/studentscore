@@ -1,0 +1,201 @@
+{
+  "timestamp": "2025-06-09T15:13:51.899246",
+  "holdout_validation": {
+    "seed_42": {
+      "LinearRegression": {
+        "error": "columns are missing: {'gender', 'bag_color', 'gender_x_CCA', 'risk_amplification_score', 'age_group', 'mode_of_transport', 'attendance_category', 'gender_x_learning_style', 'age_group_x_attendance_category', 'sleep_time', 'learning_style', 'tuition', 'learning_style_x_tuition', 'CCA', 'direct_admission', 'wake_time'}"
+      },
+      "RandomForest": {
+        "error": "This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      },
+      "Ridge": {
+        "error": "This Ridge instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      }
+    },
+    "seed_123": {
+      "LinearRegression": {
+        "error": "columns are missing: {'gender', 'bag_color', 'gender_x_CCA', 'risk_amplification_score', 'age_group', 'mode_of_transport', 'attendance_category', 'gender_x_learning_style', 'age_group_x_attendance_category', 'sleep_time', 'learning_style', 'tuition', 'learning_style_x_tuition', 'CCA', 'direct_admission', 'wake_time'}"
+      },
+      "RandomForest": {
+        "error": "This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      },
+      "Ridge": {
+        "error": "This Ridge instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      }
+    },
+    "seed_456": {
+      "LinearRegression": {
+        "error": "columns are missing: {'gender', 'bag_color', 'gender_x_CCA', 'risk_amplification_score', 'age_group', 'mode_of_transport', 'attendance_category', 'gender_x_learning_style', 'age_group_x_attendance_category', 'sleep_time', 'learning_style', 'tuition', 'learning_style_x_tuition', 'CCA', 'direct_admission', 'wake_time'}"
+      },
+      "RandomForest": {
+        "error": "This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      },
+      "Ridge": {
+        "error": "This Ridge instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      }
+    },
+    "seed_789": {
+      "LinearRegression": {
+        "error": "columns are missing: {'gender', 'bag_color', 'gender_x_CCA', 'risk_amplification_score', 'age_group', 'mode_of_transport', 'attendance_category', 'gender_x_learning_style', 'age_group_x_attendance_category', 'sleep_time', 'learning_style', 'tuition', 'learning_style_x_tuition', 'CCA', 'direct_admission', 'wake_time'}"
+      },
+      "RandomForest": {
+        "error": "This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      },
+      "Ridge": {
+        "error": "This Ridge instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      }
+    },
+    "seed_999": {
+      "LinearRegression": {
+        "error": "columns are missing: {'gender', 'bag_color', 'gender_x_CCA', 'risk_amplification_score', 'age_group', 'mode_of_transport', 'attendance_category', 'gender_x_learning_style', 'age_group_x_attendance_category', 'sleep_time', 'learning_style', 'tuition', 'learning_style_x_tuition', 'CCA', 'direct_admission', 'wake_time'}"
+      },
+      "RandomForest": {
+        "error": "This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      },
+      "Ridge": {
+        "error": "This Ridge instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      }
+    }
+  },
+  "cross_validation": {
+    "KFold_5": {
+      "LinearRegression": {
+        "error": "columns are missing: {'gender', 'bag_color', 'gender_x_CCA', 'risk_amplification_score', 'age_group', 'mode_of_transport', 'attendance_category', 'gender_x_learning_style', 'age_group_x_attendance_category', 'sleep_time', 'learning_style', 'tuition', 'learning_style_x_tuition', 'CCA', 'direct_admission', 'wake_time'}"
+      },
+      "RandomForest": {
+        "error": "This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      },
+      "Ridge": {
+        "error": "This Ridge instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      }
+    },
+    "KFold_10": {
+      "LinearRegression": {
+        "error": "columns are missing: {'gender', 'bag_color', 'gender_x_CCA', 'risk_amplification_score', 'age_group', 'mode_of_transport', 'attendance_category', 'gender_x_learning_style', 'age_group_x_attendance_category', 'sleep_time', 'learning_style', 'tuition', 'learning_style_x_tuition', 'CCA', 'direct_admission', 'wake_time'}"
+      },
+      "RandomForest": {
+        "error": "This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      },
+      "Ridge": {
+        "error": "This Ridge instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      }
+    },
+    "StratifiedKFold_5": {
+      "LinearRegression": {
+        "error": "columns are missing: {'gender', 'bag_color', 'gender_x_CCA', 'risk_amplification_score', 'age_group', 'mode_of_transport', 'attendance_category', 'gender_x_learning_style', 'age_group_x_attendance_category', 'sleep_time', 'learning_style', 'tuition', 'learning_style_x_tuition', 'CCA', 'direct_admission', 'wake_time'}"
+      },
+      "RandomForest": {
+        "error": "This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      },
+      "Ridge": {
+        "error": "This Ridge instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      }
+    }
+  },
+  "subset_validation": {
+    "subset_0.1": {
+      "LinearRegression": {
+        "error": "columns are missing: {'gender', 'bag_color', 'gender_x_CCA', 'risk_amplification_score', 'age_group', 'mode_of_transport', 'attendance_category', 'gender_x_learning_style', 'age_group_x_attendance_category', 'sleep_time', 'learning_style', 'tuition', 'learning_style_x_tuition', 'CCA', 'direct_admission', 'wake_time'}"
+      },
+      "RandomForest": {
+        "error": "This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      },
+      "Ridge": {
+        "error": "This Ridge instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      }
+    },
+    "subset_0.3": {
+      "LinearRegression": {
+        "error": "columns are missing: {'gender', 'bag_color', 'gender_x_CCA', 'risk_amplification_score', 'age_group', 'mode_of_transport', 'attendance_category', 'gender_x_learning_style', 'age_group_x_attendance_category', 'sleep_time', 'learning_style', 'tuition', 'learning_style_x_tuition', 'CCA', 'direct_admission', 'wake_time'}"
+      },
+      "RandomForest": {
+        "error": "This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      },
+      "Ridge": {
+        "error": "This Ridge instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      }
+    },
+    "subset_0.5": {
+      "LinearRegression": {
+        "error": "columns are missing: {'gender', 'bag_color', 'gender_x_CCA', 'risk_amplification_score', 'age_group', 'mode_of_transport', 'attendance_category', 'gender_x_learning_style', 'age_group_x_attendance_category', 'sleep_time', 'learning_style', 'tuition', 'learning_style_x_tuition', 'CCA', 'direct_admission', 'wake_time'}"
+      },
+      "RandomForest": {
+        "error": "This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      },
+      "Ridge": {
+        "error": "This Ridge instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      }
+    },
+    "subset_0.7": {
+      "LinearRegression": {
+        "error": "columns are missing: {'gender', 'bag_color', 'gender_x_CCA', 'risk_amplification_score', 'age_group', 'mode_of_transport', 'attendance_category', 'gender_x_learning_style', 'age_group_x_attendance_category', 'sleep_time', 'learning_style', 'tuition', 'learning_style_x_tuition', 'CCA', 'direct_admission', 'wake_time'}"
+      },
+      "RandomForest": {
+        "error": "This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      },
+      "Ridge": {
+        "error": "This Ridge instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      }
+    },
+    "subset_0.9": {
+      "LinearRegression": {
+        "error": "columns are missing: {'gender', 'bag_color', 'gender_x_CCA', 'risk_amplification_score', 'age_group', 'mode_of_transport', 'attendance_category', 'gender_x_learning_style', 'age_group_x_attendance_category', 'sleep_time', 'learning_style', 'tuition', 'learning_style_x_tuition', 'CCA', 'direct_admission', 'wake_time'}"
+      },
+      "RandomForest": {
+        "error": "This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      },
+      "Ridge": {
+        "error": "This Ridge instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      }
+    }
+  },
+  "population_validation": {
+    "population_Yes": {
+      "LinearRegression": {
+        "error": "columns are missing: {'gender', 'bag_color', 'gender_x_CCA', 'risk_amplification_score', 'age_group', 'mode_of_transport', 'attendance_category', 'gender_x_learning_style', 'age_group_x_attendance_category', 'sleep_time', 'learning_style', 'tuition', 'learning_style_x_tuition', 'CCA', 'direct_admission', 'wake_time'}"
+      },
+      "RandomForest": {
+        "error": "This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      },
+      "Ridge": {
+        "error": "This Ridge instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      }
+    },
+    "population_No": {
+      "LinearRegression": {
+        "error": "columns are missing: {'gender', 'bag_color', 'gender_x_CCA', 'risk_amplification_score', 'age_group', 'mode_of_transport', 'attendance_category', 'gender_x_learning_style', 'age_group_x_attendance_category', 'sleep_time', 'learning_style', 'tuition', 'learning_style_x_tuition', 'CCA', 'direct_admission', 'wake_time'}"
+      },
+      "RandomForest": {
+        "error": "This RandomForestRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      },
+      "Ridge": {
+        "error": "This Ridge instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator."
+      }
+    }
+  },
+  "temporal_validation": {
+    "message": "Temporal validation with actual dates not implemented yet"
+  },
+  "summary": {
+    "total_models_tested": 3,
+    "models_tested": [
+      "LinearRegression",
+      "RandomForest",
+      "Ridge"
+    ],
+    "validation_types_completed": [
+      "holdout_validation",
+      "cross_validation",
+      "subset_validation",
+      "population_validation",
+      "temporal_validation"
+    ],
+    "key_findings": [],
+    "performance_consistency": {},
+    "recommendations": [
+      "Review feature engineering for potential target leakage",
+      "Consider using more diverse validation strategies",
+      "Implement additional robustness testing"
+    ]
+  }
+}

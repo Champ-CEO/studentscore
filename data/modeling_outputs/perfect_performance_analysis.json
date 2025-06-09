@@ -1,0 +1,250 @@
+{
+  "analysis_timestamp": "2025-06-09T11:11:37.319160",
+  "dataset_info": {
+    "data_path": "data\\modeling_outputs\\clean_dataset_no_leakage.csv",
+    "data_shape": [
+      15895,
+      61
+    ],
+    "features_count": 60,
+    "target_name": "final_test"
+  },
+  "critical_findings": [
+    "Found 1 features derived from target"
+  ],
+  "recommendations": [
+    "Remove derived features to eliminate data leakage"
+  ],
+  "analysis_results": {
+    "target_analysis": {
+      "basic_stats": {
+        "count": 15895,
+        "mean": 67.16603896103896,
+        "std": 13.977913516062584,
+        "min": 32.0,
+        "max": 100.0,
+        "median": 68.0,
+        "unique_values": 68,
+        "missing_values": 495
+      },
+      "constant_target": false,
+      "very_low_variance": false,
+      "score_range": 68.0,
+      "unrealistic_range": false,
+      "distribution": {
+        "skewness": NaN,
+        "kurtosis": NaN,
+        "normality_test_pvalue": NaN
+      },
+      "value_frequency": {
+        "most_common_value": 69.0,
+        "most_common_frequency": 498,
+        "most_common_percentage": 3.133060710915382
+      },
+      "mostly_same_values": false
+    },
+    "correlation_analysis": {
+      "numerical_features_count": 44,
+      "perfect_correlations": [],
+      "near_perfect_correlations": [],
+      "high_correlations": [],
+      "correlation_stats": {
+        "max_correlation": NaN,
+        "mean_correlation": NaN,
+        "median_correlation": NaN,
+        "std_correlation": NaN
+      },
+      "all_correlations": [
+        {
+          "feature": "index",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "number_of_siblings",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "n_male",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "n_female",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "age",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "hours_per_week",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "attendance_rate",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "attendance_rate_missing",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "attendance_age_ratio",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "engagement_score",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "learning_style_visual",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "learning_style_auditory",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "support_seeking_score",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "gender_female",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "gender_male",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "high_consistency",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "low_attendance_risk",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "age_mismatch_risk",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "low_engagement_risk",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        },
+        {
+          "feature": "multiple_risk_factors",
+          "correlation": NaN,
+          "p_value": NaN,
+          "abs_correlation": NaN
+        }
+      ]
+    },
+    "relationship_analysis": {
+      "identical_features": [],
+      "derived_features": [
+        {
+          "feature": "performance_vs_age_peers",
+          "r_squared": 0.9992748995880579,
+          "slope": 0.999670632335825,
+          "intercept": 67.94432589518725
+        }
+      ],
+      "suspicious_features": []
+    },
+    "leakage_analysis": {
+      "temporal_leakage": false,
+      "aggregation_leakage": [],
+      "future_information": [
+        {
+          "feature": "engagement_score",
+          "suspicious_keyword": "score"
+        },
+        {
+          "feature": "support_seeking_score",
+          "suspicious_keyword": "score"
+        },
+        {
+          "feature": "attendance_age_ratio_x_engagement_score",
+          "suspicious_keyword": "score"
+        },
+        {
+          "feature": "attendance_age_ratio_div_engagement_score",
+          "suspicious_keyword": "score"
+        },
+        {
+          "feature": "attendance_age_ratio_minus_engagement_score",
+          "suspicious_keyword": "score"
+        },
+        {
+          "feature": "engagement_score_mean_by_age_group",
+          "suspicious_keyword": "score"
+        },
+        {
+          "feature": "engagement_score_median_by_age_group",
+          "suspicious_keyword": "score"
+        },
+        {
+          "feature": "engagement_score_std_by_age_group",
+          "suspicious_keyword": "score"
+        },
+        {
+          "feature": "engagement_score_deviation_from_age_group_mean",
+          "suspicious_keyword": "score"
+        },
+        {
+          "feature": "performance_vs_age_peers",
+          "suspicious_keyword": "performance"
+        },
+        {
+          "feature": "risk_amplification_score",
+          "suspicious_keyword": "score"
+        }
+      ],
+      "target_encoding_leakage": []
+    },
+    "split_test_results": {
+      "n_splits": 5,
+      "results": [],
+      "performance_stats": {}
+    }
+  },
+  "overall_assessment": "CRITICAL ISSUES DETECTED: 1 major problems found"
+}
